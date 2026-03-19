@@ -899,6 +899,78 @@
             </div>
           </div>
           <!-- Team End -->
+<!-- Portfolio End -->
+
+          <!-- Post Holders Slider Start -->
+          <div class="container-fluid bg-light py-5 px-lg-5 fade-in-up" id="post-holders">
+            <div class="text-center mx-auto mb-5 mt-4" style="max-width: 600px">
+              <h1 class="display-5 text-uppercase text-dark mb-4">NSS Post Holders</h1>
+              <p class="fs-5 text-secondary">The dedicated student leadership team of NSS NIT Kurukshetra.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+              <div class="col-12 px-4">
+                <div class="owl-carousel post-holder-carousel">
+                  
+                  <!-- Card 1 -->
+                  <div class="item pb-4 pt-2">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 hover-lift text-center py-4 bg-white mx-2">
+                      <div class="card-body">
+                        <img src="img/team-placeholder.png" class="img-fluid rounded-circle mb-3 border border-dark border-3 mx-auto" style="width: 120px; height: 120px; object-fit: cover;" alt="Abhisek Sharma" onerror="this.src='img/NSS_Logo.png'">
+                        <h4 class="card-title text-dark fw-bold mb-1">Abhisek Sharma</h4>
+                        <p class="text-secondary fw-semibold mb-0">General Secretary</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Card 2 -->
+                  <div class="item pb-4 pt-2">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 hover-lift text-center py-4 bg-white mx-2">
+                      <div class="card-body">
+                        <img src="img/team-placeholder.png" class="img-fluid rounded-circle mb-3 border border-dark border-3 mx-auto" style="width: 120px; height: 120px; object-fit: cover;" alt="Komal Yadav" onerror="this.src='img/NSS_Logo.png'">
+                        <h4 class="card-title text-dark fw-bold mb-1">Komal Yadav</h4>
+                        <p class="text-secondary fw-semibold mb-0">General Secretary</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Card 3 -->
+                  <div class="item pb-4 pt-2">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 hover-lift text-center py-4 bg-white mx-2">
+                      <div class="card-body">
+                        <img src="img/team-placeholder.png" class="img-fluid rounded-circle mb-3 border border-dark border-3 mx-auto" style="width: 120px; height: 120px; object-fit: cover;" alt="Aadarsh Singh" onerror="this.src='img/NSS_Logo.png'">
+                        <h4 class="card-title text-dark fw-bold mb-1">Aadarsh Singh</h4>
+                        <p class="text-secondary fw-semibold mb-0">Additional Secretary</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Card 4 -->
+                  <div class="item pb-4 pt-2">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 hover-lift text-center py-4 bg-white mx-2">
+                      <div class="card-body">
+                        <img src="img/team-placeholder.png" class="img-fluid rounded-circle mb-3 border border-dark border-3 mx-auto" style="width: 120px; height: 120px; object-fit: cover;" alt="Santosh Kumar" onerror="this.src='img/NSS_Logo.png'">
+                        <h4 class="card-title text-dark fw-bold mb-1">Santosh Kumar</h4>
+                        <p class="text-secondary fw-semibold mb-0">Joint Secretary</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Card 5 -->
+                  <div class="item pb-4 pt-2">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 hover-lift text-center py-4 bg-white mx-2">
+                      <div class="card-body">
+                        <img src="img/team-placeholder.png" class="img-fluid rounded-circle mb-3 border border-dark border-3 mx-auto" style="width: 120px; height: 120px; object-fit: cover;" alt="Dev Goel" onerror="this.src='img/NSS_Logo.png'">
+                        <h4 class="card-title text-dark fw-bold mb-1">Dev Goel</h4>
+                        <p class="text-secondary fw-semibold mb-0">Joint Secretary</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Post Holders Slider End -->
 
           <!-- Testimonial Start -->
           <div class="container-fluid py-5 px-lg-5">
@@ -1276,6 +1348,45 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        
+        <!-- Animated UI Slider Bindings & Intersection Observer -->
+        <script>
+          $(document).ready(function(){
+            if($(".post-holder-carousel").length) {
+              $(".post-holder-carousel").owlCarousel({
+                  autoplay: true,
+                  smartSpeed: 1500,
+                  dots: true,
+                  loop: true,
+                  margin: 20,
+                  responsive: {
+                      0:{ items: 1 },
+                      768:{ items: 2 },
+                      992:{ items: 3 }
+                  }
+              });
+            }
+          });
+
+          // Smooth scroll appearance logic
+          document.addEventListener("DOMContentLoaded", function() {
+            if ('IntersectionObserver' in window) {
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if(entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                  }
+                });
+              }, { threshold: 0.15 });
+              
+              document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+            } else {
+              // Fallback for extremely old browsers natively
+              document.querySelectorAll('.fade-in-up').forEach(el => el.classList.add('appear'));
+            }
+          });
+        </script>
 </body>
 
 </html>

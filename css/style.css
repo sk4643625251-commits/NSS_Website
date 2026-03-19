@@ -995,3 +995,13 @@ html {
 .gallery-item:hover .gallery-img {
     transform: scale(1.08);
 }
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.fade-in-up.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
