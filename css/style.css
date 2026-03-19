@@ -985,3 +985,13 @@ object-position:top;
 html {
     scroll-behavior: smooth;
 }
+
+.gallery-img {
+    transition: transform 0.4s ease;
+    object-fit: cover;
+    height: 300px;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.08);
+}
