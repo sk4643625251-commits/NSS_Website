@@ -917,12 +917,12 @@ object-position:top;
 
 /* --- Modern Navbar & Hero Enhancements --- */
 .navbar-light .navbar-nav .nav-link {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--dark) !important;
     text-transform: uppercase;
     transition: 0.3s ease;
-    padding: 25px 15px;
+    padding: 8px 20px !important;
     position: relative;
 }
 
@@ -936,15 +936,15 @@ object-position:top;
     content: "";
     width: 0;
     height: 3px;
-    bottom: 18px;
-    left: 15px;
+    bottom: 0px;
+    left: 20px;
     background: var(--primary);
     transition: width 0.3s ease, left 0.3s ease;
 }
 
 .navbar-light .navbar-nav .nav-link:hover::after,
 .navbar-light .navbar-nav .nav-link.active::after {
-    width: calc(100% - 30px);
+    width: calc(100% - 40px);
 }
 
 .hero-header {
