@@ -1315,23 +1315,11 @@ html {
 
 .testimonial-section {
     position: relative;
-    background: url('../img/Teams/pmo.jpeg') center center / cover no-repeat !important;
+    background: linear-gradient(to right, #1e3c72, #2a5298) !important;
     padding: 100px 0 !important;
     color: #ffffff !important;
     z-index: 1;
     min-height: 450px;
-}
-
-/* Dark overlay for readability */
-.testimonial-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7); /* Slightly darker for better readability */
-    z-index: -1;
 }
 
 /* Force all text inside to be white */
