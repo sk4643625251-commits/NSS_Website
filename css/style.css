@@ -1127,3 +1127,59 @@ html {
     display: inline-block;
     width: 95px;
 }
+
+/* --- Modern Event Cards Section --- */
+.modern-event-card {
+    border-radius: 15px !important;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.modern-event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+}
+
+.modern-event-img-wrapper {
+    height: 280px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modern-event-img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.modern-event-card:hover .modern-event-img {
+    transform: scale(1.1);
+}
+
+.modern-event-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(4, 15, 40, 0.1) 0%, rgba(4, 15, 40, 0.85) 100%);
+    z-index: 1;
+    border-radius: 15px;
+}
+
+.modern-event-content {
+    z-index: 2;
+}
+
+.modern-event-title {
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    letter-spacing: 1px;
+}
+
+.modern-event-meta {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
