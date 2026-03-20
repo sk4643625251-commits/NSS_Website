@@ -946,7 +946,9 @@ object-position:top;
 .navbar-light .navbar-nav .nav-link.active::after {
     width: calc(100% - 40px);
 }
-
+.team-section{
+    paddidng-top:120px;
+}
 .hero-header {
     background: linear-gradient(rgba(4, 15, 40, 0.7), rgba(4, 15, 40, 0.7)), url(../img/administrative_edit.jpg) center center no-repeat;
     background-size: cover;
