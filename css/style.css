@@ -947,7 +947,7 @@ object-position:top;
     width: calc(100% - 40px);
 }
 .team-section{
-    paddidng-top:120px;
+    padding-top:120px;
 }
 .hero-header {
     background: linear-gradient(rgba(4, 15, 40, 0.7), rgba(4, 15, 40, 0.7)), url(../img/administrative_edit.jpg) center center no-repeat;
@@ -1167,6 +1167,11 @@ html {
     background: linear-gradient(to bottom, rgba(4, 15, 40, 0.1) 0%, rgba(4, 15, 40, 0.85) 100%);
     z-index: 1;
     border-radius: 15px;
+    transition: background 0.4s ease;
+}
+
+.modern-event-card:hover .modern-event-gradient {
+    background: linear-gradient(to bottom, rgba(4, 15, 40, 0.3) 0%, rgba(4, 15, 40, 0.95) 100%);
 }
 
 .modern-event-content {
@@ -1179,7 +1184,33 @@ html {
     letter-spacing: 1px;
 }
 
+.modern-event-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
 .modern-event-meta {
     font-size: 0.95rem;
     font-weight: 500;
+}
+
+.modern-event-view-gallery {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.4s ease;
+    margin-top: 10px;
+}
+
+.modern-event-card:hover .modern-event-view-gallery {
+    opacity: 1;
+    transform: translateY(0);
 }
