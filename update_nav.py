@@ -24,7 +24,7 @@ navbar_template = """  <!-- Navbar Start -->
         <a href="cells.html" class="nav-item nav-link">Team</a>
         <a href="nss-camp.html" class="nav-item nav-link">NSS Camp</a>
         <a href="projects.html" class="nav-item nav-link">Projects</a>
-        <a href="index.html#newspaper" class="nav-item nav-link">Newspaper</a>
+        <a href="newspaper.html" class="nav-item nav-link">Newspaper</a>
       </div>
       <a href="contact.html#contact" class="btn btn-primary py-2 px-4 ms-lg-3 d-none d-lg-block modern-solid-btn">Contact</a>
       <a href="contact.html#contact" class="btn btn-primary py-2 px-4 mt-2 mb-2 d-lg-none w-100 modern-solid-btn">Contact</a>
