@@ -1603,6 +1603,47 @@ html {
 }
 
 /* --- Projects Page Enhancements --- */
+/* Full width section */
+.project-section {
+    width: 100%;
+    background: #f8f9fa;
+}
+
+/* Centered wide container */
+.project-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Card styling */
+.project-card {
+    border-radius: 16px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(25, 135, 84, 0.15);
+}
+
+/* Text fix (VERY IMPORTANT) */
+h2,
+h5 {
+    word-break: normal !important;
+    white-space: normal !important;
+}
+
+/* Responsive padding */
+@media (max-width: 768px) {
+    .project-container {
+        padding: 0 10px;
+    }
+}
 .sustainability-accent-left {
     border-left: 5px solid #198754; 
 }
@@ -1610,16 +1651,18 @@ html {
     border-bottom: 5px solid #0d6efd; 
 }
 .project-card {
-    border-radius: 12px !important;
-    transition: all 0.4s ease;
-    background: #ffffff;
-    border: 1px solid rgba(0,0,0,0.05) !important;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
+
 .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(25, 135, 84, 0.15) !important; 
-    border-color: rgba(25, 135, 84, 0.3) !important;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(25, 135, 84, 0.15);
+    border-color: rgba(25, 135, 84, 0.25);
 }
+
 .project-icon {
     width: 65px;
     height: 65px;
@@ -1627,20 +1670,20 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.4s ease;
 }
-.project-card:hover .project-icon {
-    transform: scale(1.1) rotate(5deg);
-}
+
 .bg-success-light {
     background-color: rgba(25, 135, 84, 0.1);
 }
+
 .bg-info-light {
     background-color: rgba(13, 202, 240, 0.1);
 }
+
 .bg-primary-light {
     background-color: rgba(13, 110, 253, 0.1);
 }
+
 .bg-warning-light {
     background-color: rgba(255, 193, 7, 0.1);
 }

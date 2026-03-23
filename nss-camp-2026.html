@@ -5,295 +5,210 @@
   <meta charset="utf-8" />
   <title>NSS 7-Day Camp 2026 - NIT KKR</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta content="NSS | NIT Kurukshetra" name="keywords" />
-  <meta content="“IMPLEMENTING THE IDEOLOGY OF UNITY IN DIVERSITY,
-    WORKING SELFLESSLY BY INCULCATING HUMANITY,
-    SERVING WITHOUT TIRING ALONG THE WAY,
-    NSS NIT KURUKSHETRA GRINDS AWAY, EVERYDAY.”
-    " name="description" />
+  <link href="img/Logo_White_1.png" rel="icon" />
 
-  <!-- Favicon -->
-  <link href="img\Logo_White_1.png" rel="icon" />
-
-  <!-- Google Web Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
-    rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
     rel="stylesheet">
 
-  <!-- Icon Font Stylesheet -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-
-  <!-- Libraries Stylesheet -->
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-  <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
-
-  <!-- Customized Bootstrap Stylesheet -->
   <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Template Stylesheet -->
-  <link href="css/style.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #198754;
+      --dark-blue: #0f172a;
+      --light-bg: #f1f5f9;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light-bg);
+      color: #334155;
+    }
+
+    .camp-header {
+      background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('img/nitkkr.jpeg') center/cover no-repeat;
+      padding: 120px 0 80px;
+      color: white;
+      text-align: center;
+    }
+
+    .day-card {
+      background: #ffffff;
+      border-radius: 24px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      transition: all 0.4s ease;
+      margin-bottom: 60px;
+      padding: 45px;
+    }
+
+    .day-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .day-badge {
+      background: var(--primary-color);
+      color: white;
+      padding: 6px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    .day-title {
+      font-weight: 700;
+      color: var(--dark-blue);
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    .gallery-img {
+      height: 280px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    .gallery-img:hover {
+      filter: brightness(0.8);
+      transform: scale(1.02);
+    }
+
+    .footer-modern {
+      background: var(--dark-blue);
+      color: #94a3b8;
+      padding: 80px 0 30px;
+    }
+  </style>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body>
 
-    <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm sticky-top py-2 px-4 px-lg-5">
-    <a href="index.html" class="navbar-brand d-flex align-items-center">
-      <img src="img/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2" />
-      <div class="d-flex flex-column text-start justify-content-center">
-        <h2 class="m-0 text-dark fs-5 fw-bold" style="font-family: 'Poppins', sans-serif; line-height: 1.2;">National Service Scheme</h2>
-        <p class="m-0 text-secondary" style="font-size: 0.85rem; letter-spacing: 0.5px; line-height: 1; font-family: 'Inter', sans-serif;">Kurukshetra</p>
-      </div>
-    </a>
-    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav ms-auto py-0 fw-bold align-items-center">
-        <a href="index.html" class="nav-item nav-link">Home</a>
-        <a href="about.html" class="nav-item nav-link">About</a>
-        <a href="units.html" class="nav-item nav-link">Units</a>
-        <a href="events.html" class="nav-item nav-link">Events</a>
-        <a href="cells.html" class="nav-item nav-link">Team</a>
-        <a href="nss-camp.html" class="nav-item nav-link">NSS Camp</a>
+  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-3 px-lg-5">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <img src="img/NSS_Logo.png" alt="Logo" width="45" class="me-2" />
+        <h2 class="m-0 text-dark fs-5 fw-bold">NSS NIT Kurukshetra</h2>
+      </a>
+      <div class="navbar-nav ms-auto fw-bold">
+        <a href="nss-camp.html" class="nav-item nav-link active">7-Day Camp</a>
         <a href="projects.html" class="nav-item nav-link">Projects</a>
-        <a href="index.html#newspaper" class="nav-item nav-link">Newspaper</a>
+        <a href="index.html" class="nav-item nav-link">Home</a>
       </div>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 ms-lg-3 d-none d-lg-block modern-solid-btn">Contact</a>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 mt-2 mb-2 d-lg-none w-100 modern-solid-btn">Contact</a>
     </div>
   </nav>
-  <!-- Navbar End -->
 
-  <main class="flex-grow-1">
-
-  <!-- Detailed Camp Section -->
-  <section class="container-fluid bg-white py-5 px-lg-5">
-    <div class="text-center mx-auto mb-5 mt-4" style="max-width: 900px">
-      <h1 class="display-5 text-uppercase text-dark mb-4">NSS 7-Day Camp 2026 – Dayalpur Village</h1>
-      <p class="fs-5 text-secondary">Our NSS unit organized a 7-day camp in Dayalpur village focusing on social service, cleanliness drives, awareness campaigns, and community engagement.</p>
+  <header class="camp-header">
+    <div class="container">
+      <h1 class="display-3 fw-bold mb-3">Dayalpur Village Camp 2026</h1>
+      <p class="fs-5 opacity-75">Not Me, But You — 7 Days of Impact and Learning</p>
     </div>
-    
-    <div class="container mb-5">
-      
-      <!-- Day 1 -->
-      <div class="mb-5 pb-4 border-bottom border-light">
-        <h2 class="text-uppercase text-dark mb-3">Day 1 – Tree Plantation</h2>
-        <p class="fs-5 text-secondary mb-4">Volunteers actively participated in tree plantation drives to promote environmental sustainability and create awareness about the importance of greenery.</p>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/nsa0.jpeg" class="img-fluid w-100 gallery-img" alt="Day 1 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/nsa1.jpeg" class="img-fluid w-100 gallery-img" alt="Day 1 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/nsa2.jpeg" class="img-fluid w-100 gallery-img" alt="Day 1 Activity"></div>
-          </div>
-        </div>
-      </div>
+  </header>
 
-      <!-- Day 2 -->
-      <div class="mb-5 pb-4 border-bottom border-light">
-        <h2 class="text-uppercase text-dark mb-3">Day 2 – Social Activities</h2>
-        <p class="fs-5 text-secondary mb-4">Various social service activities were conducted to engage with the local community and understand their needs.</p>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/sewa0.jpeg" class="img-fluid w-100 gallery-img" alt="Day 2 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/sewa1.jpeg" class="img-fluid w-100 gallery-img" alt="Day 2 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/sewa2.jpeg" class="img-fluid w-100 gallery-img" alt="Day 2 Activity"></div>
-          </div>
-        </div>
-      </div>
+  <main class="container py-5">
 
-      <!-- Day 3 -->
-      <div class="mb-5 pb-4 border-bottom border-light">
-        <h2 class="text-uppercase text-dark mb-3">Day 3 – Sports Activities</h2>
-        <p class="fs-5 text-secondary mb-4">Sports events were organized to encourage teamwork, physical fitness, and coordination among volunteers and villagers.</p>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/fit0.jpeg" class="img-fluid w-100 gallery-img" alt="Day 3 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/fit1.jpeg" class="img-fluid w-100 gallery-img" alt="Day 3 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/fit2.jpeg" class="img-fluid w-100 gallery-img" alt="Day 3 Activity"></div>
-          </div>
-        </div>
+    <div class="day-card">
+      <span class="day-badge">Day 01</span>
+      <h2 class="day-title">Inauguration & Plantation</h2>
+      <p class="text-muted fs-5">Camp ka aagaz tree plantation drive ke saath hua, jisme humne paryavaran sanrakshan ka
+        sankalp liya.</p>
+      <div class="row g-4 mt-2">
+        <div class="col-md-4"><img src="img/events/nsa0.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/nsa1.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/nsa2.jpeg" class="img-fluid gallery-img w-100"></div>
       </div>
-
-      <!-- Day 4 -->
-      <div class="mb-5 pb-4 border-bottom border-light">
-        <h2 class="text-uppercase text-dark mb-3">Day 4 – Swachhta Abhiyan</h2>
-        <p class="fs-5 text-secondary mb-4">A cleanliness drive was carried out to spread awareness about hygiene and sanitation in the village.</p>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/swach1.jpeg" class="img-fluid w-100 gallery-img" alt="Day 4 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/swach2.jpeg" class="img-fluid w-100 gallery-img" alt="Day 4 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/swach3.jpeg" class="img-fluid w-100 gallery-img" alt="Day 4 Activity"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Day 5 -->
-      <div class="mb-5 pb-4 border-bottom border-light">
-        <h2 class="text-uppercase text-dark mb-3">Day 5 – Holi Celebration</h2>
-        <p class="fs-5 text-secondary mb-4">Volunteers celebrated Holi with the villagers, promoting unity, joy, and cultural bonding.</p>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/vasantpanchmi.jpeg" class="img-fluid w-100 gallery-img" alt="Day 5 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/swach12.jpeg" class="img-fluid w-100 gallery-img" alt="Day 5 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/saraswati1.jpeg" class="img-fluid w-100 gallery-img" alt="Day 5 Activity"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Day 6 -->
-      <div class="mb-5 pb-4 border-bottom border-light">
-        <h2 class="text-uppercase text-dark mb-3">Day 6 – Awareness & Counseling</h2>
-        <p class="fs-5 text-secondary mb-4">Sessions on drug awareness, career counseling, and balanced diet were conducted to educate and empower the community.</p>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/nsamukt.jpeg" class="img-fluid w-100 gallery-img" alt="Day 6 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/grooming&hygiene.jpeg" class="img-fluid w-100 gallery-img" alt="Day 6 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/nsa8.jpeg" class="img-fluid w-100 gallery-img" alt="Day 6 Activity"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Day 7 -->
-      <div class="mb-5 pb-4">
-        <h2 class="text-uppercase text-dark mb-3">Day 7 – Valedictory Ceremony</h2>
-        <p class="fs-5 text-secondary mb-4">The camp concluded with a valedictory ceremony highlighting achievements, experiences, and volunteer participation.</p>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/vande0.jpeg" class="img-fluid w-100 gallery-img" alt="Day 7 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/vande1.jpeg" class="img-fluid w-100 gallery-img" alt="Day 7 Activity"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="gallery-item overflow-hidden rounded shadow-sm hover-lift"><img src="img/events/vande2.jpeg" class="img-fluid w-100 gallery-img" alt="Day 7 Activity"></div>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </section>
-  <!-- Camp Detail Section End -->
+
+    <div class="day-card">
+      <span class="day-badge">Day 02</span>
+      <h2 class="day-title">Shramdaan & Community Service</h2>
+      <p class="text-muted fs-5">Volunteers ne gaon ke mandir aur sarvajanik sthalon par safai karke 'Sewa Hi Parmo
+        Dharma' ka sandesh diya.</p>
+      <div class="row g-4 mt-2">
+        <div class="col-md-4"><img src="img/events/sewa0.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/sewa1.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/sewa2.jpeg" class="img-fluid gallery-img w-100"></div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <span class="day-badge">Day 03</span>
+      <h2 class="day-title">Healthy Body, Healthy Mind</h2>
+      <p class="text-muted fs-5">Sports aur yoga sessions ke madhyam se fitness aur teamwork ko promote kiya gaya.</p>
+      <div class="row g-4 mt-2">
+        <div class="col-md-4"><img src="img/events/fit0.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/fit1.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/fit2.jpeg" class="img-fluid gallery-img w-100"></div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <span class="day-badge">Day 04</span>
+      <h2 class="day-title">Swachhta Abhiyan Drive</h2>
+      <p class="text-muted fs-5">Waste management aur hygiene awareness ke liye door-to-door campaign aur safai
+        karyakram.</p>
+      <div class="row g-4 mt-2">
+        <div class="col-md-4"><img src="img/events/swach1.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/swach2.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/swach3.jpeg" class="img-fluid gallery-img w-100"></div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <span class="day-badge">Day 05</span>
+      <h2 class="day-title">Cultural Unity & Festivals</h2>
+      <p class="text-muted fs-5">Holi aur Vasant Panchami ka jashn gaon ke bachon aur buzurgon ke saath milkar manaya
+        gaya.</p>
+      <div class="row g-4 mt-2">
+        <div class="col-md-4"><img src="img/events/vasantpanchmi.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/swach12.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/saraswati1.jpeg" class="img-fluid gallery-img w-100"></div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <span class="day-badge">Day 06</span>
+      <h2 class="day-title">Awareness & Social Counseling</h2>
+      <p class="text-muted fs-5">Nashamukti (Drug Awareness) aur Career Counseling par vishesh satra aayojit kiye gaye.
+      </p>
+      <div class="row g-4 mt-2">
+        <div class="col-md-4"><img src="img/events/nsamukt.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/grooming&hygiene.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/nsa8.jpeg" class="img-fluid gallery-img w-100"></div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <span class="day-badge">Day 07</span>
+      <h2 class="day-title">Valedictory: Journey's End</h2>
+      <p class="text-muted fs-5">7 dino ki yaadon ko samet-te hue, camp ka समापन deshbhakti aur sanskritik prastutiyon
+        ke saath hua.</p>
+      <div class="row g-4 mt-2">
+        <div class="col-md-4"><img src="img/events/vande0.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/vande1.jpeg" class="img-fluid gallery-img w-100"></div>
+        <div class="col-md-4"><img src="img/events/vande2.jpeg" class="img-fluid gallery-img w-100"></div>
+      </div>
+    </div>
+
   </main>
 
-  <!-- Footer Start -->
-  <div class="container-fluid footer-modern py-5 mt-auto">
-    <div class="row g-5 px-lg-5">
-      <!-- Column 1: About -->
-      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-        <a href="index.html" class="navbar-brand mb-4 d-flex align-items-center">
-          <img src="img/Logo_White_1.png" alt="NSS NIT KKR Logo" width="60" height="60" class="me-3">
-          <h2 class="m-0 text-white" style="font-size: 1.5rem;">NSS NIT KKR</h2>
-        </a>
-        <p class="mb-4 text-white-50">
-          Striving for the purpose of bringing peace and harmony by inculcating every individual with the spirit
-          of humanity through community service.
-        </p>
-        <div class="d-flex text-white-50 mb-2">
-          <i class="fa fa-map-marker-alt text-primary me-3 mt-1"></i>
-          <p class="mb-0">NSS Office, NIT Kurukshetra<br>Haryana, 136118</p>
-        </div>
-        <div class="d-flex text-white-50 mb-4">
-          <i class="fa fa-envelope text-primary me-3 mt-1"></i>
-          <p class="mb-0">nss@nitkkr.ac.in</p>
-        </div>
-        <div class="d-flex mt-4">
-          <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
-          <a class="social-icon" href="https://www.facebook.com/nss.nitkkr"><i class="fab fa-facebook-f"></i></a>
-          <a class="social-icon" href="https://www.linkedin.com/company/nss-nit-kurukshetra/"><i
-              class="fab fa-linkedin-in"></i></a>
-          <a class="social-icon" href="https://instagram.com/nss_nitkkr"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-
-      <!-- Column 2: Quick Links -->
-      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-        <h4 class="text-white text-uppercase">Quick Links</h4>
-        <div class="d-flex flex-column justify-content-start mt-4 pt-2">
-          <a class="mb-3 text-white-50" href="index.html"><i class="fa fa-angle-right text-primary me-2"></i>Home</a>
-          <a class="mb-3 text-white-50" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About Us</a>
-          <a class="mb-3 text-white-50" href="units.html"><i class="fa fa-angle-right text-primary me-2"></i>Units</a>
-          <a class="mb-3 text-white-50" href="events.html"><i class="fa fa-angle-right text-primary me-2"></i>Events</a>
-          <a class="mb-3 text-white-50" href="cells.html"><i class="fa fa-angle-right text-primary me-2"></i>Team</a>
-          <a class="mb-3 text-white-50" href="nss-camp.html"><i class="fa fa-angle-right text-primary me-2"></i>NSS Camp</a>
-          <a class="mb-3 text-white-50" href="projects.html"><i class="fa fa-angle-right text-primary me-2"></i>Projects</a>
-          <a class="text-white-50" href="contact.html"><i class="fa fa-angle-right text-primary me-2"></i>Contact</a>
-        </div>
-      </div>
-
-      <!-- Column 3: Newsletter -->
-      <div class="col-lg-4 col-md-12">
-        <h4 class="text-white text-uppercase">Newsletter</h4>
-        <p class="mt-4 pt-2 mb-4 text-white-50">Subscribe to our newsletter to receive the latest updates and news about our camps and projects.</p>
-        <div class="w-100 mt-2">
-          <div class="input-group">
-            <input type="email" class="form-control newsletter-input" style="padding: 15px;"
-              placeholder="Your Email Address">
-            <button class="btn btn-primary px-4 fw-bold modern-solid-btn">Sign Up</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid footer-bottom text-white-50">
+  <footer class="footer-modern">
     <div class="container text-center">
-      <p class="mb-0">
-        &copy; <a class="text-white fw-bold" href="#">NSS NIT Kurukshetra</a>. All Rights Reserved.
-      </p>
-      <p class="mb-0 mt-1" style="font-size: 13px;">
-        Designed by <a class="text-white opacity-75" href="#">Shivam & NSS Web Team</a>
-      </p>
+      <h3 class="text-white mb-3">NSS NIT KURUKSHETRA</h3>
+      <p class="mb-4">Evolving society through community leadership.</p>
+      <p class="small opacity-50">&copy; 2026 NSS NIT KKR. All Rights Reserved.</p>
     </div>
-  </div>
-  <!-- Footer End -->
+  </footer>
 
-  <!-- Back to Top -->
-  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top modern-solid-btn"><i class="bi bi-arrow-up"></i></a>
-
-  <!-- JavaScript Libraries -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/tempusdominus/js/moment.min.js"></script>
-  <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-  <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-  <script src="lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-  <!-- Template Javascript -->
-  <script src="js/main.js"></script>
 </body>
+
 </html>
