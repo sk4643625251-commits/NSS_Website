@@ -88,6 +88,11 @@ p {
     left: 25%;
 }
 
+/* Suppress the underline line on modern solid buttons to prevent navbar logo overlap */
+.modern-solid-btn::after {
+    display: none !important;
+}
+
 .btn-primary {
     color: #FFFFFF;
 }
@@ -143,113 +148,183 @@ p {
     background-size: 3px 3px;
 }
 
-/* Modern Footer Styles */
+/* ============================================
+   Modern Footer Styles
+   ============================================ */
 .footer-modern {
-    background: linear-gradient(135deg, #0b1021 0%, #160a2b 100%);
-    color: #a0a5b5;
-    font-family: 'Open Sans', sans-serif;
-    padding-top: 2.5rem !important; /* Overrides py-5 */
-    padding-bottom: 2.5rem !important;
+    background: linear-gradient(160deg, #050e24 0%, #0a0e2a 50%, #10062a 100%);
+    color: #9aa3b5;
+    font-family: 'Outfit', 'Open Sans', sans-serif;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    border-top: 1px solid rgba(99, 102, 241, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+/* Ambient glow effect */
+.footer-modern::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+.footer-modern::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
 }
 .footer-modern .row {
-    --bs-gutter-y: 1.5rem; /* Overrides g-5 */
+    position: relative;
+    z-index: 1;
+    --bs-gutter-y: 1.5rem;
 }
 .footer-modern h4 {
     color: #ffffff;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 1rem !important;
-    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.25rem !important;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+    display: inline-block;
 }
 .footer-modern p {
-    line-height: 1.5 !important;
-    font-size: 0.85rem !important;
+    line-height: 1.7 !important;
+    font-size: 0.88rem !important;
     margin-bottom: 10px !important;
+    color: #9aa3b5;
 }
 .footer-modern .navbar-brand {
-    margin-bottom: 10px !important;
+    margin-bottom: 12px !important;
 }
 .footer-modern .navbar-brand h2 {
     font-size: 1.2rem !important;
+    color: #fff !important;
 }
 .footer-modern .navbar-brand img {
-    width: 45px !important;
-    height: 45px !important;
+    width: 48px !important;
+    height: 48px !important;
 }
 .footer-modern a {
-    color: #a0a5b5;
+    color: #9aa3b5;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 0.85rem !important;
+    font-size: 0.88rem !important;
     margin-bottom: 8px !important;
     display: inline-block;
 }
 .footer-modern a:hover {
-    color: #ffffff;
-    padding-left: 5px;
+    color: #a78bfa;
+    padding-left: 6px;
 }
 /* Social Icons */
 .footer-modern .social-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px !important;
-    height: 34px !important;
+    width: 36px !important;
+    height: 36px !important;
     font-size: 14px !important;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.1);
     color: #ffffff;
     margin-right: 8px !important;
     transition: all 0.3s ease;
 }
 .footer-modern .social-icon:hover {
-    background: var(--primary);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(58, 176, 255, 0.4);
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    border-color: transparent;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
     color: #ffffff;
     padding-left: 0 !important;
 }
-/* Newsletter */
-.footer-modern .newsletter-input {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    color: #ffffff;
-    padding: 8px 15px !important;
-    height: 42px !important;
-    font-size: 0.85rem !important;
+
+/* Newsletter Input Box - Rectangular, Uniform Height */
+.footer-modern .newsletter-input,
+.footer-modern .input-group .form-control {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-right: none !important;
+    color: #ffffff !important;
+    padding: 10px 16px !important;
+    height: 46px !important;
+    font-size: 0.875rem !important;
+    border-radius: 6px 0 0 6px !important;
+    box-shadow: none !important;
+    outline: none;
 }
-.footer-modern .newsletter-input:focus {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: none;
-    border-color: var(--primary) !important;
+.footer-modern .newsletter-input:focus,
+.footer-modern .input-group .form-control:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(99, 102, 241, 0.5) !important;
+    box-shadow: none !important;
 }
-.footer-modern .newsletter-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+.footer-modern .newsletter-input::placeholder,
+.footer-modern .input-group .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.4);
 }
 .footer-modern .input-group .btn {
-    padding: 8px 20px !important;
-    height: 42px !important;
-    font-size: 0.9rem !important;
+    height: 46px !important;
+    padding: 0 22px !important;
+    font-size: 0.875rem !important;
+    font-weight: 600;
+    border-radius: 0 6px 6px 0 !important;
+    background: linear-gradient(135deg, #6366f1, #a855f7) !important;
+    border: none !important;
+    color: #fff !important;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: none;
 }
+.footer-modern .input-group .btn::after {
+    display: none !important;
+}
+.footer-modern .input-group .btn:hover {
+    background: linear-gradient(135deg, #4f46e5, #9333ea) !important;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    transform: none;
+}
+
 /* Utility overrides */
-.footer-modern .mt-4 {
-    margin-top: 15px !important;
+.footer-modern .mt-4, .footer-modern .mt-2 {
+    margin-top: 12px !important;
 }
 .footer-modern .mb-4 {
-    margin-bottom: 15px !important;
+    margin-bottom: 12px !important;
 }
 .footer-modern .pt-2 {
     padding-top: 0 !important;
 }
 .footer-bottom {
-    background: #060913;
-    padding: 15px 0 !important;
+    background: #020817;
+    padding: 18px 0 !important;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 1;
 }
 .footer-bottom p {
     margin: 0;
     font-size: 13px !important;
+    color: #7a839a;
+}
+.footer-bottom a {
+    color: #a78bfa;
+    text-decoration: none;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -327,6 +402,11 @@ p {
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
     width: calc(100% - 30px);
+}
+
+/* Suppress line on glass navbar (modern pages) */
+.navbar-glass .nav-link::after {
+    display: none !important;
 }
 
 /* Transparent State Hover override */
@@ -459,95 +539,55 @@ p {
     font-size: 60px;
 }
 
-.portfolio-item {
-    margin-bottom: 60px;
+/* --- NEW CAMP ACTIVITY CARDS (Modern Layout) --- */
+.camp-activity-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
-.portfolio-box{
-  overflow: hidden;
+.camp-activity-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
-
-.portfolio-title {
-    position: absolute;
+.camp-img-wrap {
+    width: 100%;
+    overflow: hidden;
+}
+.camp-img-wrap img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.camp-activity-card:hover .camp-img-wrap img {
+    transform: scale(1.05);
+}
+.camp-card-body {
+    padding: 24px 20px;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 120px;
-    padding: 0 30px;
-    right: 30px;
-    left: 30px;
-    bottom: 0;
-    margin-top: 10px;
-    background: #FFFFFF;
-    z-index: 3;
 }
-
-.portfolio-btn {
-    position: absolute;
-    display: inline-block;
-    top: 50%;
-    left: 50%;
-    font-size: 120px;
-    line-height: 0;
-    transform: translate(-50%,-50%);
-    transition: .1s;
-    transition-delay: .3s;
-    z-index: 2;
-    opacity: 0;
+.camp-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
 }
-.portfolio-item {
-  margin-bottom: 30px;
+.camp-card-sub {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-family: 'Inter', sans-serif;
 }
-.portfolio-item:hover .portfolio-btn {
-    opacity: 1;
-}
-
-.portfolio-box img {
-  height: 250px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-.portfolio-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.portfolio-item {
-  padding: 10px;
-}
-
-.portfolio-box img {
-  height: 250px;
-  object-fit: cover;
-}
-.portfolio-box::before,
-.portfolio-box::after {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    transition: .5s;
-    z-index: 1;
-    background: rgba(4, 15, 40, .7);
-}
-
-.portfolio-box::before {
-    left: 0;
-}
-
-.portfolio-box::after {
-    right: 0;
-}
-
-.portfolio-item:hover .portfolio-box::before {
-    left: 0;
-    width: 50%;
-}
-
-.portfolio-item:hover .portfolio-box::after {
-    right: 0;
-    width: 50%;
+.camp-card-sub i {
+    color: var(--primary);
 }
 .pmo-card img {
   width: 100%;
@@ -1041,10 +1081,7 @@ object-position:top;
     padding-top:120px;
 }
 .hero-header {
-    background:
-        linear-gradient(rgba(4, 15, 40, 0.6), rgba(4, 15, 40, 0.6)),
-        url('../img/home/nss-admin.jpg');
-
+    background:url('../img/home/admin.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1056,7 +1093,7 @@ object-position:top;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+
 }
 .modern-solid-btn {
     background-color: #0d6efd !important;
@@ -1529,7 +1566,7 @@ html {
 
 /* --- NSS Units Hero Redesign --- */
 .units-hero {
-    background: url('../img/nit\ kkr.jpg') center center no-repeat;
+    background: url('../img/about/nit\ kkr.jpg') center center no-repeat;
     background-size: cover;
     padding: 130px 0;
     min-height: 480px;

@@ -1,0 +1,413 @@
+/* ======================================
+   MODERN NSS UNITS SECTION - REDESIGN
+   ====================================== */
+
+:root {
+  --primary-blue: #0d47a1;
+  --dark-bg: #040F28;
+  --accent-teal: #00bcd4;
+  --accent-orange: #ff7043;
+  --light-bg: #f8f9fa;
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+}
+
+/* ======================================
+   UNIT CARD MODERN DESIGN
+   ====================================== */
+
+.unit-card-modern {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.unit-card-modern:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 48px rgba(13, 71, 161, 0.15);
+}
+
+/* ======================================
+   UNIT HEADER & TYPOGRAPHY
+   ====================================== */
+
+.unit-header-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #00bcd4, #0097a7);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 25px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+}
+
+.unit-title-modern {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.unit-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff7043, #ff9800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.unit-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333333;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+/* ======================================
+   SECTION TITLES WITH ICONS
+   ====================================== */
+
+.section-title-modern {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title-modern i {
+  font-size: 1.2rem;
+}
+
+/* ======================================
+   OFFICER CARD STYLING
+   ====================================== */
+
+.officer-card-modern {
+  background: linear-gradient(135deg, rgba(13, 71, 161, 0.05), rgba(0, 188, 212, 0.05));
+  border: 2px solid rgba(13, 71, 161, 0.2);
+  border-radius: 14px;
+  padding: 16px;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.officer-card-modern:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, rgba(13, 71, 161, 0.1), rgba(0, 188, 212, 0.1));
+  border-color: var(--primary-blue);
+  box-shadow: 0 8px 24px rgba(13, 71, 161, 0.15);
+}
+
+.officer-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-blue);
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2);
+  flex-shrink: 0;
+}
+
+.officer-info h5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.officer-info p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+/* ======================================
+   UNIT HEAD CARD STYLING
+   ====================================== */
+
+.unit-head-card-modern {
+  background: linear-gradient(135deg, #040F28, #0d1f3c);
+  border: 1px solid rgba(0, 188, 212, 0.3);
+  border-radius: 12px;
+  padding: 14px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.unit-head-card-modern:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #0d1f3c, #0f2845);
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);
+}
+
+.unit-head-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 188, 212, 0.5);
+  flex-shrink: 0;
+}
+
+.unit-head-info h6 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.unit-head-info p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(0, 188, 212, 0.8);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ======================================
+   CTA BUTTON STYLING
+   ====================================== */
+
+.btn-cta-modern {
+  background: linear-gradient(135deg, var(--primary-blue), #1565c0);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 28px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.btn-cta-modern:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(13, 71, 161, 0.3);
+  text-decoration: none;
+  color: white;
+}
+
+/* ======================================
+   IMAGE CONTAINER & HOVER EFFECTS
+   ====================================== */
+
+.unit-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  height: 300px;
+}
+
+.unit-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.unit-image-container:hover img {
+  transform: scale(1.08);
+}
+
+/* ======================================
+   ANIMATIONS
+   ====================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.scroll-anim.visible {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ======================================
+   CONTENT LAYOUT
+   ====================================== */
+
+.unit-content-modern {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ======================================
+   RESPONSIVE DESIGN
+   ====================================== */
+
+@media (max-width: 992px) {
+  .unit-title-modern {
+    font-size: 2.2rem;
+  }
+  
+  .unit-content-modern {
+    padding: 30px;
+  }
+  
+  .unit-image-container {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .unit-title-modern {
+    font-size: 2rem;
+  }
+  
+  .unit-tagline {
+    font-size: 0.9rem;
+  }
+  
+  .unit-description {
+    font-size: 0.95rem;
+  }
+  
+  .unit-image-container {
+    height: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .unit-title-modern {
+    font-size: 1.8rem;
+  }
+  
+  .unit-content-modern {
+    padding: 20px;
+  }
+  
+  .unit-card-modern {
+    flex-direction: column !important;
+  }
+  
+  .unit-image-container {
+    height: 200px;
+  }
+  
+  .officer-card-modern {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .unit-head-card-modern {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ======================================
+   ENHANCED COLOR VARIANTS FOR BADGES
+   ====================================== */
+
+/* Year 1 - Teal (already defined) */
+.badge-year-1 {
+  background: linear-gradient(135deg, #00bcd4, #0097a7);
+}
+
+/* Year 2 - Orange */
+.badge-year-2 {
+  background: linear-gradient(135deg, #ff9800, #ff7043);
+}
+
+/* Year 3 - Light Blue */
+.badge-year-3 {
+  background: linear-gradient(135deg, #07c3f4, #039be5);
+}
+
+/* Year 4 Variant 1 - Purple */
+.badge-year-4-1 {
+  background: linear-gradient(135deg, #9c27b0, #673ab7);
+}
+
+/* Year 4 Variant 2 - Pink */
+.badge-year-4-2 {
+  background: linear-gradient(135deg, #e91e63, #c2185b);
+}
+
+/* Year 4 Variant 3 - Green */
+.badge-year-4-3 {
+  background: linear-gradient(135deg, #00897b, #00695c);
+}
+
+/* ======================================
+   UTILITY CLASSES
+   ====================================== */
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.slide-in-left {
+  opacity: 0;
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* High Contrast Text */
+.high-contrast {
+  color: var(--text-dark) !important;
+  font-weight: 600;
+}
+
+.high-contrast-light {
+  color: var(--text-light) !important;
+  font-weight: 600;
+}

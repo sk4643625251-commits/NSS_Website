@@ -1,0 +1,805 @@
+/* 
+    ======================================
+    Blood Donation & Request Page Styles
+    Theme: Cinematic Dark — Crimson & Glass
+    ======================================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;600&display=swap');
+
+/* ===== BASE ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #040F28;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ===== HERO SECTION ===== */
+.blood-hero {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(180, 0, 0, 0.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(220, 38, 38, 0.2) 0%, transparent 55%),
+        linear-gradient(180deg, #040F28 0%, #0a0a1a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 120px 20px 200px;
+    overflow: hidden;
+}
+
+/* Animated particles */
+.blood-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle 2px at 15% 30%, rgba(220,38,38,0.6) 0%, transparent 100%),
+        radial-gradient(circle 1.5px at 85% 20%, rgba(248,113,113,0.5) 0%, transparent 100%),
+        radial-gradient(circle 2px at 60% 75%, rgba(220,38,38,0.4) 0%, transparent 100%),
+        radial-gradient(circle 1px at 35% 65%, rgba(255,255,255,0.2) 0%, transparent 100%),
+        radial-gradient(circle 1.5px at 75% 55%, rgba(220,38,38,0.5) 0%, transparent 100%);
+    pointer-events: none;
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+.blood-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(to bottom, transparent, #040F28);
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+/* Floating animated blood cells */
+.hero-bg-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(220, 38, 38, 0.12);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    animation: floatParticle linear infinite;
+}
+
+.particle:nth-child(1)  { width: 80px;  height: 80px;  left: 10%; animation-duration: 18s; animation-delay: 0s;   top: 80%; }
+.particle:nth-child(2)  { width: 50px;  height: 50px;  left: 25%; animation-duration: 14s; animation-delay: 2s;   top: 90%; }
+.particle:nth-child(3)  { width: 120px; height: 120px; left: 50%; animation-duration: 22s; animation-delay: 4s;   top: 95%; }
+.particle:nth-child(4)  { width: 40px;  height: 40px;  left: 70%; animation-duration: 16s; animation-delay: 1s;   top: 85%; }
+.particle:nth-child(5)  { width: 70px;  height: 70px;  left: 88%; animation-duration: 20s; animation-delay: 3s;   top: 92%; }
+.particle:nth-child(6)  { width: 30px;  height: 30px;  left: 5%;  animation-duration: 12s; animation-delay: 5s;   top: 88%; }
+
+@keyframes floatParticle {
+    0%   { transform: translateY(0) rotate(0deg);   opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(720deg); opacity: 0; }
+}
+
+/* Hero badge */
+.blood-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(220, 38, 38, 0.15);
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f87171;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    animation: fadeInDown 0.7s ease both;
+    position: relative;
+    z-index: 3;
+}
+
+.blood-hero-badge i {
+    font-size: 0.9rem;
+    animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14%       { transform: scale(1.3); }
+    28%       { transform: scale(1); }
+    42%       { transform: scale(1.2); }
+    70%       { transform: scale(1); }
+}
+
+.blood-hero h1 {
+    font-weight: 900;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    line-height: 1.05;
+    position: relative;
+    z-index: 3;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.blood-hero h1 .highlight {
+    background: linear-gradient(135deg, #dc2626, #f87171, #fca5a5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+}
+
+.blood-hero-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #dc2626, #f87171);
+    border-radius: 4px;
+    margin: 28px auto;
+    position: relative;
+    z-index: 3;
+    animation: expandWidth 0.9s ease 0.5s both;
+}
+
+@keyframes expandWidth {
+    from { width: 0; opacity: 0; }
+    to   { width: 80px; opacity: 1; }
+}
+
+.blood-hero-desc {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 300;
+    max-width: 620px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.75);
+    position: relative;
+    z-index: 3;
+    animation: fadeInUp 0.8s ease 0.6s both;
+    font-style: italic;
+}
+
+.blood-hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+    z-index: 3;
+    animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+.btn-hero-donate {
+    background: linear-gradient(135deg, #b91c1c, #dc2626);
+    color: #fff;
+    border: none;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(220, 38, 38, 0.45);
+    transition: all 0.35s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-hero-donate:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 16px 48px rgba(220, 38, 38, 0.6);
+    color: #fff;
+}
+
+.btn-hero-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.25);
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: all 0.35s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-hero-outline:hover {
+    border-color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-4px);
+    color: #fff;
+}
+
+/* ===== STATS STRIP ===== */
+.blood-stats-strip {
+    position: relative;
+    z-index: 10;
+    margin-top: -80px;
+    padding: 0 15px 60px;
+}
+
+.stats-glass-row {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+}
+
+.stat-value {
+    font-size: 2.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #dc2626, #f87171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.stat-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.12);
+    align-self: stretch;
+}
+
+/* ===== FORMS SECTION ===== */
+.blood-forms-section {
+    padding: 20px 0 100px;
+    background: linear-gradient(180deg, #040F28 0%, #060d20 100%);
+    position: relative;
+}
+
+.blood-forms-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(ellipse, rgba(220,38,38,0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.section-title-badge {
+    display: inline-block;
+    background: rgba(220,38,38,0.12);
+    border: 1px solid rgba(220,38,38,0.3);
+    border-radius: 50px;
+    padding: 6px 18px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f87171;
+    margin-bottom: 16px;
+}
+
+.section-main-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* ===== GLASS CARDS (FORMS) ===== */
+.blood-glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
+    overflow: hidden;
+    transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.blood-glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 28px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.blood-glass-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(220, 38, 38, 0.35);
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.5),
+        0 0 40px rgba(220, 38, 38, 0.15),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.form-accent-line {
+    height: 4px;
+    background: linear-gradient(90deg, #b91c1c, #ef4444, #fca5a5);
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.blood-form-container {
+    padding: 50px 45px;
+}
+
+/* ===== FORM ICON ===== */
+.form-icon-circle {
+    width: 80px;
+    height: 80px;
+    background: rgba(220, 38, 38, 0.12);
+    border: 2px solid rgba(220, 38, 38, 0.25);
+    color: #f87171;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 28px auto;
+    transition: all 0.35s ease;
+}
+
+.blood-glass-card:hover .form-icon-circle {
+    background: rgba(220, 38, 38, 0.2);
+    border-color: rgba(220, 38, 38, 0.5);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.form-heading {
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.form-heading span {
+    background: linear-gradient(135deg, #dc2626, #f87171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.form-subheading {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+/* ===== FORM ELEMENTS ===== */
+.blood-label {
+    font-weight: 600;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+}
+
+.blood-form-control, .blood-form-select {
+    border-radius: 14px;
+    padding: 14px 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255,255,255,0.05);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.blood-form-control::placeholder {
+    color: rgba(255,255,255,0.3);
+}
+
+.blood-form-select option {
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+.blood-form-control:focus, .blood-form-select:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25);
+    border-color: rgba(220, 38, 38, 0.6);
+    background-color: rgba(220, 38, 38, 0.05);
+    outline: none;
+    color: #fff;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.btn-blood-submit {
+    background: linear-gradient(135deg, #b91c1c, #dc2626, #ef4444);
+    color: white !important;
+    border: none;
+    padding: 17px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
+    margin-top: 10px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 30px rgba(220, 53, 69, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-blood-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.55s ease;
+    transform: skewX(-20deg);
+}
+
+.btn-blood-submit:hover {
+    box-shadow: 0 16px 45px rgba(220, 38, 38, 0.5), 0 0 0 1px rgba(220,38,38,0.4);
+    transform: translateY(-4px);
+}
+
+.btn-blood-submit:hover::before {
+    left: 150%;
+}
+
+.btn-blood-submit * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Request card variation */
+.req-gradient {
+    background: linear-gradient(90deg, #ea580c, #f97316, #fb923c) !important;
+}
+
+.req-shadow {
+    box-shadow: 0 8px 30px rgba(234, 88, 12, 0.35) !important;
+}
+
+.req-shadow:hover {
+    box-shadow: 0 16px 45px rgba(234, 88, 12, 0.5) !important;
+}
+
+.req-icon-bg {
+    background: rgba(234, 88, 12, 0.12) !important;
+    border-color: rgba(234, 88, 12, 0.25) !important;
+    color: #fb923c !important;
+}
+
+.blood-glass-card.req-card:hover {
+    border-color: rgba(234, 88, 12, 0.35);
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.5),
+        0 0 40px rgba(234, 88, 12, 0.15),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+/* ===== WHY DONATE SECTION ===== */
+.why-donate-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #060d20 0%, #040F28 100%);
+    position: relative;
+}
+
+.why-donate-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(220,38,38,0.4), transparent);
+}
+
+.why-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 36px 30px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #dc2626, #f87171);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.why-card:hover {
+    border-color: rgba(220, 38, 38, 0.25);
+    background: rgba(220, 38, 38, 0.04);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.why-card:hover::before {
+    transform: scaleX(1);
+}
+
+.why-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.6rem;
+    color: #f87171;
+    transition: all 0.4s ease;
+}
+
+.why-card:hover .why-icon {
+    background: rgba(220, 38, 38, 0.2);
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.why-card h5 {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.why-card p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ===== ELIGIBILITY SECTION ===== */
+.eligibility-section {
+    padding: 80px 0;
+    background: #040F28;
+    position: relative;
+}
+
+.eligibility-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+}
+
+.eligibility-glass {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 50px 40px;
+}
+
+.eligibility-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.3s ease;
+}
+
+.eligibility-item:last-child {
+    border-bottom: none;
+}
+
+.eligibility-item:hover {
+    padding-left: 8px;
+}
+
+.eligibility-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(220, 38, 38, 0.12);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f87171;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: transform 0.3s ease;
+}
+
+.eligibility-item:hover .eligibility-icon {
+    transform: scale(1.15);
+}
+
+.eligibility-text strong {
+    display: block;
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.eligibility-text span {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Blood group compatibility grid */
+.blood-group-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.bg-cell {
+    background: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 14px;
+    padding: 18px 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.bg-cell:hover {
+    background: rgba(220, 38, 38, 0.18);
+    border-color: rgba(220, 38, 38, 0.45);
+    transform: scale(1.05);
+}
+
+.bg-type {
+    font-size: 1.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #dc2626, #f87171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.bg-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+}
+
+/* ===== CTA STRIP ===== */
+.blood-cta-strip {
+    padding: 90px 20px;
+    background: linear-gradient(135deg, rgba(185,28,28,0.2) 0%, rgba(4,15,40,0.98) 100%);
+    border-top: 1px solid rgba(220,38,38,0.2);
+    border-bottom: 1px solid rgba(220,38,38,0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.blood-cta-strip::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(220,38,38,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.blood-cta-strip h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.blood-cta-strip p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 36px;
+    position: relative;
+}
+
+/* ===== KEYFRAME ANIMATIONS ===== */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 992px) {
+    .blood-hero h1 { font-size: 3.5rem; }
+    .blood-form-container { padding: 40px 30px; }
+    .blood-group-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .blood-hero { padding: 140px 20px 180px; }
+    .blood-hero h1 { font-size: 2.8rem; letter-spacing: -1px; }
+    .blood-form-container { padding: 32px 22px; }
+    .stats-glass-row { flex-direction: column; gap: 24px; text-align: center; }
+    .stat-divider { display: none; }
+    .blood-group-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .bg-type { font-size: 1.2rem; }
+    .eligibility-glass { padding: 36px 24px; }
+    .btn-hero-donate, .btn-hero-outline { padding: 14px 24px; font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+    .blood-hero h1 { font-size: 2.2rem; letter-spacing: -0.5px; }
+    .blood-hero-desc { font-size: 0.95rem; }
+    .blood-group-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+    .bg-type { font-size: 1rem; }
+}
