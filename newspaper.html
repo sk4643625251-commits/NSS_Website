@@ -2,44 +2,380 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Newspaper | NSS - NIT KKR</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+  <meta charset="utf-8">
+  <title>Media & Press | NSS NIT Kurukshetra</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="img/Logo_White_1.png" rel="icon" />
 
-    <!-- Favicon -->
-    <link href="img\Logo_ White_1.png" rel="icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Outfit:wght@300;400;600&display=swap"
+    rel="stylesheet">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #020617;
+      --primary-dark: #f8fafc;
+      --accent-blue: #6366f1;
+      --soft-bg: #020617;
+      --card-glass: rgba(255, 255, 255, 0.03);
+      --border-glow: rgba(255, 255, 255, 0.1);
+      --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+      --transition-smooth: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--soft-bg);
+      color: #94a3b8;
+      overflow-x: hidden;
+    }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    /* Ambient Glow Background */
+    .ambient-glow {
+      position: fixed;
+      width: 80vw;
+      height: 80vh;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+      top: -20%;
+      left: -10%;
+      z-index: -1;
+      filter: blur(100px);
+      animation: moveGlow 20s infinite alternate;
+    }
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    @keyframes moveGlow {
+      from {
+        transform: translate(0, 0);
+      }
+
+      to {
+        transform: translate(20%, 20%);
+      }
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.8) !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    /* Modern Hero Header */
+    .hero-section {
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 0 0 50px 50px;
+      margin-bottom: -40px;
+      color: white;
+      text-align: center;
+    }
+
+    .text-gradient {
+      background: linear-gradient(to right, #60a5fa, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Newspaper Card - Cinematic Dark Style (Team Theme) */
+    .news-card {
+      background: var(--card-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 30px;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+      transition: var(--transition-smooth);
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .news-card:hover {
+      transform: translateY(-15px);
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: 0 40px 60px -15px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .img-zoom-wrapper {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+    }
+
+    .img-zoom-wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 40%, rgba(2, 6, 23, 0.8));
+      pointer-events: none;
+    }
+
+    .img-zoom-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s ease;
+    }
+
+    .news-card:hover .img-zoom-wrapper img {
+      transform: scale(1.15);
+    }
+
+    .date-float {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .news-content {
+      padding: 30px;
+      flex-grow: 1;
+    }
+
+    .news-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: var(--accent-gradient);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 15px;
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+    }
+
+    .news-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    /* Cinematic Impact Section - Blood Donation */
+    .impact-container {
+      background: linear-gradient(135deg, #040F28 0%, #1e090b 100%);
+      border-radius: 40px;
+      padding: 70px 60px;
+      margin-top: 100px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(220, 53, 69, 0.2);
+    }
+
+    .impact-bg-glow {
+      position: absolute;
+      top: 50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(220, 53, 69, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+      transform: translateY(-50%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .impact-content-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    .impact-btn {
+      background: linear-gradient(135deg, #dc3545, #9b1c28);
+      color: white;
+      padding: 14px 40px;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: none;
+      box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
+      letter-spacing: 1px;
+    }
+
+    .impact-btn:hover {
+      background: linear-gradient(135deg, #e44d5d, #b52534);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 25px rgba(220, 53, 69, 0.6);
+      color: white;
+    }
+
+    .impact-btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 14px 40px;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: all 0.4s ease;
+      letter-spacing: 1px;
+    }
+
+    .impact-btn-outline:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      color: white;
+      transform: translateY(-4px);
+    }
+
+    .heartbeat-icon {
+      animation: heartbeat 1.5s infinite;
+      filter: drop-shadow(0 0 15px rgba(220, 53, 69, 0.6));
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+
+      15% {
+        transform: scale(1.15);
+      }
+
+      30% {
+        transform: scale(1);
+      }
+
+      45% {
+        transform: scale(1.15);
+      }
+
+      60% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .hero-link-hover {
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .hero-link-hover:hover {
+      color: #3b82f6 !important;
+      transform: translateX(8px);
+    }
+
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <!-- Global Cinematic Variables -->
+  <style>
+    .cinematic-section {
+      background-color: #040F28;
+      /* Deep Navy */
+      color: #ffffff;
+    }
+
+    .cinematic-heading {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 20px !important;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+      color: #fff !important;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px) scale(1.02) !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(13, 71, 161, 0.4) !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    }
+  </style>
+
 </head>
 
 <body>
-    <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm sticky-top py-2 px-4 px-lg-5">
+  <div class="ambient-glow"></div>
+
+
+  <style>
+    /* Cinematic Navbar Upgrade */
+    .navbar-glass {
+      background: rgba(4, 15, 40, 0.7) !important;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s ease;
+    }
+
+    .navbar-glass .nav-link {
+      color: #ffffff !important;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+
+    .navbar-glass .nav-link:hover,
+    .navbar-glass .nav-link.active {
+      color: #a855f7 !important;
+    }
+
+    .navbar-glass .navbar-brand h2 {
+      color: #ffffff !important;
+    }
+
+    .navbar-glass .navbar-brand p {
+      color: #bbbbbb !important;
+    }
+
+    .navbar-glass .navbar-toggler-icon {
+      filter: invert(1);
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-glass shadow-sm sticky-top py-3 px-4 px-lg-5">
     <a href="index.html" class="navbar-brand d-flex align-items-center">
-      <img src="img/home/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2" />
+      <img src="img/home/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2"
+        onerror="this.src='img/NSS_Logo.png'" />
       <div class="d-flex flex-column text-start justify-content-center">
-        <h2 class="m-0 text-dark fs-5 fw-bold" style="font-family: 'Poppins', sans-serif; line-height: 1.2;">National Service Scheme</h2>
-        <p class="m-0 text-secondary" style="font-size: 0.85rem; letter-spacing: 0.5px; line-height: 1; font-family: 'Inter', sans-serif;">Kurukshetra</p>
+        <h2 class="m-0 text-white fs-5 fw-bold" style="font-family: 'Poppins', sans-serif; line-height: 1.2;">National
+          Service Scheme</h2>
+        <p class="m-0 text-secondary"
+          style="font-size: 0.85rem; letter-spacing: 0.5px; line-height: 1; font-family: 'Inter', sans-serif;">
+          Kurukshetra</p>
       </div>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -47,7 +383,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0 fw-bold align-items-center">
-        <a href="Home.html" class="nav-item nav-link">Home</a>
+        <a href="index.html" class="nav-item nav-link">Home</a>
         <a href="about.html" class="nav-item nav-link">About</a>
         <a href="units.html" class="nav-item nav-link">Units</a>
         <a href="events.html" class="nav-item nav-link">Events</a>
@@ -56,177 +392,186 @@
         <a href="projects.html" class="nav-item nav-link">Projects</a>
         <a href="newspaper.html" class="nav-item nav-link active">Newspaper</a>
       </div>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 ms-lg-3 d-none d-lg-block modern-solid-btn">Contact</a>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 mt-2 mb-2 d-lg-none w-100 modern-solid-btn">Contact</a>
+      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 ms-lg-3 d-none d-lg-block modern-solid-btn"
+        style="background: linear-gradient(135deg, #6366f1, #a855f7); border: none; border-radius: 50px;">Contact</a>
+      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 mt-2 mb-2 d-lg-none w-100 modern-solid-btn"
+        style="background: linear-gradient(135deg, #6366f1, #a855f7); border: none; border-radius: 50px;">Contact</a>
     </div>
   </nav>
-  <!-- Navbar End -->
 
-  <!-- Hero Banner Start -->
-  <div class="container-fluid position-relative p-0 mb-5" style="height: 40vh; min-height: 300px;">
-      <div class="position-absolute w-100 h-100" style="background: url('img/nit kkr.jpg') center center / cover no-repeat; z-index: 1;"></div>
-      <div class="position-absolute w-100 h-100" style="background: linear-gradient(to right, rgba(0, 32, 96, 0.85), rgba(0, 80, 160, 0.65)); z-index: 2;"></div>
-      <div class="container position-relative h-100 d-flex flex-column align-items-center justify-content-center text-center" style="z-index: 3;">
-          <h1 class="fw-bold text-white mb-3" style="font-size: 3.5rem; letter-spacing: 2px;">NSS in Newspapers</h1>
-          <p class="text-white fs-5 opacity-75">A record of our community impact and volunteerism.</p>
-      </div>
-  </div>
-  <!-- Hero Banner End -->
-
-  <!-- Newspaper Section Start -->
-  <div class="container-fluid bg-light py-6 px-lg-5" id="newspaper">
-    <div class="text-center mx-auto mb-5" style="max-width: 800px">
-      <h2 class="display-5 text-uppercase mb-4">
-        Our <span class="text-dark">Impact</span> in Media
-      </h2>
-      <p class="fs-5 text-white">A glimpse of our community initiatives as featured in leading regional newspapers.</p>
+  <header class="hero-section">
+    <div class="container">
+      <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing: 4px; color: #94a3b8;">Our Presence</h6>
+      <h1 class="display-3 fw-800 mb-4">Capturing Our <span class="text-gradient">Impact</span></h1>
+      <p class="lead opacity-75 mx-auto" style="max-width: 650px;">A digital archive of NSS NIT Kurukshetra's
+        contributions as seen through the lens of national and regional media.</p>
     </div>
-    <div class="row g-4 justify-content-center">
-      <!-- Newspaper Item 1: Vasant Panchami -->
-      <div class="col-lg-4 col-md-6 fade-in-up">
-        <div class="service-item bg-white d-flex flex-column align-items-center text-center p-0 overflow-hidden shadow-sm h-100 rounded-4 border-0">
-          <img class="img-fluid w-100" src="img/newspaper/newsvasant.jpeg" alt="Vasant Panchami Celebration" style="height: 240px; object-fit: contain;" onerror="this.src='img/NSS_Logo.png'" />
-          <div class="p-4 flex-grow-1 d-flex flex-column">
-            <div class="mb-3">
-              <span class="badge bg-primary px-3 py-2 text-uppercase" style="letter-spacing: 1px; font-size: 0.75rem;">Vasant Panchami</span>
-            </div>
-            <h4 class="text-uppercase mb-3 fw-bold" style="font-size: 1.15rem; color: #2C3E50;">Honoring Heritage: Vasant Panchami Celebrations at NSS</h4>
-            <p class="text-muted mb-0" style="line-height: 1.7; font-size: 0.95rem;">The auspicious occasion of Vasant Panchami was marked by the NSS unit with traditional ceremonies, celebrating the arrival of spring and seeking blessings for knowledge and wisdom.</p>
+  </header>
+
+  <main class="container py-5 mt-5">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="news-card">
+          <div class="img-zoom-wrapper">
+            <img src="img/newspaper/newsvasant.jpeg" alt="Vasant Panchami">
+            <div class="date-float">Feb 2026</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag">Cultural</span>
+            <h4 class="news-title">Honoring Heritage: Vasant Panchami at NIT</h4>
+            <p class="small  mb-0" style="color: #ffffff;">The unit marked the occasion with traditional ceremonies,
+              celebrating
+              spring and seeking blessings for wisdom.</p>
           </div>
         </div>
       </div>
 
-      <!-- Newspaper Item 2: NSS Day -->
-      <div class="col-lg-4 col-md-6 fade-in-up">
-        <div class="service-item bg-white d-flex flex-column align-items-center text-center p-0 overflow-hidden shadow-sm h-100 rounded-4 border-0">
-          <img class="img-fluid w-100" src="img/newspaper/nssday.jpeg" alt="NSS Day Celebration" style="height: 240px; object-fit: cover;" onerror="this.src='img/NSS_Logo.png'" />
-          <div class="p-4 flex-grow-1 d-flex flex-column">
-            <div class="mb-3">
-              <span class="badge bg-primary px-3 py-2 text-uppercase" style="letter-spacing: 1px; font-size: 0.75rem;">NSS Day</span>
-            </div>
-            <h4 class="text-uppercase mb-3 fw-bold" style="font-size: 1.15rem; color: #2C3E50;">NSS Day: Celebrating Decades of Service and Youth Leadership</h4>
-            <p class="text-muted mb-0" style="line-height: 1.7; font-size: 0.95rem;">Commemorating the foundation of the National Service Scheme, our volunteers engaged in various community service projects, reaffirming their commitment to 'Not Me, But You'.</p>
+      <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.1s;">
+        <div class="news-card">
+          <div class="img-zoom-wrapper">
+            <img src="img/newspaper/nssday.jpeg" alt="NSS Day">
+            <div class="date-float">Sep 2025</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag">Leadership</span>
+            <h4 class="news-title">Decades of Service & Youth Leadership</h4>
+            <p class="small  mb-0" style="color: #ffffff;">Commemorating foundation day, volunteers reaffirmed the motto
+              'Not Me, But
+              You' through massive service drives.</p>
           </div>
         </div>
       </div>
 
-      <!-- Newspaper Item 3: Nasha Mukti -->
-      <div class="col-lg-4 col-md-6 fade-in-up">
-        <div class="service-item bg-white d-flex flex-column align-items-center text-center p-0 overflow-hidden shadow-sm h-100 rounded-4 border-0">
-          <img class="img-fluid w-100" src="img/newspaper/newsnsamukti.jpeg" alt="Nasha Mukti Campaign" style="height: 240px; object-fit: cover;" onerror="this.src='img/NSS_Logo.png'" />
-          <div class="p-4 flex-grow-1 d-flex flex-column">
-            <div class="mb-3">
-              <span class="badge bg-primary px-3 py-2 text-uppercase" style="letter-spacing: 1px; font-size: 0.75rem;">Nasha Mukti</span>
-            </div>
-            <h4 class="text-uppercase mb-3 fw-bold" style="font-size: 1.15rem; color: #2C3E50;">Campus Mobilization for a Drug-Free Society</h4>
-            <p class="text-muted mb-0" style="line-height: 1.7; font-size: 0.95rem;">In a powerful stand against substance abuse, the NSS unit organized workshops and awareness drives to highlight the socio-economic impact of addiction on youth.</p>
+      <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.2s;">
+        <div class="news-card">
+          <div class="img-zoom-wrapper">
+            <img src="img/newspaper/newsnsamukti.jpeg" alt="Nasha Mukti">
+            <div class="date-float">Mar 2026</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag">Social Cause</span>
+            <h4 class="news-title">Campus Mobilization for Drug-Free Society</h4>
+            <p class="small  mb-0" style="color: #ffffff;">Workshops organized to highlight the socio-economic impact of
+              addiction and
+              empower local youth.</p>
           </div>
         </div>
       </div>
 
-      <!-- Newspaper Item 4: Sewa Parv -->
-      <div class="col-lg-4 col-md-6 fade-in-up">
-        <div class="service-item bg-white d-flex flex-column align-items-center text-center p-0 overflow-hidden shadow-sm h-100 rounded-4 border-0">
-          <img class="img-fluid w-100" src="img/newspaper/sewaparvnews.jpeg" alt="Sewa Parv Activities" style="height: 240px; object-fit: cover;" onerror="this.src='img/NSS_Logo.png'" />
-          <div class="p-4 flex-grow-1 d-flex flex-column">
-            <div class="mb-3">
-              <span class="badge bg-primary px-3 py-2 text-uppercase" style="letter-spacing: 1px; font-size: 0.75rem;">Sewa Parv</span>
-            </div>
-            <h4 class="text-uppercase mb-3 fw-bold" style="font-size: 1.15rem; color: #2C3E50;">Sewa Parv: Celebrating the Spirit of Selfless Service</h4>
-            <p class="text-muted mb-0" style="line-height: 1.7; font-size: 0.95rem;">NSS volunteers visited local welfare homes, emphasizing compassion and community bonding through direct service and interaction with the disadvantaged.</p>
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="news-card">
+          <div class="img-zoom-wrapper">
+            <img src="img/newspaper/sewaparvnews.jpeg" alt="Sewa Parv">
+          </div>
+          <div class="news-content">
+            <span class="news-tag">Community</span>
+            <h4 class="news-title">Sewa Parv: Celebrating Selfless Service</h4>
+            <p class="small  mb-0" style="color: #ffffff;">Volunteers visited welfare homes, emphasizing compassion
+              through direct
+              interaction with the disadvantaged.</p>
           </div>
         </div>
       </div>
 
-      <!-- Newspaper Item 5: Shramdan -->
-      <div class="col-lg-4 col-md-6 fade-in-up">
-        <div class="service-item bg-white d-flex flex-column align-items-center text-center p-0 overflow-hidden shadow-sm h-100 rounded-4 border-0">
-          <img class="img-fluid w-100" src="img/newspaper/shrmdan.jpeg" alt="Shramdan Initiative" style="height: 240px; object-fit: cover;" onerror="this.src='img/NSS_Logo.png'" />
-          <div class="p-4 flex-grow-1 d-flex flex-column">
-            <div class="mb-3">
-              <span class="badge bg-primary px-3 py-2 text-uppercase" style="letter-spacing: 1px; font-size: 0.75rem;">Shramdan</span>
-            </div>
-            <h4 class="text-uppercase mb-3 fw-bold" style="font-size: 1.15rem; color: #2C3E50;">Shramdan: Volunteer-Led Cleanliness and Infrastructure Drive</h4>
-            <p class="text-muted mb-0" style="line-height: 1.7; font-size: 0.95rem;">Demonstrating the dignity of labor, NSS volunteers participated in a massive Shramdan drive to improve local campus facilities and promote hygiene.</p>
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="news-card">
+          <div class="img-zoom-wrapper">
+            <img src="img/newspaper/shrmdan.jpeg" alt="Shramdan">
+          </div>
+          <div class="news-content">
+            <span class="news-tag">Labor Dignity</span>
+            <h4 class="news-title">Shramdan: Cleanliness & Infrastructure Drive</h4>
+            <p class="small  mb-0" style="color: #ffffff;">A massive volunteer-led drive to improve campus facilities
+              and promote
+              hygiene through manual labor.</p>
           </div>
         </div>
       </div>
-<!-- Newspaper Item: Guru Nanak Ji -->
-<div class="col-lg-4 col-md-6 fade-in-up">
-    <div
-        class="service-item bg-white d-flex flex-column align-items-center text-center p-0 overflow-hidden shadow-sm h-100 rounded-4 border-0">
-        <img class="img-fluid w-100" src="img/newspaper/guru.jpeg" alt="Guru Nanak Ji"
-            style="height: 240px; object-fit: cover;" onerror="this.src='img/NSS_Logo.png'" />
 
-        <div class="p-4 flex-grow-1 d-flex flex-column">
-            <div class="mb-3">
-                <span class="badge bg-warning text-dark px-3 py-2 text-uppercase"
-                    style="letter-spacing: 1px; font-size: 0.75rem;">Guru Nanak Ji</span>
-            </div>
-
-            <h4 class="text-uppercase mb-3 fw-bold" style="font-size: 1.15rem; color: #2C3E50;">
-                Life and Teachings of Guru Nanak Dev Ji
-            </h4>
-
-            <p class="text-muted mb-0" style="line-height: 1.7; font-size: 0.95rem;">
-                NSS volunteers highlighted the life and teachings of Guru Nanak Dev Ji, emphasizing equality, selfless
-                service, and devotion to humanity as guiding principles for a better society.
-            </p>
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="news-card">
+          <div class="img-zoom-wrapper">
+            <img src="img/newspaper/guru.jpeg" alt="Guru Nanak Ji">
+          </div>
+          <div class="news-content">
+            <span class="news-tag">Spiritual</span>
+            <h4 class="news-title">Life and Teachings of Guru Nanak Dev Ji</h4>
+            <p class="small  mb-0" style="color: #ffffff;">Highlighting equality and devotion to humanity through the
+              teachings of the
+              great saint.</p>
+          </div>
         </div>
-    </div>
-</div>
-<!-- Newspaper Item: Black Day -->
-<div class="col-lg-4 col-md-6 fade-in-up">
-    <div
-        class="service-item bg-white d-flex flex-column align-items-center text-center p-0 overflow-hidden shadow-sm h-100 rounded-4 border-0">
-        <img class="img-fluid w-100" src="img/newspaper/blackday.jpeg" alt="Black Day Observance"
-            style="height: 240px; object-fit: cover;" onerror="this.src='img/NSS_Logo.png'" />
+      </div>
 
-        <div class="p-4 flex-grow-1 d-flex flex-column">
-            <div class="mb-3">
-                <span class="badge bg-dark px-3 py-2 text-uppercase"
-                    style="letter-spacing: 1px; font-size: 0.75rem;">Black Day</span>
-            </div>
-
-            <h4 class="text-uppercase mb-3 fw-bold" style="font-size: 1.15rem; color: #2C3E50;">
-                Black Day: Remembering Sacrifice and Raising Awareness
-            </h4>
-
-            <p class="text-muted mb-0" style="line-height: 1.7; font-size: 0.95rem;">
-                NSS volunteers observed Black Day to honor the sacrifices of martyrs and spread awareness about national
-                integrity, unity, and the importance of standing against injustice.
-            </p>
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="news-card">
+          <div class="img-zoom-wrapper">
+            <img src="img/newspaper/blackday.jpeg" alt="Black Day">
+          </div>
+          <div class="news-content">
+            <span class="news-tag">Awareness</span>
+            <h4 class="news-title">Black Day: Remembering the Sacrifice</h4>
+            <p class="small  mb-0" style="color: #ffffff;">Observing a tribute to honor martyrs and spread awareness
+              about national
+              integrity.</p>
+          </div>
         </div>
-    </div>
-</div>
-      <!-- Newspaper Item 6: 7 Day Camp -->
-      <div class="col-lg-4 col-md-6 fade-in-up">
-        <div class="service-item bg-white d-flex flex-column align-items-center text-center p-0 overflow-hidden shadow-sm h-100 rounded-4 border-0">
-          <img class="img-fluid w-100" src="img/camp.jpeg" alt="7 Day Camp at Dayalpur" style="height: 240px; object-fit: cover;" onerror="this.src='img/NSS_Logo.png'" />
-          <div class="p-4 flex-grow-1 d-flex flex-column">
-            <div class="mb-3">
-              <span class="badge bg-primary px-3 py-2 text-uppercase" style="letter-spacing: 1px; font-size: 0.75rem;">Special Camp</span>
-            </div>
-            <h4 class="text-uppercase mb-3 fw-bold" style="font-size: 1.15rem; color: #2C3E50;">7 Day Residential Camp Concludes at Dayalpur Village</h4>
-            <p class="text-muted mb-0" style="line-height: 1.7; font-size: 0.95rem;">A week-long special camp focused on rural development, awareness, and community service provided volunteers with immersive social service experiences.</p>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="news-card">
+          <div class="img-zoom-wrapper">
+            <img src="img/newspaper/camp.jpeg" alt="7 Day Camp">
+          </div>
+          <div class="news-content">
+            <span class="news-tag">Development</span>
+            <h4 class="news-title">7-Day Residential Camp at Dayalpur</h4>
+            <p class="small  mb-0" style="color: #ffffff;">Immersive social service experience focused on rural
+              development and
+              community engagement.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Newspaper Section End -->
+
+    <div class="impact-container reveal">
+      <div class="impact-bg-glow"></div>
+      <div class="row align-items-center impact-content-wrapper">
+        <div class="col-lg-8 mb-4 mb-lg-0">
+          <h2 class="display-4 fw-bold mb-3"
+            style="font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -1px;">Be a Hero. <span
+              class="text-danger">Save Lives.</span></h2>
+          <p class="fs-5 text-white-50 mb-5" style="max-width: 600px; line-height: 1.6;">
+            Join our blood donor network. Small efforts lead to big changes in someone's world. Your contribution could
+            be the difference between life and death.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="blood.html" class="impact-btn text-decoration-none text-center d-flex align-items-center"><i
+                class="fa-solid fa-droplet me-2"></i> Register as Donor</a>
+            <a href="blood.html#request"
+              class="impact-btn-outline text-decoration-none text-center d-flex align-items-center"><i
+                class="fa-solid fa-hand-holding-medical me-2"></i> Request Help</a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center d-none d-lg-block">
+          <i class="fa-solid fa-heart-pulse text-danger heartbeat-icon" style="font-size: 8rem;"></i>
+        </div>
+      </div>
+    </div>
+  </main>
 
   <!-- Footer Start -->
-  <div class="container-fluid footer-modern py-5">
+  <div class="container-fluid footer-modern py-5 mt-auto">
     <div class="row g-5 px-lg-5">
       <!-- Column 1: About -->
       <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-        <a href="Home.html" class="navbar-brand mb-4 d-flex align-items-center">
-          <img src="img/home/Logo_White_1.png" alt="NSS NIT KKR Logo" width="60" height="60" class="me-3">
+        <a href="index.html" class="navbar-brand mb-4 d-flex align-items-center">
+          <img src="img/home/Logo_WHite_1.png" alt="NSS NIT KKR Logo" width="60" height="60" class="me-3">
           <h2 class="m-0 text-white" style="font-size: 1.5rem;">NSS NIT KKR</h2>
         </a>
-        <p class="mb-4">
-          Striving for the purpose of bringing peace and harmony by inculcating every individual with the spirit of humanity through community service.
+        <p class="mb-4 text-white-50">
+          Striving for the purpose of bringing peace and harmony by inculcating every individual with the spirit
+          of humanity through community service.
         </p>
         <div class="d-flex text-white-50 mb-2">
           <i class="fa fa-map-marker-alt text-primary me-3 mt-1"></i>
@@ -239,8 +584,9 @@
         <div class="d-flex mt-4">
           <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
           <a class="social-icon" href="https://www.facebook.com/nss.nitkkr"><i class="fab fa-facebook-f"></i></a>
-          <a class="social-icon" href="https://www.linkedin.com/company/nss-nit-kurukshetra/"><i class="fab fa-linkedin-in"></i></a>
-          <a class="social-icon" href="https://instagram.com/nss_nitkkr"><i class="fab fa-instagram"></i></a>
+          <a class="social-icon" href="https://www.linkedin.com/company/nss-nit-kurukshetra/"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a class="social-icon" href="https://www.instagram.com/nss_nitkkr?igsh=MWFrNWYyMzh4ZGVhNA==" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
 
@@ -248,25 +594,29 @@
       <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
         <h4 class="text-white text-uppercase">Quick Links</h4>
         <div class="d-flex flex-column justify-content-start mt-4 pt-2">
-          <a class="mb-3" href="Home.html"><i class="fa fa-angle-right text-primary me-2"></i>Home</a>
-          <a class="mb-3" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About Us</a>
-          <a class="mb-3" href="units.html"><i class="fa fa-angle-right text-primary me-2"></i>Units</a>
-          <a class="mb-3" href="events.html"><i class="fa fa-angle-right text-primary me-2"></i>Events</a>
-          <a class="mb-3" href="Team.html"><i class="fa fa-angle-right text-primary me-2"></i>Team</a>
-          <a class="mb-3" href="nss-camp.html"><i class="fa fa-angle-right text-primary me-2"></i>NSS Camp</a>
-          <a class="mb-3" href="projects.html"><i class="fa fa-angle-right text-primary me-2"></i>Projects</a>
-          <a class="mb-3" href="newspaper.html"><i class="fa fa-angle-right text-primary me-2"></i>Newspaper</a>
-          <a class="" href="contact.html"><i class="fa fa-angle-right text-primary me-2"></i>Contact</a>
+          <a class="mb-3 text-white-50" href="index.html"><i class="fa fa-angle-right text-primary me-2"></i>Home</a>
+          <a class="mb-3 text-white-50" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About
+            Us</a>
+          <a class="mb-3 text-white-50" href="units.html"><i class="fa fa-angle-right text-primary me-2"></i>Units</a>
+          <a class="mb-3 text-white-50" href="events.html"><i class="fa fa-angle-right text-primary me-2"></i>Events</a>
+          <a class="mb-3 text-white-50" href="Team.html"><i class="fa fa-angle-right text-primary me-2"></i>Team</a>
+          <a class="mb-3 text-white-50" href="nss-camp.html"><i class="fa fa-angle-right text-primary me-2"></i>NSS
+            Camp</a>
+          <a class="mb-3 text-white-50" href="projects.html"><i
+              class="fa fa-angle-right text-primary me-2"></i>Projects</a>
+          <a class="text-white-50" href="contact.html"><i class="fa fa-angle-right text-primary me-2"></i>Contact</a>
         </div>
       </div>
 
       <!-- Column 3: Newsletter -->
       <div class="col-lg-4 col-md-12">
         <h4 class="text-white text-uppercase">Newsletter</h4>
-        <p class="mt-4 pt-2 mb-4">Subscribe to our newsletter to receive the latest updates and news about our camps and projects.</p>
+        <p class="mt-4 pt-2 mb-4 text-white-50">Subscribe to our newsletter to receive the latest updates and news about
+          our camps and projects.</p>
         <div class="w-100 mt-2">
           <div class="input-group">
-            <input type="email" class="form-control newsletter-input" style="padding: 15px;" placeholder="Your Email Address">
+            <input type="email" class="form-control newsletter-input" style="padding: 15px;"
+              placeholder="Your Email Address">
             <button class="btn btn-primary px-4 fw-bold modern-solid-btn">Sign Up</button>
           </div>
         </div>
@@ -284,47 +634,15 @@
     </div>
   </div>
   <!-- Footer End -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
 
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top modern-solid-btn"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-
-    <script>
-        // Smooth scroll appearance logic
-        document.addEventListener("DOMContentLoaded", function() {
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if(entry.isIntersecting) {
-                            entry.target.classList.add('appear');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.15 });
-                
-                document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
-            } else {
-                // Fallback for old browsers
-                document.querySelectorAll('.fade-in-up').forEach(el => el.classList.add('appear'));
-            }
-        });
-    </script>
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 
 </html>

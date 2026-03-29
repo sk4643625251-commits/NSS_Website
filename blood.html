@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Blood Donation &amp; Request | NSS NIT KKR</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="description" content="Join NSS NIT Kurukshetra's blood donation drive. Register as a voluntary donor or request blood in times of medical emergency." />
+  <link href="img/home/Logo_White_1.png" rel="icon" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome & Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Template Stylesheet & Custom Blood Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/blood.css" rel="stylesheet" />
+
+  <style>
+    /* Navbar overrides */
+    .navbar-glass {
+      background: rgba(4, 15, 40, 0.75) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .navbar-glass .nav-link { color: #ffffff !important; font-family: 'Inter', sans-serif; font-weight: 500; }
+    .navbar-glass .nav-link:hover,
+    .navbar-glass .nav-link.active { color: #f87171 !important; }
+    .navbar-glass .navbar-brand h2 { color: #ffffff !important; }
+    .navbar-glass .navbar-brand p  { color: #aaaaaa !important; }
+    .navbar-glass .navbar-toggler-icon { filter: invert(1); }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-glass shadow-sm sticky-top py-3 px-4 px-lg-5">
+    <a href="index.html" class="navbar-brand d-flex align-items-center">
+      <img src="img/home/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2"
+        onerror="this.src='img/NSS_Logo.png'" />
+      <div class="d-flex flex-column text-start justify-content-center">
+        <h2 class="m-0 text-white fs-5 fw-bold" style="font-family:'Poppins',sans-serif;line-height:1.2;">National Service Scheme</h2>
+        <p class="m-0 text-light opacity-90" style="font-size:0.85rem;letter-spacing:0.5px;line-height:1;font-family:'Inter',sans-serif;">Kurukshetra</p>
+      </div>
+    </a>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto py-0 fw-bold align-items-center">
+        <a href="index.html"      class="nav-item nav-link">Home</a>
+        <a href="about.html"     class="nav-item nav-link">About</a>
+        <a href="units.html"     class="nav-item nav-link">Units</a>
+        <a href="events.html"    class="nav-item nav-link">Events</a>
+        <a href="Team.html"      class="nav-item nav-link">Team</a>
+        <a href="nss-camp.html"  class="nav-item nav-link">NSS Camp</a>
+        <a href="projects.html"  class="nav-item nav-link">Projects</a>
+        <a href="newspaper.html" class="nav-item nav-link">Newspaper</a>
+      </div>
+      <a href="contact.html#contact"
+         class="btn py-2 px-4 ms-lg-3 d-none d-lg-block"
+         style="background:linear-gradient(135deg,#dc2626,#f87171);border:none;border-radius:50px;color:#fff;font-weight:700;">
+        Contact
+      </a>
+      <a href="contact.html#contact"
+         class="btn py-2 px-4 mt-2 mb-2 d-lg-none w-100"
+         style="background:linear-gradient(135deg,#dc2626,#f87171);border:none;border-radius:50px;color:#fff;font-weight:700;">
+        Contact
+      </a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="blood-hero">
+      <!-- Floating particles -->
+      <div class="hero-bg-particles" aria-hidden="true">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+
+      <div class="blood-hero-badge">
+        <i class="fa-solid fa-droplet"></i> NSS NIT Kurukshetra
+      </div>
+
+      <h1>
+        Blood Donation
+        <span class="highlight">&amp; Request</span>
+      </h1>
+
+      <div class="blood-hero-divider"></div>
+
+      <p class="blood-hero-desc">
+        "Every drop counts. Be the reason someone sees tomorrow."<br>
+        Connect with us to donate or request blood safely and securely.
+      </p>
+
+      <div class="blood-hero-actions">
+        <a href="#forms-section" class="btn-hero-donate">
+          <i class="fa-solid fa-droplet"></i> Donate Blood
+        </a>
+        <a href="#forms-section" class="btn-hero-outline">
+          <i class="fa-solid fa-briefcase-medical"></i> Request Blood
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== STATS STRIP ===== -->
+    <section class="blood-stats-strip">
+      <div class="container">
+        <div class="stats-glass-row">
+          <div class="stat-item">
+            <div class="stat-value">500+</div>
+            <div class="stat-label">Units Donated</div>
+          </div>
+          <div class="stat-divider d-none d-md-block"></div>
+          <div class="stat-item">
+            <div class="stat-value">8</div>
+            <div class="stat-label">Blood Groups</div>
+          </div>
+          <div class="stat-divider d-none d-md-block"></div>
+          <div class="stat-item">
+            <div class="stat-value">1500+</div>
+            <div class="stat-label">Lives Impacted</div>
+          </div>
+          <div class="stat-divider d-none d-md-block"></div>
+          <div class="stat-item">
+            <div class="stat-value">24/7</div>
+            <div class="stat-label">Emergency Support</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FORMS SECTION ===== -->
+    <section class="blood-forms-section" id="forms-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-title-badge">Take Action</span>
+          <h2 class="section-main-title">Donate or Request Blood</h2>
+          <p class="section-subtitle">Fill in the form below — our team will get in touch with you promptly.</p>
+        </div>
+
+        <div class="row g-5 justify-content-center">
+
+          <!-- DONATE FORM CARD -->
+          <div class="col-lg-6 col-md-10">
+            <div class="blood-glass-card h-100 d-flex flex-column">
+              <div class="form-accent-line"></div>
+              <div class="blood-form-container text-center flex-grow-1">
+                <div class="form-icon-circle">
+                  <i class="fa-solid fa-droplet"></i>
+                </div>
+                <h2 class="form-heading">Donate <span>Blood</span></h2>
+                <p class="form-subheading">Register as a voluntary blood donor today.</p>
+
+                <form class="text-start">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="blood-label">Full Name</label>
+                      <input type="text" class="form-control blood-form-control" placeholder="E.g., John Doe" required>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="blood-label">Phone Number</label>
+                      <input type="tel" class="form-control blood-form-control" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="blood-label">Blood Group</label>
+                      <select class="form-select blood-form-select" required>
+                        <option selected disabled>Select Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A−</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B−</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB−</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O−</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label class="blood-label">Location / Address</label>
+                      <input type="text" class="form-control blood-form-control" placeholder="E.g., Kurukshetra, Haryana" required>
+                    </div>
+                    <div class="col-12">
+                      <label class="blood-label">Last Donation Date <span style="color:rgba(255,255,255,0.35)">(optional)</span></label>
+                      <input type="date" class="form-control blood-form-control">
+                    </div>
+                    <div class="col-12 mt-3">
+                      <button type="submit" class="btn btn-blood-submit">
+                        <span><i class="fa-solid fa-heart me-2"></i>Register as Donor</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- REQUEST FORM CARD -->
+          <div class="col-lg-6 col-md-10">
+            <div class="blood-glass-card req-card h-100 d-flex flex-column">
+              <div class="form-accent-line req-gradient"></div>
+              <div class="blood-form-container text-center flex-grow-1">
+                <div class="form-icon-circle req-icon-bg">
+                  <i class="fa-solid fa-briefcase-medical"></i>
+                </div>
+                <h2 class="form-heading" style="color:#fff;">Request <span style="background:linear-gradient(135deg,#ea580c,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Blood</span></h2>
+                <p class="form-subheading">We are here to help you in your medical emergency.</p>
+
+                <form class="text-start">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="blood-label">Patient's Name</label>
+                      <input type="text" class="form-control blood-form-control" placeholder="E.g., Jane Smith" required>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="blood-label">Contact Number</label>
+                      <input type="tel" class="form-control blood-form-control" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="blood-label">Required Blood Group</label>
+                      <select class="form-select blood-form-select" required>
+                        <option selected disabled>Select Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A−</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B−</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB−</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O−</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label class="blood-label">Hospital Name &amp; Location</label>
+                      <input type="text" class="form-control blood-form-control" placeholder="E.g., Civil Hospital, Kurukshetra" required>
+                    </div>
+                    <div class="col-12">
+                      <label class="blood-label">Units Required <span style="color:rgba(255,255,255,0.35)">(optional)</span></label>
+                      <input type="number" min="1" max="20" class="form-control blood-form-control" placeholder="E.g., 2">
+                    </div>
+                    <div class="col-12 mt-3">
+                      <button type="submit" class="btn btn-blood-submit req-gradient req-shadow">
+                        <span><i class="fa-solid fa-paper-plane me-2"></i>Submit Request</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY DONATE SECTION ===== -->
+    <section class="why-donate-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-title-badge">Why It Matters</span>
+          <h2 class="section-main-title">Every Drop Saves Lives</h2>
+          <p class="section-subtitle">Blood cannot be manufactured — only generous humans can provide it.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-3 col-sm-6">
+            <div class="why-card">
+              <div class="why-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+              <h5>Save Up to 3 Lives</h5>
+              <p>A single blood donation can be separated into components and save up to three different lives.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="why-card">
+              <div class="why-icon"><i class="fa-solid fa-shield-heart"></i></div>
+              <h5>Health Benefits</h5>
+              <p>Regular donation stimulates new red blood cell production, keeping your blood fresh and circulation healthy.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="why-card">
+              <div class="why-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <h5>Only 30 Minutes</h5>
+              <p>The actual donation process takes less than 30 minutes and the blood replenishes naturally within weeks.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="why-card">
+              <div class="why-icon"><i class="fa-solid fa-users-line"></i></div>
+              <h5>Community Impact</h5>
+              <p>1 in 3 people will need blood in their lifetime. Be the reason someone's family stays together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ELIGIBILITY + BLOOD GROUPS SECTION ===== -->
+    <section class="eligibility-section">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+
+          <!-- Eligibility -->
+          <div class="col-lg-6">
+            <span class="section-title-badge">Eligibility</span>
+            <h2 class="section-main-title mt-2">Can You Donate?</h2>
+            <p class="section-subtitle mb-4" style="text-align:left;margin:0 0 30px 0;">Check if you meet these basic criteria before registering as a donor.</p>
+
+            <div class="eligibility-glass">
+              <div class="eligibility-item">
+                <div class="eligibility-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="eligibility-text">
+                  <strong>Age 18 – 65 years</strong>
+                  <span>Donors must be within the eligible age bracket.</span>
+                </div>
+              </div>
+              <div class="eligibility-item">
+                <div class="eligibility-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="eligibility-text">
+                  <strong>Weight ≥ 45 kg</strong>
+                  <span>Minimum body weight ensures donor safety.</span>
+                </div>
+              </div>
+              <div class="eligibility-item">
+                <div class="eligibility-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="eligibility-text">
+                  <strong>Hemoglobin ≥ 12.5 g/dL</strong>
+                  <span>Adequate hemoglobin levels are required for donation.</span>
+                </div>
+              </div>
+              <div class="eligibility-item">
+                <div class="eligibility-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="eligibility-text">
+                  <strong>No recent illness or surgery</strong>
+                  <span>Must be free from infections and recent surgical procedures.</span>
+                </div>
+              </div>
+              <div class="eligibility-item">
+                <div class="eligibility-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="eligibility-text">
+                  <strong>Donation gap ≥ 3 months</strong>
+                  <span>Required interval between consecutive whole blood donations.</span>
+                </div>
+              </div>
+              <div class="eligibility-item">
+                <div class="eligibility-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="eligibility-text">
+                  <strong>Healthy &amp; well-rested</strong>
+                  <span>Should be in good general health and adequately hydrated.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blood Groups -->
+          <div class="col-lg-6">
+            <span class="section-title-badge">Blood Groups</span>
+            <h2 class="section-main-title mt-2">All Types Needed</h2>
+            <p class="section-subtitle mb-4" style="text-align:left;margin:0 0 30px 0;">Every blood type plays a critical role. Find yours and know who you can help.</p>
+
+            <div class="blood-group-grid">
+              <div class="bg-cell">
+                <span class="bg-type">A+</span>
+                <span class="bg-label">Common</span>
+              </div>
+              <div class="bg-cell">
+                <span class="bg-type">A−</span>
+                <span class="bg-label">Universal</span>
+              </div>
+              <div class="bg-cell">
+                <span class="bg-type">B+</span>
+                <span class="bg-label">Common</span>
+              </div>
+              <div class="bg-cell">
+                <span class="bg-type">B−</span>
+                <span class="bg-label">Rare</span>
+              </div>
+              <div class="bg-cell">
+                <span class="bg-type">AB+</span>
+                <span class="bg-label">Universal Rcvr</span>
+              </div>
+              <div class="bg-cell">
+                <span class="bg-type">AB−</span>
+                <span class="bg-label">Very Rare</span>
+              </div>
+              <div class="bg-cell">
+                <span class="bg-type">O+</span>
+                <span class="bg-label">Most Common</span>
+              </div>
+              <div class="bg-cell">
+                <span class="bg-type">O−</span>
+                <span class="bg-label">Universal Donor</span>
+              </div>
+            </div>
+
+            <div class="mt-4 p-3" style="background:rgba(220,38,38,0.06);border:1px solid rgba(220,38,38,0.15);border-radius:16px;">
+              <p class="mb-0" style="color:rgba(255,255,255,0.6);font-size:0.875rem;line-height:1.7;">
+                <i class="fa-solid fa-circle-info me-2" style="color:#f87171;"></i>
+                <strong style="color:#f87171;">O−</strong> is the universal donor — it can be given to any patient regardless of their blood type. <strong style="color:#f87171;">AB+</strong> patients can receive from any blood group.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA STRIP ===== -->
+    <section class="blood-cta-strip">
+      <div class="container">
+        <h2>Be a Hero Today.</h2>
+        <p>Your one act of kindness can give three families a reason to smile.</p>
+        <div class="blood-hero-actions">
+          <a href="#forms-section" class="btn-hero-donate">
+            <i class="fa-solid fa-droplet"></i> Donate Now
+          </a>
+          <a href="contact.html" class="btn-hero-outline">
+            <i class="fa-solid fa-phone"></i> Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="container-fluid footer-modern py-5 mt-auto">
+    <div class="row g-5 px-lg-5">
+      <!-- Column 1: About -->
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <a href="index.html" class="navbar-brand mb-4 d-flex align-items-center">
+          <img src="img/home/Logo_WHite_1.png" alt="NSS NIT KKR Logo" width="60" height="60" class="me-3">
+          <h2 class="m-0 text-white" style="font-size:1.5rem;">NSS NIT KKR</h2>
+        </a>
+        <p class="mb-4 text-white-50">
+          Striving for the purpose of bringing peace and harmony by inculcating every individual with the spirit of humanity through community service.
+        </p>
+        <div class="d-flex text-white-50 mb-2">
+          <i class="fa fa-map-marker-alt text-primary me-3 mt-1"></i>
+          <p class="mb-0">NSS Office, NIT Kurukshetra<br>Haryana, 136118</p>
+        </div>
+        <div class="d-flex text-white-50 mb-4">
+          <i class="fa fa-envelope text-primary me-3 mt-1"></i>
+          <p class="mb-0">nss@nitkkr.ac.in</p>
+        </div>
+        <div class="d-flex mt-4">
+          <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="social-icon" href="https://www.facebook.com/nss.nitkkr"><i class="fab fa-facebook-f"></i></a>
+          <a class="social-icon" href="https://www.linkedin.com/company/nss-nit-kurukshetra/"><i class="fab fa-linkedin-in"></i></a>
+          <a class="social-icon" href="https://www.instagram.com/nss_nitkkr?igsh=MWFrNWYyMzh4ZGVhNA==" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <h4 class="text-white text-uppercase">Quick Links</h4>
+        <div class="d-flex flex-column justify-content-start mt-4 pt-2">
+          <a class="mb-3 text-white-50" href="index.html"><i class="fa fa-angle-right text-primary me-2"></i>Home</a>
+          <a class="mb-3 text-white-50" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About Us</a>
+          <a class="mb-3 text-white-50" href="units.html"><i class="fa fa-angle-right text-primary me-2"></i>Units</a>
+          <a class="mb-3 text-white-50" href="events.html"><i class="fa fa-angle-right text-primary me-2"></i>Events</a>
+          <a class="mb-3 text-white-50" href="Team.html"><i class="fa fa-angle-right text-primary me-2"></i>Team</a>
+          <a class="mb-3 text-white-50" href="nss-camp.html"><i class="fa fa-angle-right text-primary me-2"></i>NSS Camp</a>
+          <a class="mb-3 text-white-50" href="projects.html"><i class="fa fa-angle-right text-primary me-2"></i>Projects</a>
+          <a class="text-white-50" href="contact.html"><i class="fa fa-angle-right text-primary me-2"></i>Contact</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Newsletter -->
+      <div class="col-lg-4 col-md-12">
+        <h4 class="text-white text-uppercase">Newsletter</h4>
+        <p class="mt-4 pt-2 mb-4 text-white-50">Subscribe to receive the latest updates and news about our camps and projects.</p>
+        <div class="w-100 mt-2">
+          <div class="input-group">
+            <input type="email" class="form-control newsletter-input" style="padding:15px;" placeholder="Your Email Address">
+            <button class="btn btn-primary px-4 fw-bold modern-solid-btn">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid footer-bottom text-white-50">
+    <div class="container text-center">
+      <p class="mb-0">&copy; <a class="text-white fw-bold" href="#">NSS NIT Kurukshetra</a>. All Rights Reserved.</p>
+      <p class="mb-0 mt-1" style="font-size:13px;">Designed by <a class="text-white opacity-75" href="#">Shivam &amp; NSS Web Team</a></p>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Counter animation for stats
+    function animateCounter(el, target, suffix) {
+      let count = 0;
+      const step = Math.ceil(target / 60);
+      const timer = setInterval(() => {
+        count = Math.min(count + step, target);
+        el.textContent = count + suffix;
+        if (count >= target) clearInterval(timer);
+      }, 25);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(document.querySelectorAll('.stat-value')[0], 500, '+');
+          animateCounter(document.querySelectorAll('.stat-value')[1],   8,  '');
+          animateCounter(document.querySelectorAll('.stat-value')[2], 1500, '+');
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const statsEl = document.querySelector('.stats-glass-row');
+    if (statsEl) observer.observe(statsEl);
+  </script>
+
+</body>
+</html>

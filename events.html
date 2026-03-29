@@ -2,43 +2,437 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Events | NSS - NIT KKR</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="NSS Events, NIT Kurukshetra" name="keywords">
-    <meta content="NSS NIT Kurukshetra Recent Events" name="description">
+  <meta charset="utf-8">
+  <title>Events | NSS - NIT KKR</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <!-- Favicon -->
-    <link href="img\Logo_White_1.png" rel="icon" />
+  <link href="img/home/Logo_White_1.png" rel="icon" />
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* --- ENHANCED CSS (Requirement 2 & 4) --- */
+    :root {
+      --nss-blue: #002d5b;
+      --nss-orange: #ff4b2b;
+      --dark-bg: #121212;
+    }
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    body {
+      font-family: 'Inter', sans-serif;
+      /* Fullscreen Parallax Background */
+      color: #fff;
+      position: relative;
+    }
+
+    /* Dark Glass Overlay for the entire page */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(4, 15, 40, 0.82);
+      /* Deep Navy semi-transparent */
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: -1;
+    }
+
+    .events-header-bg {
+      background: linear-gradient(rgba(0, 45, 91, 0.9), rgba(0, 45, 91, 0.9)), url('img/about/nit\ kkr.jpg') no-repeat;
+      background-size: cover;
+      background-position: center;
+      padding: 80px 0;
+      margin-bottom: 50px;
+    }
+
+    /* --- MODERN CARD DESIGN --- */
+    .modern-event-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.08) !important;
+      backdrop-filter: blur(15px) !important;
+      -webkit-backdrop-filter: blur(15px) !important;
+      color: #fff !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      height: 100%;
+    }
+
+    .modern-event-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 20px rgba(13, 71, 161, 0.3);
+      background: rgba(255, 255, 255, 0.12) !important;
+      border-color: rgba(255, 255, 255, 0.4) !important;
+    }
+
+    .img-container {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .modern-event-card:hover .img-container img {
+      transform: scale(1.1);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--nss-orange);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: bold;
+      z-index: 2;
+    }
+
+    /* --- GALLERY MODAL (Requirement 2, 4, 7) --- */
+    .gallery-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1050;
+      background: rgba(4, 15, 40, 0.95);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      color: white;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .gallery-modal-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .main-image-section {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 0 60px;
+      /* Space for nav buttons */
+      height: 100%;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #mainSliderImg {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      /* Requirement 6 */
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .image-counter {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .nav-btn:hover {
+      background: var(--nss-orange);
+      border-color: var(--nss-orange);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .prev-btn {
+      left: 20px;
+    }
+
+    .next-btn {
+      right: 20px;
+    }
+
+    .sidebar-section {
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      height: 100%;
+    }
+
+    .slider-info {
+      padding: 30px;
+      flex-shrink: 0;
+    }
+
+    .slider-info h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #fff !important;
+    }
+
+    .slider-info p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8) !important;
+      margin-bottom: 0;
+    }
+
+    .gallery-thumbs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      gap: 10px;
+      padding: 20px;
+      overflow-y: auto;
+      /* Fixes overflow issue */
+      flex: 1;
+      /* Takes available space */
+    }
+
+    .gallery-thumbs::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .gallery-thumbs::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
+
+    .thumb-item {
+      height: 70px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .thumb-item:hover,
+    .thumb-item.active {
+      opacity: 1;
+      border-color: var(--nss-orange);
+      transform: scale(1.05);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1060;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .close-modal:hover {
+      background: var(--nss-orange);
+      border-color: var(--nss-orange);
+      transform: rotate(90deg);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      .gallery-modal-content {
+        flex-direction: column;
+      }
+
+      .sidebar-section {
+        width: 100%;
+        height: auto;
+        max-height: 40vh;
+        /* Bottom 40% for sidebar on mobile */
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .main-image-section {
+        height: 60vh;
+        padding: 0 40px;
+      }
+
+      #mainSliderImg {
+        max-height: 50vh;
+      }
+
+      .slider-info {
+        padding: 15px;
+      }
+
+      .gallery-thumbs {
+        padding: 15px;
+      }
+
+      .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+
+      .prev-btn {
+        left: 10px;
+      }
+
+      .next-btn {
+        right: 10px;
+      }
+    }
+  </style>
+
+  <!-- Global Cinematic Variables -->
+  <style>
+    .cinematic-section {
+      background-color: #040F28;
+      /* Deep Navy */
+      color: #ffffff;
+    }
+
+    .cinematic-heading {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 20px !important;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+      color: #fff !important;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px) scale(1.02) !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(13, 71, 161, 0.4) !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    }
+  </style>
+
 </head>
 
 <body>
-      <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm sticky-top py-2 px-4 px-lg-5">
-    <a href="Home.html" class="navbar-brand d-flex align-items-center">
-      <img src="img/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2" />
+
+  <style>
+    /* Cinematic Navbar Upgrade */
+    .navbar-glass {
+      background: rgba(4, 15, 40, 0.7) !important;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s ease;
+    }
+
+    .navbar-glass .nav-link {
+      color: #ffffff !important;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+
+    .navbar-glass .nav-link:hover,
+    .navbar-glass .nav-link.active {
+      color: #a855f7 !important;
+    }
+
+    .navbar-glass .navbar-brand h2 {
+      color: #ffffff !important;
+    }
+
+    .navbar-glass .navbar-brand p {
+      color: #bbbbbb !important;
+    }
+
+    .navbar-glass .navbar-toggler-icon {
+      filter: invert(1);
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-glass shadow-sm sticky-top py-3 px-4 px-lg-5">
+    <a href="index.html" class="navbar-brand d-flex align-items-center">
+      <img src="img/home/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2"
+        onerror="this.src='img/NSS_Logo.png'" />
       <div class="d-flex flex-column text-start justify-content-center">
-        <h2 class="m-0 text-dark fs-5 fw-bold" style="font-family: 'Poppins', sans-serif; line-height: 1.2;">National Service Scheme</h2>
-        <p class="m-0 text-secondary" style="font-size: 0.85rem; letter-spacing: 0.5px; line-height: 1; font-family: 'Inter', sans-serif;">Kurukshetra</p>
+        <h2 class="m-0 text-white fs-5 fw-bold" style="font-family: 'Poppins', sans-serif; line-height: 1.2;">National
+          Service Scheme</h2>
+        <p class="m-0 text-light opacity-90"
+          style="font-size: 0.85rem; letter-spacing: 0.5px; line-height: 1; font-family: 'Inter', sans-serif;">
+          Kurukshetra</p>
       </div>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -46,7 +440,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0 fw-bold align-items-center">
-        <a href="Home.html" class="nav-item nav-link">Home</a>
+        <a href="index.html" class="nav-item nav-link">Home</a>
         <a href="about.html" class="nav-item nav-link">About</a>
         <a href="units.html" class="nav-item nav-link">Units</a>
         <a href="events.html" class="nav-item nav-link active">Events</a>
@@ -55,385 +449,197 @@
         <a href="projects.html" class="nav-item nav-link">Projects</a>
         <a href="newspaper.html" class="nav-item nav-link">Newspaper</a>
       </div>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 ms-lg-3 d-none d-lg-block modern-solid-btn">Contact</a>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 mt-2 mb-2 d-lg-none w-100 modern-solid-btn">Contact</a>
+      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 ms-lg-3 d-none d-lg-block modern-solid-btn"
+        style="background: linear-gradient(135deg, #6366f1, #a855f7); border: none; border-radius: 50px;">Contact</a>
+      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 mt-2 mb-2 d-lg-none w-100 modern-solid-btn"
+        style="background: linear-gradient(135deg, #6366f1, #a855f7); border: none; border-radius: 50px;">Contact</a>
     </div>
   </nav>
-  <!-- Navbar End -->
 
-    <!-- Page Header Start -->
-   
-    <!-- Page Header End -->
+  <div class="events-header-bg text-center">
+    <h1 class="display-4 text-white fw-bold">OUR IMPACTFUL EVENTS</h1>
+    <p class="text-white-50 fs-5">Building a better society through service and dedication.</p>
+  </div>
 
-    <!-- Events Start -->
-    <div class="container-fluid events-blue-bg pb-5" id="events-section">
-        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h1 class="display-5 text-uppercase mb-4 text-white">Our <span class="text-white">Events</span></h1>
-            <p class="text-white fs-5">Explore the various activities and initiatives undertaken by NSS NIT Kurukshetra team.</p>
-        </div>
-        
-        <div class="row g-5 justify-content-center px-lg-5">
-            <!-- ========== SWACHHATA ========== -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card modern-event-card h-100 border-0 bg-transparent">
-                    <div class="modern-event-img-wrapper position-relative w-100">
-                        <img class="card-img-top modern-event-img w-100" src="img/events/swachtaabhiyan.jpeg" alt="Swachhata">
-                        <div class="modern-event-gradient"></div>
-                        <div class="modern-event-content position-absolute top-50 start-50 translate-middle w-100 text-center px-3">
-                            <h4 class="modern-event-title text-white text-uppercase mb-2">Swachhata</h4>
-                            <p class="modern-event-desc">Our continuous effort towards a cleaner, greener campus through regular cleanliness drives.</p>
-                            <p class="modern-event-meta text-white-50 mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</p>
-                            <p class="modern-event-view-gallery"><i class="bi bi-images me-2"></i>View Gallery</p>
-                        </div>
-                        <a href="img/events/swachtaabhiyan.jpeg" data-lightbox="swach" data-title="Swachhata" class="stretched-link"></a>
-                    </div>
-                </div>
-                <!-- SWACHH GALLERY (Hidden) -->
-                <div class="d-none">
-                    <a href="img/events/swach0.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach1.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach2.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach3.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach4.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach5.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach6.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach7.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach8.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach9.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach10.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach11.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach12.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach13.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach14.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach15.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach16.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach17.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach18.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach19.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach20.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach21.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach22.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach23.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach24.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach25.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach26.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach27.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach28.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach29.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach30.jpeg" data-lightbox="swach"></a>
-                    <a href="img/events/swach31.jpeg" data-lightbox="swach"></a>
-                </div>
-            </div>
-
-            <!-- ========== SEWA PARV ========== -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card modern-event-card h-100 border-0 bg-transparent">
-                    <div class="modern-event-img-wrapper position-relative w-100">
-                        <img class="card-img-top modern-event-img w-100" src="img/events/sewaparv.jpeg" alt="Sewa Parv">
-                        <div class="modern-event-gradient"></div>
-                        <div class="modern-event-content position-absolute top-50 start-50 translate-middle w-100 text-center px-3">
-                            <h4 class="modern-event-title text-white text-uppercase mb-2">Sewa Parv</h4>
-                            <p class="modern-event-desc">A dedicated festival reflecting our commitment to unconditional community service.</p>
-                            <p class="modern-event-meta text-white-50 mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</p>
-                            <p class="modern-event-view-gallery"><i class="bi bi-images me-2"></i>View Gallery</p>
-                        </div>
-                        <a href="img/events/sewaparv.jpeg" data-lightbox="sewa" data-title="Sewa Parv" class="stretched-link"></a>
-                    </div>
-                </div>
-                <!-- SEWA GALLERY -->
-                <div class="d-none">
-                    <a href="img/events/sewa0.jpeg" data-lightbox="sewa"></a>
-                    <a href="img/events/sewa1.jpeg" data-lightbox="sewa"></a>
-                    <a href="img/events/sewa2.jpeg" data-lightbox="sewa"></a>
-                    <a href="img/events/sewa3.jpeg" data-lightbox="sewa"></a>
-                    <a href="img/events/sewa4.jpeg" data-lightbox="sewa"></a>
-                    <a href="img/events/sewa5.jpeg" data-lightbox="sewa"></a>
-                    <a href="img/events/sewa6.jpeg" data-lightbox="sewa"></a>
-                    <a href="img/events/sewa7.jpeg" data-lightbox="sewa"></a>
-                    <a href="img/events/sewa8.jpeg" data-lightbox="sewa"></a>
-                    <a href="img/events/sewa9.jpeg" data-lightbox="sewa"></a>
-                    <a href="img/events/sewa10.jpeg" data-lightbox="sewa"></a>
-                    <a href="img/events/sewa11.jpeg" data-lightbox="sewa"></a>
-                </div>
-            </div>
-
-            <!-- ========== NASHA MUKT ========== -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card modern-event-card h-100 border-0 bg-transparent">
-                    <div class="modern-event-img-wrapper position-relative w-100">
-                        <img class="card-img-top modern-event-img w-100" src="img/events/nsamukt.jpeg" alt="Nasha Mukt Bharat">
-                        <div class="modern-event-gradient"></div>
-                        <div class="modern-event-content position-absolute top-50 start-50 translate-middle w-100 text-center px-3">
-                            <h4 class="modern-event-title text-white text-uppercase mb-2">Nasha Mukt Bharat</h4>
-                            <p class="modern-event-desc">Awareness rallies and campaigns to achieve a drug-free India.</p>
-                            <p class="modern-event-meta text-white-50 mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</p>
-                            <p class="modern-event-view-gallery"><i class="bi bi-images me-2"></i>View Gallery</p>
-                        </div>
-                        <a href="img/events/nsamukt.jpeg" data-lightbox="nasha" data-title="Nasha Mukt Bharat" class="stretched-link"></a>
-                    </div>
-                </div>
-                <!-- NASHA GALLERY -->
-                <div class="d-none">
-                    <a href="img/events/nsa0.jpeg" data-lightbox="nasha"></a>
-                    <a href="img/events/nsa1.jpeg" data-lightbox="nasha"></a>
-                    <a href="img/events/nsa2.jpeg" data-lightbox="nasha"></a>
-                    <a href="img/events/nsa3.jpeg" data-lightbox="nasha"></a>
-                    <a href="img/events/nsa4.jpeg" data-lightbox="nasha"></a>
-                    <a href="img/events/nsa5.jpeg" data-lightbox="nasha"></a>
-                    <a href="img/events/nsa6.jpeg" data-lightbox="nasha"></a>
-                    <a href="img/events/nsa7.jpeg" data-lightbox="nasha"></a>
-                    <a href="img/events/nsa8.jpeg" data-lightbox="nasha"></a>
-                    <a href="img/events/nsa9.jpeg" data-lightbox="nasha"></a>
-                    <a href="img/events/nsa10.jpeg" data-lightbox="nasha"></a>
-                    <a href="img/events/nsa11.jpeg" data-lightbox="nasha"></a>
-                </div>
-            </div>
-
-            <!-- ========== VIGILANCE ========== -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card modern-event-card h-100 border-0 bg-transparent">
-                    <div class="modern-event-img-wrapper position-relative w-100">
-                        <img class="card-img-top modern-event-img w-100" src="img/events/vigilance.jpg" alt="Vigilance Awareness Week">
-                        <div class="modern-event-gradient"></div>
-                        <div class="modern-event-content position-absolute top-50 start-50 translate-middle w-100 text-center px-3">
-                            <h4 class="modern-event-title text-white text-uppercase mb-2">Vigilance Awareness Week</h4>
-                            <p class="modern-event-desc">Fostering integrity and transparency among youth and citizens.</p>
-                            <p class="modern-event-meta text-white-50 mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</p>
-                            <p class="modern-event-view-gallery"><i class="bi bi-images me-2"></i>View Gallery</p>
-                        </div>
-                        <a href="img/events/vigilance.jpg" data-lightbox="vigilance" data-title="Vigilance Awareness Week" class="stretched-link"></a>
-                    </div>
-                </div>
-                <!-- VIGILANCE GALLERY -->
-                <div class="d-none">
-                    <a href="img/events/vg.jpg" data-lightbox="vigilance"></a>
-                    <a href="img/events/vg1.jpg" data-lightbox="vigilance"></a>
-                    <a href="img/events/vg2.jpg" data-lightbox="vigilance"></a>
-                </div>
-            </div>
-
-            <!-- ========== GROOMING ========== -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card modern-event-card h-100 border-0 bg-transparent">
-                    <div class="modern-event-img-wrapper position-relative w-100">
-                        <img class="card-img-top modern-event-img w-100" src="img/events/grooming&hygiene.jpeg" alt="Grooming & Hygiene">
-                        <div class="modern-event-gradient"></div>
-                        <div class="modern-event-content position-absolute top-50 start-50 translate-middle w-100 text-center px-3">
-                            <h4 class="modern-event-title text-white text-uppercase mb-2">Grooming & Hygiene</h4>
-                            <p class="modern-event-desc">Empowering children with habits for better health and self-care.</p>
-                            <p class="modern-event-meta text-white-50 mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</p>
-                            <p class="modern-event-view-gallery"><i class="bi bi-images me-2"></i>View Gallery</p>
-                        </div>
-                        <a href="img/events/grooming&hygiene.jpeg" data-lightbox="grooming" data-title="Grooming & Hygiene" class="stretched-link"></a>
-                    </div>
-                </div>
-                <!-- GROOMING GALLERY -->
-                <div class="d-none">
-                    <a href="img/events/vg3.jpg" data-lightbox="grooming"></a>
-                    <a href="img/events/vg4.jpg" data-lightbox="grooming"></a>
-                    <a href="img/events/vg5.jpg" data-lightbox="grooming"></a>
-                    <a href="img/events/vg6.jpg" data-lightbox="grooming"></a>
-                </div>
-            </div>
-
-            <!-- ========== VANDEMATARAM ========== -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card modern-event-card h-100 border-0 bg-transparent">
-                    <div class="modern-event-img-wrapper position-relative w-100">
-                        <img class="card-img-top modern-event-img w-100" src="img/events/vandemataram150year.jpeg" alt="Vandematram 150 Years">
-                        <div class="modern-event-gradient"></div>
-                        <div class="modern-event-content position-absolute top-50 start-50 translate-middle w-100 text-center px-3">
-                            <h4 class="modern-event-title text-white text-uppercase mb-2">Vandematram 150 Years</h4>
-                            <p class="modern-event-desc">Celebrating the spirit of our national song with monumental pride.</p>
-                            <p class="modern-event-meta text-white-50 mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</p>
-                            <p class="modern-event-view-gallery"><i class="bi bi-images me-2"></i>View Gallery</p>
-                        </div>
-                        <a href="img/events/vandemataram150year.jpeg" data-lightbox="vande" data-title="Vandematram 150 Years" class="stretched-link"></a>
-                    </div>
-                </div>
-                <!-- VANDE GALLERY -->
-                <div class="d-none">
-                    <a href="img/events/vande0.jpeg" data-lightbox="vande"></a>
-                    <a href="img/events/vande1.jpeg" data-lightbox="vande"></a>
-                    <a href="img/events/vande2.jpeg" data-lightbox="vande"></a>
-                    <a href="img/events/vande3.jpeg" data-lightbox="vande"></a>
-                    <a href="img/events/vande4.jpeg" data-lightbox="vande"></a>
-                    <a href="img/events/vande5.jpeg" data-lightbox="vande"></a>
-                    <a href="img/events/vande6.jpeg" data-lightbox="vande"></a>
-                    <a href="img/events/vande7.jpeg" data-lightbox="vande"></a>
-                    <a href="img/events/vande8.jpeg" data-lightbox="vande"></a>
-                </div>
-            </div>
-
-            <!-- ========== JJGD ========== -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card modern-event-card h-100 border-0 bg-transparent">
-                    <div class="modern-event-img-wrapper position-relative w-100">
-                        <img class="card-img-top modern-event-img w-100" src="img/events/jjgd1.jpeg" alt="JJGD">
-                        <div class="modern-event-gradient"></div>
-                        <div class="modern-event-content position-absolute top-50 start-50 translate-middle w-100 text-center px-3">
-                            <h4 class="modern-event-title text-white text-uppercase mb-2">JJGD</h4>
-                            <p class="modern-event-desc">Jal Jeevan Gramin Disha, an initiative for rural water awareness.</p>
-                            <p class="modern-event-meta text-white-50 mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</p>
-                            <p class="modern-event-view-gallery"><i class="bi bi-images me-2"></i>View Gallery</p>
-                        </div>
-                        <a href="img/events/jjgd1.jpeg" data-lightbox="jjgd" data-title="JJGD" class="stretched-link"></a>
-                    </div>
-                </div>
-                <!-- JJGD GALLERY -->
-                <div class="d-none">
-                    <a href="img/events/jjjd.jpeg" data-lightbox="jjgd"></a>
-                    <a href="img/events/jjgd0.jpeg" data-lightbox="jjgd"></a>
-                    <a href="img/events/jjgd2.jpeg" data-lightbox="jjgd"></a>
-                    <a href="img/events/jjgd3.jpeg" data-lightbox="jjgd"></a>
-                    <a href="img/events/jjgd4.jpeg" data-lightbox="jjgd"></a>
-                    <a href="img/events/jjgd5.jpeg" data-lightbox="jjgd"></a>
-                    <a href="img/events/jjgd6.jpeg" data-lightbox="jjgd"></a>
-                    <a href="img/events/jjgd7.jpeg" data-lightbox="jjgd"></a>
-                    <a href="img/events/jjgd8.jpeg" data-lightbox="jjgd"></a>
-                    <a href="img/events/jjgd9.jpeg" data-lightbox="jjgd"></a>
-                    <a href="img/events/jjgd10.jpeg" data-lightbox="jjgd"></a>
-                </div>
-            </div>
-
-            <!-- ========== SARASWATI PUJA ========== -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card modern-event-card h-100 border-0 bg-transparent">
-                    <div class="modern-event-img-wrapper position-relative w-100">
-                        <img class="card-img-top modern-event-img w-100" src="img/events/vasantpanchmi.jpeg" alt="Saraswati Puja">
-                        <div class="modern-event-gradient"></div>
-                        <div class="modern-event-content position-absolute top-50 start-50 translate-middle w-100 text-center px-3">
-                            <h4 class="modern-event-title text-white text-uppercase mb-2">Saraswati Puja</h4>
-                            <p class="modern-event-desc">Celebrating knowledge and learning on the auspicious occasion of Vasant Panchami.</p>
-                            <p class="modern-event-meta text-white-50 mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</p>
-                            <p class="modern-event-view-gallery"><i class="bi bi-images me-2"></i>View Gallery</p>
-                        </div>
-                        <a href="img/events/vasantpanchmi.jpeg" data-lightbox="saraswati" data-title="Saraswati Puja" class="stretched-link"></a>
-                    </div>
-                </div>
-                <!-- SARASWATI GALLERY -->
-                <div class="d-none">
-                    <a href="img/events/saraswati2.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati3.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati4.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati5.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati6.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati7.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati8.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati9.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati10.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati11.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati12.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati13.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati14.jpeg" data-lightbox="saraswati"></a>
-                    <a href="img/events/saraswati15.jpeg" data-lightbox="saraswati"></a>
-                </div>
-            </div>
-
-            <!-- ========== FIT INDIA ========== -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card modern-event-card h-100 border-0 bg-transparent">
-                    <div class="modern-event-img-wrapper position-relative w-100">
-                        <img class="card-img-top modern-event-img w-100" src="img/events/fitindia.jpeg" alt="Fit India">
-                        <div class="modern-event-gradient"></div>
-                        <div class="modern-event-content position-absolute top-50 start-50 translate-middle w-100 text-center px-3">
-                            <h4 class="modern-event-title text-white text-uppercase mb-2">Fit India</h4>
-                            <p class="modern-event-desc">Promoting physical activity and a healthier lifestyle for everyone.</p>
-                            <p class="modern-event-meta text-white-50 mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</p>
-                            <p class="modern-event-view-gallery"><i class="bi bi-images me-2"></i>View Gallery</p>
-                        </div>
-                        <a href="img/events/fitindia.jpeg" data-lightbox="fit" data-title="Fit India" class="stretched-link"></a>
-                    </div>
-                </div>
-                <!-- FIT GALLERY -->
-                <div class="d-none">
-                    <a href="img/events/fitmain.jpeg" data-lightbox="fit"></a>
-                    <a href="img/events/fit0.jpeg" data-lightbox="fit"></a>
-                    <a href="img/events/fit1.jpeg" data-lightbox="fit"></a>
-                    <a href="img/events/fit2.jpeg" data-lightbox="fit"></a>
-                    <a href="img/events/fit3.jpeg" data-lightbox="fit"></a>
-                    <a href="img/events/fit4.jpeg" data-lightbox="fit"></a>
-                </div>
-            </div>
-        </div>
+  <div class="container pb-5">
+    <div class="row g-4" id="eventsGrid">
     </div>
-    <!-- Events End -->
 
-    <!-- Footer Start -->
-    <div class="container-fluid footer-modern py-5 mt-auto">
-      <div class="row g-5 px-lg-5">
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-          <a href="Home.html" class="navbar-brand mb-4 d-flex align-items-center">
-            <img src="img/Logo_White_1.png" alt="NSS NIT KKR Logo" width="60" height="60" class="me-3">
-            <h2 class="m-0 text-white" style="font-size: 1.5rem;">NSS NIT KKR</h2>
-          </a>
-          <p class="mb-4">Striving for the purpose of bringing peace and harmony by inculcating every individual with the spirit of humanity through community service.</p>
-          <div class="d-flex text-white-50 mb-2">
-            <i class="fa fa-map-marker-alt text-primary me-3 mt-1"></i>
-            <p class="mb-0">NSS Office, NIT Kurukshetra<br>Haryana, 136118</p>
+    <div id="expandView" class="gallery-modal">
+      <button class="close-modal" onclick="closeExpand()"><i class="fas fa-times"></i></button>
+
+      <div class="gallery-modal-content">
+        <div class="main-image-section">
+          <button class="nav-btn prev-btn" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
+
+          <div class="slider-wrapper" id="sliderWrapper">
+            <img src="" id="mainSliderImg" alt="Main View">
+            <div class="image-counter" id="imageCounter">1 / 1</div>
           </div>
-          <div class="d-flex text-white-50 mb-4">
-            <i class="fa fa-envelope text-primary me-3 mt-1"></i>
-            <p class="mb-0">nss@nitkkr.ac.in</p>
-          </div>
-          <div class="d-flex mt-4">
-            <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
-            <a class="social-icon" href="https://www.facebook.com/nss.nitkkr"><i class="fab fa-facebook-f"></i></a>
-            <a class="social-icon" href="https://www.linkedin.com/company/nss-nit-kurukshetra/"><i class="fab fa-linkedin-in"></i></a>
-            <a class="social-icon" href="https://instagram.com/nss_nitkkr"><i class="fab fa-instagram"></i></a>
-          </div>
+
+          <button class="nav-btn next-btn" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
         </div>
 
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-          <h4 class="text-white text-uppercase">Quick Links</h4>
-          <div class="d-flex flex-column justify-content-start mt-4 pt-2">
-            <a class="mb-3" href="index.html"><i class="fa fa-angle-right text-primary me-2"></i>Home</a>
-            <a class="mb-3" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About Us</a>
-            <a class="mb-3" href="units.html"><i class="fa fa-angle-right text-primary me-2"></i>Units</a>
-            <a class="mb-3" href="events.html"><i class="fa fa-angle-right text-primary me-2"></i>Events</a>
-            <a class="mb-3" href="cells.html"><i class="fa fa-angle-right text-primary me-2"></i>Team</a>
-            <a class="mb-3" href="nss-camp.html"><i class="fa fa-angle-right text-primary me-2"></i>NSS Camp</a>
-            <a class="mb-3" href="projects.html"><i class="fa fa-angle-right text-primary me-2"></i>Projects</a>
-            <a class="" href="contact.html"><i class="fa fa-angle-right text-primary me-2"></i>Contact</a>
+        <div class="sidebar-section">
+          <div class="slider-info">
+            <h2 id="expTitle">Event Title</h2>
+            <hr style="border-color: rgba(255,255,255,0.1)">
+            <p id="expDesc">Description goes here...</p>
           </div>
-        </div>
-
-        <div class="col-lg-4 col-md-12">
-          <h4 class="text-white text-uppercase">Newsletter</h4>
-          <p class="mt-4 pt-2 mb-4">Subscribe to our newsletter to receive the latest updates and news about our camps and projects.</p>
-          <div class="w-100 mt-2">
-            <div class="input-group">
-              <input type="email" class="form-control newsletter-input" style="padding: 15px;" placeholder="Your Email Address">
-              <button class="btn btn-primary px-4 fw-bold modern-solid-btn">Sign Up</button>
-            </div>
-          </div>
+          <div class="gallery-thumbs" id="thumbContainer"></div>
         </div>
       </div>
     </div>
-    <div class="container-fluid footer-bottom text-white-50">
-      <div class="container text-center">
-        <p class="mb-0">&copy; <a class="text-white fw-bold" href="#">NSS NIT Kurukshetra</a>. All Rights Reserved.</p>
-        <p class="mb-0 mt-1" style="font-size: 13px;">Designed by <a class="text-white opacity-75" href="#">Shivam & NSS Web Team</a></p>
-      </div>
-    </div>
-    <!-- Footer End -->
+  </div>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top modern-solid-btn"><i class="bi bi-arrow-up"></i></a>
+  <script>
+    // --- DATASET: 9 EVENTS (Your provided images) ---
+    const events = [
+      { id: 1, title: "Swachhata", desc: "Our continuous effort towards a cleaner, greener campus through regular cleanliness drives.", img: "img/events/swachtaabhiyan.jpeg", gallery: ["img/events/swach0.jpeg", "img/events/swach1.jpeg", "img/events/swach2.jpeg", "img/events/swach3.jpeg", "img/events/swach4.jpeg", "img/events/swach5.jpeg", "img/events/swach6.jpeg", "img/events/swach7.jpeg", "img/events/swach8.jpeg", "img/events/swach9.jpeg", "img/events/swach10.jpeg", "img/events/swach11.jpeg", "img/events/swach12.jpeg", "img/events/swach13.jpeg", "img/events/swach15.jpeg", "img/events/swach16.jpeg", "img/events/swach17.jpeg", "img/events/swach18.jpeg", "img/events/swach19.jpeg", "img/events/swach20.jpeg", "img/events/swach21.jpeg", "img/events/swach22.jpeg", "img/events/swach23.jpeg", "img/events/swach23.jpeg", "img/events/swach24.jpeg", "img/events/swach25.jpeg", "img/events/swach26.jpeg", "img/events/swach27.jpeg", "img/events/swach28.jpeg", "img/events/swach29.jpeg", "img/events/swach30.jpeg", "img/events/swach31.jpeg"] },
+      { id: 2, title: "Sewa Parv", desc: "A dedicated festival reflecting our commitment to unconditional community service.", img: "img/events/sewaparv.jpeg", gallery: ["img/events/sewa0.jpeg", "img/events/sewa1.jpeg", "img/events/sewa2.jpeg", "img/events/sewa3.jpeg", "img/events/sewa4.jpeg", "img/events/sewa5.jpeg", "img/events/sewa6.jpeg", "img/events/sewa7.jpeg", "img/events/sewa8.jpeg", "img/events/sewa9.jpeg", "img/events/sewa10.jpeg", "img/events/sewa11.jpeg"] },
+      { id: 3, title: "Nasha Mukt Bharat", desc: "Awareness rallies and campaigns to achieve a drug-free India.", img: "img/events/nsamukt.jpeg", gallery: ["img/events/nsa0.jpeg", "img/events/nsa1.jpeg", "img/events/nsa2.jpeg", "img/events/nsa3.jpeg", "img/events/nsa4.jpeg", "img/events/nsa5.jpeg", "img/events/nsa6.jpeg", "img/events/nsa7.jpeg", "img/events/nsa8.jpeg", "img/events/nsa9.jpeg", "img/events/nsa10.jpeg", "img/events/nsa11.jpeg"] },
+      { id: 4, title: "Vigilance Week", desc: "Fostering integrity and transparency among youth and citizens.", img: "img/events/vigilance.jpg", gallery: ["img/events/vg.jpeg", "img/events/vg1.jpeg", "img/events/vg2.jpeg", "img/events/vg3.jpeg", "img/events/vg4.jpeg", "img/events/vg5.jpeg", "img/events/vg6.jpeg"] },
+      { id: 5, title: "Grooming & Hygiene", desc: "Empowering children with habits for better health and self-care.", img: "img/events/grooming&hygiene.jpeg", gallery: ["img/home/bella.jpg", "img/home/bella.jpg", "img/home/groom1.jpg", "img/events/vg3.jpg", "img/events/vg4.jpg", "img/events/vg5.jpg", "img/home/paddistribution.jpg", "img/home/groom.jpg"] },
+      { id: 6, title: "Vandematram", desc: "Celebrating 150 years of our national song with monumental pride.", img: "img/events/vandemataram150year.jpeg", gallery: ["img/events/vande0.jpeg", "img/events/vande1.jpeg", "img/events/vande3.jpeg", "img/events/vande4.jpeg", "img/events/vande5.jpeg", "img/events/vande6.jpeg", "img/events/vande7.jpeg", "img/events/vande8.jpeg", "img/events/vande9.jpeg", "img/events/vande2.jpeg"] },
+      { id: 7, title: "JJGD", desc: "Jal Jeevan Gramin Disha, an initiative for rural water awareness.", img: "img/events/jjgd1.jpeg", gallery: ["img/events/jjjd.jpeg", "img/events/jjgd0.jpeg", "img/events/jjgd1.jpeg", "img/events/jjgd2.jpeg", "img/events/jjgd3.jpeg", "img/events/jjgd4.jpeg", "img/events/jjgd5.jpeg", "img/events/jjgd6.jpeg", "img/events/jjgd7.jpeg", "img/events/jjgd8.jpeg", "img/events/jjgd9.jpeg", "img/events/jjgd10.jpeg"] },
+      { id: 8, title: "Dayalpur Visit", desc: "Direct community engagement and field work in Dayalpur Village.", img: "img/home/tree.jpg", gallery: ["img/home/camp2.jpg", "img/home/donate.jpg", "img/home/tree.jpg", "img/home/safai2.jpg", "img/home/plantation.jpg", "img/home/safai.jpg", "img/home/groom.jpg", "img/home/children.jpg"] },
+      { id: 9, title: "Annual Camp", desc: "Seven-day residential camp focusing on holistic village development.", img: "img/home/camp.jpg", gallery: ["img/home/camp2.jpg", "img/home/donate.jpg", "img/home/tree.jpg", "img/home/school.jpg", "img/home/groom.jpg", "img/home/bella.jpg", "img/home/race.jpg", "img/home/career.jpg"] },
+      { id: 10, title: "Vasant Panchami", desc: "Celebrating the auspicious festival of Vasant Panchami dedicated to Goddess Saraswati.", img: "img/home/vasant.jpeg", gallery: ["img/events/saraswat0.jpeg", "img/events/saraswati1.jpeg", "img/events/saraswati2.jpeg", "img/events/saraswati3.jpeg", "img/events/saraswati4.jpeg", "img/events/saraswati5.jpeg", "img/events/saraswati6.jpeg", "img/events/saraswati7.jpeg", "img/events/saraswati8.jpeg", "img/events/saraswati9.jpeg", "img/events/saraswati10.jpeg", "img/events/saraswati11.jpeg", "img/events/saraswati12.jpeg", "img/events/saraswati13.jpeg", "img/events/saraswati14.jpeg", "img/events/saraswati15.jpeg"] },
+      { id: 11, title: "Blood Donation Camp", desc: "A noble initiative encouraging youth to donate blood and support medical emergencies.", img: "img/home/blooddonation.jpg", gallery: ["img/home/blooddonation.jpg", "img/home/donate.jpeg"] },
+      { id: 12, title: "Fit India Movement", desc: "Promoting physical fitness and well-being among students through various sports and fitness activities.", img: "img/events/bicycleday.jpeg", gallery: ["img/events/fitmain.jpeg", "img/events/fit0.jpeg", "img/events/fit1.jpeg", "img/events/fit2.jpeg", "img/events/fit3.jpeg", "img/events/fit4.jpeg"] }
+    ];
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    const grid = document.getElementById('eventsGrid');
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    // Render Cards
+    events.forEach(ev => {
+      grid.innerHTML += `
+                <div class="col-lg-4 col-md-6">
+                    <div class="modern-event-card" onclick="openExpand(${ev.id})">
+                        <div class="img-container">
+                            <span class="card-badge">Gallery</span>
+                            <img src="${ev.img}" alt="${ev.title}">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold text-white mb-2">${ev.title}</h4>
+                            <p class="text-light opacity-75 small mb-0">${ev.desc}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+    });
+
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    // Expansion Logic
+    function openExpand(id) {
+      const ev = events.find(item => item.id === id);
+      const expandView = document.getElementById('expandView');
+
+      // Merge main image into gallery if it's not already there
+      currentGallery = ev.gallery && ev.gallery.length > 0 ? [ev.img, ...ev.gallery] : [ev.img];
+      currentIndex = 0;
+
+      expandView.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+      document.getElementById('expTitle').innerText = ev.title;
+      document.getElementById('expDesc').innerText = ev.desc;
+
+      updateMainImage(currentIndex);
+
+      // Fill Thumbnails
+      const thumbContainer = document.getElementById('thumbContainer');
+      thumbContainer.innerHTML = currentGallery.map((i, index) => `
+                <img src="${i}" class="thumb-item" id="thumb-${index}" loading="lazy" onclick="goToImage(${index})">
+            `).join('');
+
+      highlightThumbnail(currentIndex);
+    }
+
+    function updateMainImage(index) {
+      if (index < 0) index = currentGallery.length - 1;
+      if (index >= currentGallery.length) index = 0;
+      currentIndex = index;
+
+      const src = currentGallery[currentIndex];
+      const mainImg = document.getElementById('mainSliderImg');
+      mainImg.style.opacity = '0'; // Start fade out
+      mainImg.style.transform = 'scale(0.98)';
+
+      const counter = document.getElementById('imageCounter');
+      if (counter) counter.innerText = `${currentIndex + 1} / ${currentGallery.length}`;
+
+      // Prevent white flash: Load in background first
+      const temp = new Image();
+      temp.src = src;
+      temp.onload = () => {
+        mainImg.src = src;
+        mainImg.style.opacity = '1'; // Fade in
+        mainImg.style.transform = 'scale(1)';
+      };
+
+      highlightThumbnail(currentIndex);
+    }
+
+    function highlightThumbnail(index) {
+      document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+      const activeThumb = document.getElementById(`thumb-${index}`);
+      if (activeThumb) {
+        activeThumb.classList.add('active');
+        activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function goToImage(index) {
+      updateMainImage(index);
+    }
+
+    function nextImage() {
+      updateMainImage(currentIndex + 1);
+    }
+
+    function prevImage() {
+      updateMainImage(currentIndex - 1);
+    }
+
+    function closeExpand() {
+      document.getElementById('expandView').style.display = 'none';
+      document.body.style.overflow = ''; // Restore background scrolling
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (document.getElementById('expandView').style.display === 'block') {
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'Escape') closeExpand();
+      }
+    });
+
+    // Touch Swipe navigation
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', e => {
+      if (document.getElementById('expandView').style.display === 'block') {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+    });
+
+    document.addEventListener('touchend', e => {
+      if (document.getElementById('expandView').style.display === 'block') {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }
+    });
+
+    function handleSwipe() {
+      if (touchEndX < touchStartX - 50) nextImage();
+      if (touchEndX > touchStartX + 50) prevImage();
+    }
+  </script>
 </body>
+
 </html>

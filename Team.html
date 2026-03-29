@@ -2,77 +2,252 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Cells | NSS - NIT KKR</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+  <meta charset="utf-8">
+  <title>Our Cells | NSS NIT KKR</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <!-- Favicon -->
-    <link href="img\Logo_ White_1.png" rel="icon" />
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=Syncopate:wght@400;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a1628;
+      --glass-card: rgba(255, 255, 255, 0.06);
+      --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+      --border-glow: rgba(255, 255, 255, 0.12);
+      --text-glow: 0 0 15px rgba(168, 85, 247, 0.4);
+    }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    body {
+      background-color: var(--bg-dark);
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+    }
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    /* 1. Animated Ambient Background */
+    .ambient-glow {
+      position: fixed;
+      width: 80vw;
+      height: 80vh;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+      top: -20%;
+      left: -10%;
+      z-index: -1;
+      filter: blur(80px);
+      animation: moveGlow 20s infinite alternate;
+    }
+
+    .ambient-glow-2 {
+      position: fixed;
+      width: 60vw;
+      height: 60vh;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+      bottom: -10%;
+      right: -10%;
+      z-index: -1;
+      filter: blur(80px);
+      animation: moveGlow 25s infinite alternate-reverse;
+    }
+
+    @keyframes moveGlow {
+      from { transform: translate(0, 0); }
+      to   { transform: translate(20%, 20%); }
+    }
+
+    /* 2. Sleek Header */
+    .page-header {
+      padding: 100px 0 60px;
+      text-align: center;
+    }
+
+    .main-title {
+      font-family: 'Syncopate', sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    /* 3. The "Pretty" Glass Cards */
+    .team-card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 30px;
+      padding: 30px;
+      height: 100%;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle gradient bottom accent */
+    .team-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent-gradient);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .team-card:hover::after {
+      opacity: 1;
+    }
+
+    .team-card:hover {
+      transform: translateY(-12px);
+      background: rgba(255, 255, 255, 0.11);
+      border-color: rgba(168, 85, 247, 0.4);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(99,102,241,0.15);
+    }
+
+    /* 4. Image Styling with Gradient Overlay */
+    .img-container {
+      width: 100%;
+      height: 250px;
+      border-radius: 25px;
+      overflow: hidden;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.8s ease;
+    }
+
+    .team-card:hover img {
+      transform: scale(1.15);
+    }
+
+    /* Soft colorful gradient overlay on images */
+    .img-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 40%, rgba(2, 6, 23, 0.8));
+    }
+
+    /* 5. Typography & Badges */
+    .cell-badge {
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: var(--accent-gradient);
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+    }
+
+    .cell-name {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .cell-description {
+      font-size: 0.95rem;
+      color: #c0cfe4;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* 6. Spacing */
+    .container-main {
+      padding-bottom: 120px;
+    }
+
+    /* Footer */
+    .footer-modern {
+      background: #060e1c;
+      color: #94a3b8;
+      padding: 80px 0 30px;
+      border-top: 4px solid;
+      border-image: var(--accent-gradient) 1;
+    }
+
+    .footer-bottom {
+      background: #040a14;
+      padding: 20px 0;
+    }
+
+    .social-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 6px;
+      color: #fff;
+      transition: 0.35s ease;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .social-icon:hover {
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      transform: rotate(360deg);
+      color: white;
+      border-color: transparent;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <!-- <div class="container-fluid px-5 d-none d-lg-block">
-        <div class="row gx-5">
-            <div class="col-lg-4 text-center py-3">
-                <div class="d-inline-flex align-items-center">
-                    <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase fw-bold">Our Office</h6>
-                        <span>123 Street, New York, USA</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 text-center border-start border-end py-3">
-                <div class="d-inline-flex align-items-center">
-                    <i class="bi bi-envelope-open fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase fw-bold">Email Us</h6>
-                        <span>info@example.com</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 text-center py-3">
-                <div class="d-inline-flex align-items-center">
-                    <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase fw-bold">Call Us</h6>
-                        <span>+012 345 6789</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Topbar End -->
+  <div class="ambient-glow"></div>
+  <div class="ambient-glow-2"></div>
 
-
-      <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm sticky-top py-2 px-4 px-lg-5">
-    <a href="Home.html" class="navbar-brand d-flex align-items-center">
-      <img src="img/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2" />
+  <style>
+    /* Cinematic Navbar Upgrade */
+    .navbar-glass {
+      background: rgba(2, 6, 23, 0.7) !important;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.4s ease;
+    }
+    .navbar-glass .nav-link { color: #ffffff !important; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; }
+    .navbar-glass .nav-link:hover, .navbar-glass .nav-link.active { color: #a855f7 !important; }
+    .navbar-glass .navbar-brand h2 { color: #ffffff !important; }
+    .navbar-glass .navbar-brand p { color: #94a3b8 !important; }
+    .navbar-glass .navbar-toggler-icon { filter: invert(1); }
+    .hero-link-hover { transition: all 0.3s ease; display: inline-block; }
+    .hero-link-hover:hover { color: #6366f1 !important; transform: translateX(8px); }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-glass shadow-sm sticky-top py-3 px-4 px-lg-5">
+    <a href="index.html" class="navbar-brand d-flex align-items-center">
+      <img src="img/home/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2" onerror="this.src='img/Logo_White_1.png'" />
       <div class="d-flex flex-column text-start justify-content-center">
-        <h2 class="m-0 text-dark fs-5 fw-bold" style="font-family: 'Poppins', sans-serif; line-height: 1.2;">National Service Scheme</h2>
-        <p class="m-0 text-secondary" style="font-size: 0.85rem; letter-spacing: 0.5px; line-height: 1; font-family: 'Inter', sans-serif;">Kurukshetra</p>
+        <h2 class="m-0 text-white fs-5 fw-bold" style="font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.2;">National Service Scheme</h2>
+        <p class="m-0" style="font-size: 0.85rem; letter-spacing: 0.5px; line-height: 1; font-family: 'Plus Jakarta Sans', sans-serif; color: #94a3b8;">Kurukshetra</p>
       </div>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -80,7 +255,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0 fw-bold align-items-center">
-        <a href="Home.html" class="nav-item nav-link">Home</a>
+        <a href="index.html" class="nav-item nav-link">Home</a>
         <a href="about.html" class="nav-item nav-link">About</a>
         <a href="units.html" class="nav-item nav-link">Units</a>
         <a href="events.html" class="nav-item nav-link">Events</a>
@@ -89,239 +264,169 @@
         <a href="projects.html" class="nav-item nav-link">Projects</a>
         <a href="newspaper.html" class="nav-item nav-link">Newspaper</a>
       </div>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 ms-lg-3 d-none d-lg-block modern-solid-btn">Contact</a>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 mt-2 mb-2 d-lg-none w-100 modern-solid-btn">Contact</a>
+      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 ms-lg-3 d-none d-lg-block" style="background: linear-gradient(135deg, #6366f1, #a855f7); border: none; border-radius: 50px;">Contact</a>
+      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 mt-2 mb-2 d-lg-none w-100" style="background: linear-gradient(135deg, #6366f1, #a855f7); border: none; border-radius: 50px;">Contact</a>
     </div>
   </nav>
-  <!-- Navbar End -->
 
+  <header class="page-header">
+    <div class="container">
+      <h1 class="main-title">Our Teams</h1>
+      <p style="color: #64748b; letter-spacing: 3px; font-weight: 300;">THE WINGS OF IMPACT</p>
+    </div>
+  </header>
 
-    <!-- Page Header Start -->
-    <!-- <div class="container-fluid page-header">
-        <h1 class="display-3 text-uppercase text-white mb-3">Blog Grid</h1>
-        <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a href="">Home</a></h6>
-            <h6 class="text-white m-0 px-3">/</h6>
-            <h6 class="text-uppercase text-white m-0">Blog Grid</h6>
+  <main class="container container-main">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="img-container">
+            <img src="img/Teams/content.jpg" alt="Content">
+          </div>
+          <span class="cell-badge">Creative</span>
+          <h3 class="cell-name">Content Cell</h3>
+          <p class="cell-description">Drafting the voice of NSS. We specialize in storytelling, scripting, and
+            documenting the journey of change.</p>
         </div>
-    </div> -->
-    <!-- Page Header Start -->
+      </div>
 
-<!-- Portfolio Start -->
-<div class="container-fluid  py-6 px-5">
-  <div class="text-center mx-auto mb-5" style="max-width: 600px">
-    <h1 class="display-5 text-uppercase mb-4">
-      About<span class="text-dark"> Our</span> Team
-    </h1>
-  </div>
-  <div class="row g-5 portfolio-container">
-    <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item first">
-      <div class="position-relative portfolio-box">
-        <img class="img-fluid w-100" src="img/Teams/content.jpg" alt="content image" />
-        <a class="portfolio-title shadow-sm" href="">
-          <p class="h4 text-uppercase text-center">Content Team</p>
-          <span class="text-body text-center"
-            ><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</span
-          >
-        </a>
-        <a
-          class="portfolio-btn"
-          href="img/Teams/content.jpg"
-          data-lightbox="portfolio"
-        >
-          <i class="bi bi-plus text-white"></i>
-        </a>
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="img-container">
+            <img src="img/Teams/Edu.png" alt="Education">
+          </div>
+          <span class="cell-badge">Empowerment</span>
+          <h3 class="cell-name">Education Cell</h3>
+          <p class="cell-description">Igniting minds in rural areas. Our mission is to bridge the educational gap
+            through consistent teaching drives.</p>
+        </div>
       </div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item second">
-      <div class="position-relative portfolio-box">
-        <img class="img-fluid w-100" src="img/Teams/Edu.png" alt="Edu image" />
-        <a class="portfolio-title shadow-sm" href="">
-          <p class="h4 text-uppercase text-center">Education Team</p>
-          <span class="text-body text-center"
-            ><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</span
-          >
-        </a>
-        <a
-          class="portfolio-btn"
-          href="img/Teams/Edu.png"
-          data-lightbox="portfolio"
-        >
-          <i class="bi bi-plus text-white"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item first">
-      <div class="position-relative portfolio-box">
-        <img class="img-fluid w-100" src="img/Teams/Design.png" alt="Design image" />
-        <a class="portfolio-title shadow-sm" href="">
-          <p class="h4 text-uppercase text-center">Design Team</p>
-          <span class="text-body text-center"
-            ><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</span
-          >
-        </a>
-        <a
-          class="portfolio-btn"
-          href="img/Teams/Design.png"
-          data-lightbox="portfolio"
-        >
-          <i class="bi bi-plus text-white"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item second">
-      <div class="position-relative portfolio-box">
-        <img class="img-fluid w-100" src="img/Teams/WebDesign.png" alt="WebDesign image" />
-        <a class="portfolio-title shadow-sm" href="">
-          <p class="h4 text-uppercase text-center">Web Design Team</p>
-          <span class="text-body text-center"
-            ><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</span
-          >
-        </a>
-        <a
-          class="portfolio-btn"
-          href="img/Teams/WebDesign.png"
-          data-lightbox="portfolio"
-        >
-          <i class="bi bi-plus text-white"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item first">
-      <div class="position-relative portfolio-box">
-        <img class="img-fluid w-100" src="img/Teams/Env.png" alt="Env image" />
-        <a class="portfolio-title shadow-sm" href="">
-          <p class="h4 text-uppercase text-center">Enviornment Team</p>
-          <span class="text-body text-center"
-            ><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</span
-          >
-        </a>
-        <a
-          class="portfolio-btn"
-          href="img/Teams/Env.png"
-          data-lightbox="portfolio"
-        >
-          <i class="bi bi-plus text-white"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item second">
-      <div class="position-relative portfolio-box">
-        <img class="img-fluid w-100" src="img/Teams/Sports.png" alt="Sports image" />
-        <a class="portfolio-title shadow-sm" href="">
-          <p class="h4 text-uppercase text-center">Sports Team</p>
-          <span class="text-body text-center"
-            ><i class="fa fa-map-marker-alt text-primary me-2"></i>NSS NIT KKR</span
-          >
-        </a>
-        <a
-          class="portfolio-btn"
-          href="img/Teams/Sports.png"
-          data-lightbox="portfolio"
-        >
-        <a
-          class="portfolio-btn"
-          href="img/Teams/Sports.png"
-          data-lightbox="portfolio"
-        >
-          <i class="bi bi-plus text-white"></i>
-        </a>
-      </div>
-    </div>
-    
-       
-   
-  </div>
-</div>
-<!-- Portfolio End -->
 
-        <!-- Footer Start -->
-        <div class="container-fluid footer-modern py-5">
-          <div class="row g-5 px-lg-5">
-            <!-- Column 1: About -->
-            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-              <a href="Home.html" class="navbar-brand mb-4 d-flex align-items-center">
-                <img src="img/Logo_White_1.png" alt="NSS NIT KKR Logo" width="60" height="60" class="me-3">
-                <h2 class="m-0 text-white" style="font-size: 1.5rem;">NSS NIT KKR</h2>
-              </a>
-              <p class="mb-4">
-                Striving for the purpose of bringing peace and harmony by inculcating every individual with the spirit of humanity through community service.
-              </p>
-              <div class="d-flex text-white-50 mb-2">
-                <i class="fa fa-map-marker-alt text-primary me-3 mt-1"></i>
-                <p class="mb-0">NSS Office, NIT Kurukshetra<br>Haryana, 136118</p>
-              </div>
-              <div class="d-flex text-white-50 mb-4">
-                <i class="fa fa-envelope text-primary me-3 mt-1"></i>
-                <p class="mb-0">nss@nitkkr.ac.in</p>
-              </div>
-              <div class="d-flex mt-4">
-                <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
-                <a class="social-icon" href="https://www.facebook.com/nss.nitkkr"><i class="fab fa-facebook-f"></i></a>
-                <a class="social-icon" href="https://www.linkedin.com/company/nss-nit-kurukshetra/"><i class="fab fa-linkedin-in"></i></a>
-                <a class="social-icon" href="https://instagram.com/nss_nitkkr"><i class="fab fa-instagram"></i></a>
-              </div>
-            </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="img-container">
+            <img src="img/Teams/Design.png" alt="Design">
+          </div>
+          <span class="cell-badge">Visuals</span>
+          <h3 class="cell-name">Design Cell</h3>
+          <p class="cell-description">The artists behind the movement. We create the visual assets that communicate our
+            values to the world.</p>
+        </div>
+      </div>
 
-            <!-- Column 2: Quick Links -->
-            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-              <h4 class="text-white text-uppercase">Quick Links</h4>
-              <div class="d-flex flex-column justify-content-start mt-4 pt-2">
-                <a class="mb-3" href="Home.html"><i class="fa fa-angle-right text-primary me-2"></i>Home</a>
-                <a class="mb-3" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About Us</a>
-                <a class="mb-3" href="units.html"><i class="fa fa-angle-right text-primary me-2"></i>Units</a>
-                <a class="mb-3" href="events.html"><i class="fa fa-angle-right text-primary me-2"></i>Events</a>
-                <a class="mb-3" href="Team.html"><i class="fa fa-angle-right text-primary me-2"></i>Team</a>
-                <a class="mb-3" href="nss-camp.html"><i class="fa fa-angle-right text-primary me-2"></i>NSS Camp</a>
-                <a class="mb-3" href="projects.html"><i class="fa fa-angle-right text-primary me-2"></i>Projects</a>
-                <a class="" href="contact.html"><i class="fa fa-angle-right text-primary me-2"></i>Contact</a>
-              </div>
-            </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="img-container">
+            <img src="img/Teams/WebDesign.png" alt="Web">
+          </div>
+          <span class="cell-badge">Technology</span>
+          <h3 class="cell-name">Web Cell</h3>
+          <p class="cell-description">Builders of the digital grid. We manage the online presence and technical
+            infrastructure of NSS NIT KKR.</p>
+        </div>
+      </div>
 
-            <!-- Column 3: Newsletter -->
-            <div class="col-lg-4 col-md-12">
-              <h4 class="text-white text-uppercase">Newsletter</h4>
-              <p class="mt-4 pt-2 mb-4">Subscribe to our newsletter to receive the latest updates and news about our camps and projects.</p>
-              <div class="w-100 mt-2">
-                <div class="input-group">
-                  <input type="email" class="form-control newsletter-input" style="padding: 15px;" placeholder="Your Email Address">
-                  <button class="btn btn-primary px-4 fw-bold modern-solid-btn">Sign Up</button>
-                </div>
-              </div>
-            </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="img-container">
+            <img src="img/Teams/Env.png" alt="Environment">
+          </div>
+          <span class="cell-badge">Sustainable</span>
+          <h3 class="cell-name">Green Cell</h3>
+          <p class="cell-description">Advocating for Mother Earth. Our focus lies in plantation drives and spreading
+            ecological awareness.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="img-container">
+            <img src="img/Teams/Sports.png" alt="Sports">
+          </div>
+          <span class="cell-badge">Kinetic</span>
+          <h3 class="cell-name">Sports Cell</h3>
+          <p class="cell-description">Fostering unity through fitness. We organize events that use the power of sport to
+            bring communities together.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Start -->
+  <div class="container-fluid footer-modern py-5 mt-auto">
+    <div class="row g-5 px-lg-5">
+      <!-- Column 1: About -->
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <a href="index.html" class="navbar-brand mb-4 d-flex align-items-center">
+          <img src="img/home/Logo_WHite_1.png" alt="NSS NIT KKR Logo" width="60" height="60" class="me-3">
+          <h2 class="m-0 text-white" style="font-size: 1.5rem;">NSS NIT KKR</h2>
+        </a>
+        <p class="mb-4 text-white-50">
+          Striving for the purpose of bringing peace and harmony by inculcating every individual with the spirit
+          of humanity through community service.
+        </p>
+        <div class="d-flex text-white-50 mb-2">
+          <i class="fa fa-map-marker-alt text-primary me-3 mt-1"></i>
+          <p class="mb-0">NSS Office, NIT Kurukshetra<br>Haryana, 136118</p>
+        </div>
+        <div class="d-flex text-white-50 mb-4">
+          <i class="fa fa-envelope text-primary me-3 mt-1"></i>
+          <p class="mb-0">nss@nitkkr.ac.in</p>
+        </div>
+        <div class="d-flex mt-4">
+          <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="social-icon" href="https://www.facebook.com/nss.nitkkr"><i class="fab fa-facebook-f"></i></a>
+          <a class="social-icon" href="https://www.linkedin.com/company/nss-nit-kurukshetra/"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a class="social-icon" href="https://www.instagram.com/nss_nitkkr?igsh=MWFrNWYyMzh4ZGVhNA==" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <h4 class="text-white text-uppercase">Quick Links</h4>
+        <div class="d-flex flex-column justify-content-start mt-4 pt-2">
+          <a class="mb-3 text-white-50" href="index.html"><i class="fa fa-angle-right text-primary me-2"></i>Home</a>
+          <a class="mb-3 text-white-50" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About
+            Us</a>
+          <a class="mb-3 text-white-50" href="units.html"><i class="fa fa-angle-right text-primary me-2"></i>Units</a>
+          <a class="mb-3 text-white-50" href="events.html"><i class="fa fa-angle-right text-primary me-2"></i>Events</a>
+          <a class="mb-3 text-white-50" href="Team.html"><i class="fa fa-angle-right text-primary me-2"></i>Team</a>
+          <a class="mb-3 text-white-50" href="nss-camp.html"><i class="fa fa-angle-right text-primary me-2"></i>NSS
+            Camp</a>
+          <a class="mb-3 text-white-50" href="projects.html"><i
+              class="fa fa-angle-right text-primary me-2"></i>Projects</a>
+          <a class="text-white-50" href="contact.html"><i class="fa fa-angle-right text-primary me-2"></i>Contact</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Newsletter -->
+      <div class="col-lg-4 col-md-12">
+        <h4 class="text-white text-uppercase">Newsletter</h4>
+        <p class="mt-4 pt-2 mb-4 text-white-50">Subscribe to our newsletter to receive the latest updates and news about
+          our camps and projects.</p>
+        <div class="w-100 mt-2">
+          <div class="input-group">
+            <input type="email" class="form-control newsletter-input" style="padding: 15px;"
+              placeholder="Your Email Address">
+            <button class="btn btn-primary px-4 fw-bold modern-solid-btn">Sign Up</button>
           </div>
         </div>
-        <div class="container-fluid footer-bottom text-white-50">
-          <div class="container text-center">
-            <p class="mb-0">
-              &copy; <a class="text-white fw-bold" href="#">NSS NIT Kurukshetra</a>. All Rights Reserved.
-            </p>
-            <p class="mb-0 mt-1" style="font-size: 13px;">
-              Designed by <a class="text-white opacity-75" href="#">Shivam & NSS Web Team</a>
-            </p>
-          </div>
-        </div>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top modern-solid-btn"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid footer-bottom text-white-50">
+    <div class="container text-center">
+      <p class="mb-0">
+        &copy; <a class="text-white fw-bold" href="#">NSS NIT Kurukshetra</a>. All Rights Reserved.
+      </p>
+      <p class="mb-0 mt-1" style="font-size: 13px;">
+        Designed by <a class="text-white opacity-75" href="#">Shivam & NSS Web Team</a>
+      </p>
+    </div>
+  </div>
+  <!-- Footer End -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

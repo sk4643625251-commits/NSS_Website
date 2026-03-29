@@ -13,7 +13,7 @@
     " name="description" />
 
   <!-- Favicon -->
-  <link href="img\Logo_White_1.png" rel="icon" />
+  <link href="img\home/Logo_White_1.png" rel="icon" />
 
   <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -44,11 +44,340 @@
       transition: all 0.3s ease;
       cursor: pointer;
     }
+
     .unit-head-card:hover {
       transform: translateY(-3px) scale(1.02);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12) !important;
     }
   </style>
+
+  <!-- Google Fonts - Modern Typography -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Global Cinematic Variables -->
+  <style>
+    :root {
+      --primary-blue: #0d47a1;
+      --dark-bg: #040F28;
+      --accent-teal: #00bcd4;
+      --accent-orange: #ff7043;
+      --light-bg: #f8f9fa;
+      --text-dark: #1a1a1a;
+      --text-light: #ffffff;
+    }
+
+    .cinematic-section {
+      background-color: #040F28;
+      color: #ffffff;
+    }
+
+    .cinematic-heading {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 16px !important;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+      color: #fff !important;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px) scale(1.02) !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(13, 71, 161, 0.4) !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    }
+
+    /* Modern Unit Card Redesign */
+    .unit-card-modern {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .unit-card-modern:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 48px rgba(13, 71, 161, 0.15);
+    }
+
+    .unit-header-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #00bcd4, #0097a7);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 25px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+    }
+
+    .unit-title-modern {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary-blue);
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .unit-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #ff7043, #ff9800);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .unit-description {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #333333;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .section-title-modern {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary-blue);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title-modern i {
+      font-size: 1.2rem;
+    }
+
+    /* Officer Card Modern */
+    .officer-card-modern {
+      background: linear-gradient(135deg, rgba(13, 71, 161, 0.05), rgba(0, 188, 212, 0.05));
+      border: 2px solid rgba(13, 71, 161, 0.2);
+      border-radius: 14px;
+      padding: 16px;
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .officer-card-modern:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, rgba(13, 71, 161, 0.1), rgba(0, 188, 212, 0.1));
+      border-color: var(--primary-blue);
+      box-shadow: 0 8px 24px rgba(13, 71, 161, 0.15);
+    }
+
+    .officer-image {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary-blue);
+      box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2);
+      flex-shrink: 0;
+    }
+
+    .officer-info h5 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .officer-info p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-blue);
+      margin: 0;
+    }
+
+    /* Unit Head Card */
+    .unit-head-card-modern {
+      background: linear-gradient(135deg, #040F28, #0d1f3c);
+      border: 1px solid rgba(0, 188, 212, 0.3);
+      border-radius: 12px;
+      padding: 14px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .unit-head-card-modern:hover {
+      transform: translateY(-4px);
+      background: linear-gradient(135deg, #0d1f3c, #0f2845);
+      border-color: rgba(0, 212, 255, 0.6);
+      box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);
+    }
+
+    .unit-head-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(0, 188, 212, 0.5);
+      flex-shrink: 0;
+    }
+
+    .unit-head-info h6 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+
+    .unit-head-info p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(0, 188, 212, 0.8);
+      margin: 0;
+      font-weight: 600;
+    }
+
+    /* CTA Button */
+    .btn-cta-modern {
+      background: linear-gradient(135deg, var(--primary-blue), #1565c0);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 28px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    .btn-cta-modern:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(13, 71, 161, 0.3);
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Image Container */
+    .unit-image-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      height: 100%;
+      min-height: 350px;
+      /* guarantees a nice minimum height on mobile */
+    }
+
+    .unit-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .unit-image-container:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .scroll-anim.visible {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Content Layout */
+    .unit-content-modern {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (max-width: 992px) {
+      .unit-title-modern {
+        font-size: 2.2rem;
+      }
+
+      .unit-content-modern {
+        padding: 30px;
+      }
+
+      .unit-image-container {
+        min-height: 250px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .unit-title-modern {
+        font-size: 1.8rem;
+      }
+
+      .unit-content-modern {
+        padding: 20px;
+      }
+
+      .unit-card-modern {
+        flex-direction: column !important;
+      }
+    }
+  </style>
+
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -56,7 +385,7 @@
   <script>
     function darkMode() {
       var element = document.body;
-      var theme = document.getElementsByClassName("bg-light");
+      var theme = document.getElementsByClassName("glass-card");
       var content = document.getElementById("DarkModetext");
       theme.className = "bg-dark";
       element.className = "dark-mode";
@@ -71,12 +400,50 @@
   </script>
 
   <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm sticky-top py-2 px-4 px-lg-5">
-    <a href="Home.html" class="navbar-brand d-flex align-items-center">
-      <img src="img/home/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2" />
+
+  <style>
+    /* Cinematic Navbar Upgrade */
+    .navbar-glass {
+      background: rgba(4, 15, 40, 0.7) !important;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s ease;
+    }
+
+    .navbar-glass .nav-link {
+      color: #ffffff !important;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+
+    .navbar-glass .nav-link:hover,
+    .navbar-glass .nav-link.active {
+      color: #a855f7 !important;
+    }
+
+    .navbar-glass .navbar-brand h2 {
+      color: #ffffff !important;
+    }
+
+    .navbar-glass .navbar-brand p {
+      color: #bbbbbb !important;
+    }
+
+    .navbar-glass .navbar-toggler-icon {
+      filter: invert(1);
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-glass shadow-sm sticky-top py-3 px-4 px-lg-5">
+    <a href="index.html" class="navbar-brand d-flex align-items-center">
+      <img src="img/home/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2"
+        onerror="this.src='img/NSS_Logo.png'" />
       <div class="d-flex flex-column text-start justify-content-center">
-        <h2 class="m-0 text-dark fs-5 fw-bold" style="font-family: 'Poppins', sans-serif; line-height: 1.2;">National Service Scheme</h2>
-        <p class="m-0 text-secondary" style="font-size: 0.85rem; letter-spacing: 0.5px; line-height: 1; font-family: 'Inter', sans-serif;">Kurukshetra</p>
+        <h2 class="m-0 text-white fs-5 fw-bold" style="font-family: 'Poppins', sans-serif; line-height: 1.2;">National
+          Service Scheme</h2>
+        <p class="m-0 text-light opacity-90"
+          style="font-size: 0.85rem; letter-spacing: 0.5px; line-height: 1; font-family: 'Inter', sans-serif;">
+          Kurukshetra</p>
       </div>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -84,324 +451,169 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0 fw-bold align-items-center">
-        <a href="Home.html" class="nav-item nav-link">Home</a>
+        <a href="index.html" class="nav-item nav-link">Home</a>
         <a href="about.html" class="nav-item nav-link">About</a>
         <a href="units.html" class="nav-item nav-link active">Units</a>
         <a href="events.html" class="nav-item nav-link">Events</a>
         <a href="Team.html" class="nav-item nav-link">Team</a>
         <a href="nss-camp.html" class="nav-item nav-link">NSS Camp</a>
         <a href="projects.html" class="nav-item nav-link">Projects</a>
-        <a href="Newspaper.html" class="nav-item nav-link">Newspaper</a>
+        <a href="newspaper.html" class="nav-item nav-link">Newspaper</a>
       </div>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 ms-lg-3 d-none d-lg-block modern-solid-btn">Contact</a>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 mt-2 mb-2 d-lg-none w-100 modern-solid-btn">Contact</a>
+      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 ms-lg-3 d-none d-lg-block modern-solid-btn"
+        style="background: linear-gradient(135deg, #6366f1, #a855f7); border: none; border-radius: 50px;">Contact</a>
+      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 mt-2 mb-2 d-lg-none w-100 modern-solid-btn"
+        style="background: linear-gradient(135deg, #6366f1, #a855f7); border: none; border-radius: 50px;">Contact</a>
     </div>
   </nav>
   <!-- Navbar End -->
 
   <main class="flex-grow-1 units-gradient-bg pb-5 position-relative overflow-hidden">
-    
-    <!-- Background Decorators -->
-    <div style="position: absolute; top: 10%; left: -5%; width: 300px; height: 300px; background: rgba(13, 110, 253, 0.05); filter: blur(60px); border-radius: 50%; z-index: 0;"></div>
-    <div style="position: absolute; bottom: 20%; right: -5%; width: 400px; height: 400px; background: rgba(255, 193, 7, 0.05); filter: blur(80px); border-radius: 50%; z-index: 0;"></div>
 
-    <!-- Units Hero Section -->
-    <section class="container-fluid units-hero overflow-hidden position-relative d-flex align-items-center justify-content-center">
+    <!-- Background Decorators -->
+    <div
+      style="position: absolute; top: 10%; left: -5%; width: 300px; height: 300px; background: rgba(13, 110, 253, 0.05); filter: blur(60px); border-radius: 50%; z-index: 0;">
+    </div>
+    <div
+      style="position: absolute; bottom: 20%; right: -5%; width: 400px; height: 400px; background: rgba(255, 193, 7, 0.05); filter: blur(80px); border-radius: 50%; z-index: 0;">
+    </div>
+
+    <!-- Units Hero Section - Redesigned -->
+    <section
+      class="container-fluid units-hero overflow-hidden position-relative d-flex align-items-center justify-content-center py-5">
       <div class="units-hero-overlay"></div>
       <div class="container position-relative z-index-2 scroll-anim fade-in-up">
-        <div class="text-center mx-auto" style="max-width: 800px">
-          <h1 class="display-3 text-uppercase text-white fw-bold mb-3 units-hero-title">Our NSS Units</h1>
+        <div class="text-center mx-auto" style="max-width: 900px">
+          <h1 class="display-3 text-uppercase text-white fw-bold mb-3 units-hero-title"
+            style="font-family: 'Montserrat', sans-serif; letter-spacing: -1px;">Our NSS Units</h1>
           <div class="units-hero-divider mx-auto mb-4"></div>
-          <p class="fs-5 units-hero-subtitle">Dedicated to the principles of social responsibility and community development through our six progressive service units.</p>
+          <p class="fs-5 units-hero-subtitle"
+            style="font-family: 'Inter', sans-serif; font-weight: 300; letter-spacing: 0.5px;">Dedicated to the
+            principles of social responsibility and community development through our six progressive service units.
+            Each unit represents a unique dimension of service, growth, and positive change.</p>
         </div>
       </div>
     </section>
 
     <div class="container-fluid p-0 m-0 position-relative" style="z-index: 1;">
-      
-      <!-- Unit 1: NIRBHAYA -->
-      <section class="unit-section units-py-6 pb-2 border-bottom border-light">
-        <div class="container scroll-anim fade-in-up">
-          <div class="row g-0 align-items-stretch bg-white rounded-4 shadow-sm overflow-hidden unit-card border border-light">
+
+      <!-- Unit 1: NIRBHAYA - Modern Redesign -->
+      <section class="unit-section units-py-6 pb-4">
+        <div class="container">
+          <div class="row g-4 scroll-anim fade-in-up align-items-stretch">
             <!-- Image Column -->
-            <div class="col-lg-5 position-relative overflow-hidden">
-              <img src="img/units/nirbhay.png" class="img-fluid w-100 h-100 unit-banner-img" style="object-fit: cover; min-height: 400px; transition: transform 0.5s ease ; width:100%; height:100%" alt="Unit Nirbhaya" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='img/NSS_Logo.png'">
+            <div class="col-lg-5 order-lg-1">
+              <div class="unit-image-container">
+                <img src="img/units/nirbhay.png" alt="Unit Nirbhaya - Courage within every student"
+                  onerror="this.src='img/NSS_Logo.png'">
+              </div>
             </div>
+
             <!-- Content Column -->
-            <div class="col-lg-7 p-4 p-lg-5 d-flex flex-column justify-content-center glass-panel">
-              <div class="d-flex justify-content-between align-items-center mb-1">
-                <h2 class="display-6 fw-bold text-dark mb-0">NIRBHAYA</h2>
-                <span class="badge bg-light text-secondary rounded-pill py-2 px-3 fw-bold fst-italic shadow-sm fs-6 border border-secondary" style="color: #6c757d !important;">1st Year</span>
-              </div>
-              <p class="fw-bold text-primary mb-4" style="font-size: 0.95rem;"><i class="fa fa-quote-left text-primary opacity-50 me-2"></i>Courage over fear. Serve with pure dedication.</p>
-              
-              <p class="mb-4 fs-6 text-dark" style="line-height: 1.8;">Nirbhaya introduces first-year students to social service through basic community interaction, awareness drives, and campus cleanliness initiatives. The focus is on building sensitivity toward societal issues and instilling discipline and teamwork. Volunteers learn the value of small efforts and consistent actions in making a meaningful difference in society.</p>
-              
-              <h5 class="text-uppercase fw-bold text-dark mb-3 mt-2" style="font-size: 1.15rem; letter-spacing: 1px;"><i class="fa fa-user-tie me-2 text-primary"></i>Program Officers</h5>
-              <div class="row g-4 mb-4">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-light p-3 rounded-4 shadow-sm border border-primary unit-head-card">
-                    <img src="img/home/vaibhav.jpeg" class="rounded-circle shadow-sm border border-primary border-3 me-3" style="width:70px; height:70px; object-fit: cover;" alt="Dr. Vaibhav Agarwal" onerror="this.src='img/NSS_Logo.png'">
+            <div class="col-lg-7 order-lg-2">
+              <div class="unit-card-modern h-100">
+                <div class="unit-content-modern">
+                  <!-- Header with Title and Badge -->
+                  <div class="d-flex justify-content-between align-items-start mb-4">
                     <div>
-                      <h5 class="mb-1 fw-bold text-dark" style="font-size: 1.05rem;">Dr. Vaibhav Agarwal</h5>
-                      <p class="mb-0 text-primary fw-bold small" style="font-size: 0.85rem;">Program Officer</p>
+                      <h2 class="unit-title-modern mb-2">Nirbhaya</h2>
+                      <div class="unit-tagline">
+                        <i class="fas fa-shield-alt"></i>
+                        Courage Over Fear
+                      </div>
                     </div>
+                    <div class="unit-header-badge">1st Year</div>
                   </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-light p-3 rounded-4 shadow-sm border border-primary unit-head-card">
-                    <img src="img/home/SWEETI.png" class="rounded-circle shadow-sm border border-primary border-3 me-3" style="width:70px; height:70px; object-fit: cover;" alt="Sweeti Sah" onerror="this.src='img/NSS_Logo.png'">
-                    <div>
-                      <h5 class="mb-1 fw-bold text-dark" style="font-size: 1.05rem;">Sweeti Sah</h5>
-                      <p class="mb-0 text-primary fw-bold small" style="font-size: 0.85rem;">Program Officer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <h5 class="text-uppercase fw-bold text-dark mb-4 mt-2" style="font-size: 1.1rem; letter-spacing: 1px;"><i class="fa fa-users me-2 text-primary"></i>Unit Heads</h5>
-              <div class="row g-3">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/SAKSHI.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">SAKSHI</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/TINA2.0.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;object-position:top" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">TINA GAUTAM</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/YASH2.0.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover; object-position: top;" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">YASH BANSAL</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/PRANAV.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;object-position: top;" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">PRANAV MISHRA</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              
-            </div>
-          </div>
-        </div>
-      </section>
+                  <!-- Description -->
+                  <p class="unit-description">
+                    Nirbhaya introduces first-year students to social service through meaningful community engagement.
+                    Volunteers build sensitivity toward societal issues while instilling discipline and teamwork. Learn
+                    the profound value of consistent action and genuine service to the community.
+                  </p>
 
-      <!-- Unit 2: PRAYAS -->
-      <section class="unit-section units-py-6 pb-2 border-bottom border-light">
-        <div class="container scroll-anim fade-in-up">
-          <div class="row g-0 align-items-stretch bg-white rounded-4 shadow-sm overflow-hidden unit-card border border-light">
-            <!-- Image Column -->
-            <div class="col-lg-5 order-lg-2 position-relative overflow-hidden">
-              <img src="img/units/prayas.png" class="img-fluid w-100 h-100 unit-banner-img" style="object-fit: cover; min-height: 400px; transition: transform 0.5s ease;" alt="Unit Prayas" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='img/NSS_Logo.png'">
-            </div>
-            <!-- Content Column -->
-            <div class="col-lg-7 order-lg-1 p-4 p-lg-5 d-flex flex-column justify-content-center glass-panel">
-              <div class="d-flex justify-content-between align-items-center mb-1">
-                <h2 class="display-6 fw-bold text-dark mb-0">PRAYAS</h2>
-                <span class="badge bg-light text-secondary rounded-pill py-2 px-3 fw-bold fst-italic shadow-sm fs-6 border border-secondary" style="color: #6c757d !important;">2nd Year</span>
-              </div>
-              <p class="fw-bold text-primary mb-4" style="font-size: 0.95rem;"><i class="fa fa-quote-left text-primary opacity-50 me-2"></i>Take the first step. Commit unconditionally. Build the nation.</p>
-              
-              <p class="mb-4 fs-6 text-dark" style="line-height: 1.8;">Prayas actively introduces profound social service actions through direct community interaction, deep awareness drives, and robust campus cleanliness initiatives. The focus powerfully shifts toward consistently executing tangible small efforts to make a meaningful, lasting difference in local society.</p>
-              
-              <h5 class="text-uppercase fw-bold text-dark mb-3 mt-2" style="font-size: 1.15rem; letter-spacing: 1px;"><i class="fa fa-user-tie me-2 text-primary"></i>Program Officers</h5>
-              <div class="row g-4 mb-4">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-light p-3 rounded-4 shadow-sm border border-primary unit-head-card">
-                    <img src="img/home/dheeraj.jpeg" class="rounded-circle shadow-sm border border-primary border-3 me-3" style="width:70px; height:70px; object-fit: cover;" alt="Dheeraj Kumar Sharma" onerror="this.src='img/NSS_Logo.png'">
-                    <div>
-                      <h5 class="mb-1 fw-bold text-dark" style="font-size: 1.05rem;">Dheeraj Kumar Sharma</h5>
-                      <p class="mb-0 text-primary fw-bold small" style="font-size: 0.85rem;">Program Officer</p>
+                  <!-- Program Officers Section -->
+                  <div class="mb-5">
+                    <div class="section-title-modern">
+                      <i class="fas fa-user-tie"></i>Program Officers
+                    </div>
+                    <div class="row g-3">
+                      <div class="col-md-6 col-12">
+                        <div class="officer-card-modern">
+                          <img src="img/home/vaibhav.jpeg" alt="Dr. Vaibhav Agarwal" class="officer-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="officer-info">
+                            <h5>Dr. Vaibhav Agarwal</h5>
+                            <p>Program Officer</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="officer-card-modern">
+                          <img src="img/home/SWEETI.png" alt="Sweeti Sah" class="officer-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="officer-info">
+                            <h5>Sweeti Sah</h5>
+                            <p>Program Officer</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-light p-3 rounded-4 shadow-sm border border-primary unit-head-card">
-                    <img src="img/home/CHILUKAMARI.jpeg" class="rounded-circle shadow-sm border border-primary border-3 me-3" style="width:70px; height:70px; object-fit: cover;" alt="Chilukumari Rajesh" onerror="this.src='img/NSS_Logo.png'">
-                    <div>
-                      <h5 class="mb-1 fw-bold text-dark" style="font-size: 1.05rem;">Chilukumari Rajesh</h5>
-                      <p class="mb-0 text-primary fw-bold small" style="font-size: 0.85rem;">Program Officer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <h5 class="text-uppercase fw-bold text-dark mb-4 mt-2" style="font-size: 1.1rem; letter-spacing: 1px;"><i class="fa fa-users me-2 text-primary"></i>Unit Heads</h5>
-              <div class="row g-3">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/PRAGYAN.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">PRAGYAN</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
+                  <!-- Unit Heads Section -->
+                  <div class="mb-4">
+                    <div class="section-title-modern">
+                      <i class="fas fa-users"></i>Unit Leaders
+                    </div>
+                    <div class="row g-2">
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/SAKSHI.jpeg" alt="Sakshi" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Sakshi</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/TINA2.0.jpeg" alt="Tina Gautam" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Tina Gautam</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/YASH2.0.jpeg" alt="Yash Bansal" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Yash Bansal</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/PRANAV.jpeg" alt="Pranav Mishra" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Pranav Mishra</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/POORNIMA.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">POORNIMA</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/RAJSHRI.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">RAJSHRI JOGA</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/AMIT.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">AMIT KUMAR</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Unit 3: SAHYOG -->
-      <section class="unit-section units-py-6 pb-2 border-bottom border-light">
-        <div class="container scroll-anim fade-in-up">
-          <div class="row g-0 align-items-stretch bg-white rounded-4 shadow-sm overflow-hidden unit-card border border-light">
-            <!-- Image Column -->
-            <div class="col-lg-5 position-relative overflow-hidden">
-              <img src="img/units/sahyog.png" class="img-fluid w-100 h-100 unit-banner-img" style="object-fit: cover; min-height: 400px; transition: transform 0.5s ease;" alt="Unit Sahyog" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='img/NSS_Logo.png'">
-            </div>
-            <!-- Content Column -->
-            <div class="col-lg-7 p-4 p-lg-5 d-flex flex-column justify-content-center glass-panel">
-              <div class="d-flex justify-content-between align-items-center mb-1">
-                <h2 class="display-6 fw-bold text-dark mb-0">SAHYOG</h2>
-                <span class="badge bg-light text-secondary rounded-pill py-2 px-3 fw-bold fst-italic shadow-sm fs-6 border border-secondary" style="color: #6c757d !important;">3rd Year</span>
-              </div>
-              <p class="fw-bold text-primary mb-4" style="font-size: 0.95rem;"><i class="fa fa-quote-left text-primary opacity-50 me-2"></i>Unit by force. Grow by collaboration. Lead globally.</p>
-              
-              <p class="mb-4 fs-6 text-dark" style="line-height: 1.8;">Sahyog explicitly emphasizes active collaboration and immense planning coordination amongst 3rd-year students. Volunteers engage intimately in organizing monumental collaborative events, relentlessly conducting surveys, and flawlessly executing vast, far-reaching community awareness campaigns.</p>
-              
-              <h5 class="text-uppercase fw-bold text-dark mb-3 mt-2" style="font-size: 1.15rem; letter-spacing: 1px;"><i class="fa fa-user-tie me-2 text-primary"></i>Program Officers</h5>
-              <div class="row g-4 mb-4">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-light p-3 rounded-4 shadow-sm border border-primary unit-head-card">
-                    <img src="img/home/sidharth.jpeg" class="rounded-circle shadow-sm border border-primary border-3 me-3" style="width:70px; height:70px; object-fit: cover;" alt="Sidhartha Harichandan" onerror="this.src='img/NSS_Logo.png'">
-                    <div>
-                      <h5 class="mb-1 fw-bold text-dark" style="font-size: 1.05rem;">Sidhartha Harichandan</h5>
-                      <p class="mb-0 text-primary fw-bold small" style="font-size: 0.85rem;">Program Officer</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-light p-3 rounded-4 shadow-sm border border-primary unit-head-card">
-                    <img src="img/home/AMANDEEP.jpeg" class="rounded-circle shadow-sm border border-primary border-3 me-3" style="width:70px; height:70px; object-fit: cover;" alt="Amandeep Kaur" onerror="this.src='img/NSS_Logo.png'">
-                    <div>
-                      <h5 class="mb-1 fw-bold text-dark" style="font-size: 1.05rem;">Amandeep Kaur</h5>
-                      <p class="mb-0 text-primary fw-bold small" style="font-size: 0.85rem;">Program Officer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <h5 class="text-uppercase fw-bold text-dark mb-4 mt-2" style="font-size: 1.1rem; letter-spacing: 1px;"><i class="fa fa-users me-2 text-primary"></i>Unit Heads</h5>
-              <div class="row g-3 justify-content-center">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/KARTARKULSHRESTH.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">KARTAR KULSHRESTH</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/RAJMEENA.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">RAJ KUMAR MEENA</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Unit 4: SEHAJ -->
-      <section class="unit-section units-py-6 pb-2 border-bottom border-light">
-        <div class="container scroll-anim fade-in-up">
-          <div class="row g-0 align-items-stretch bg-white rounded-4 shadow-sm overflow-hidden unit-card border border-light">
-            <!-- Image Column -->
-            <div class="col-lg-5 order-lg-2 position-relative overflow-hidden">
-              <img src="img/units/sehaj.png" class="img-fluid w-100 h-100 unit-banner-img" style="object-fit: cover; min-height: 400px; transition: transform 0.5s ease;" alt="Unit Sehaj" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='img/NSS_Logo.png'">
-            </div>
-            <!-- Content Column -->
-            <div class="col-lg-7 order-lg-1 p-4 p-lg-5 d-flex flex-column justify-content-center glass-panel">
-              <div class="d-flex justify-content-between align-items-center mb-1">
-                <h2 class="display-6 fw-bold text-dark mb-0">SEHAJ</h2>
-                <span class="badge bg-light text-secondary rounded-pill py-2 px-3 fw-bold fst-italic shadow-sm fs-6 border border-secondary" style="color: #6c757d !important;">4th Year</span>
-              </div>
-              <p class="fw-bold text-primary mb-4" style="font-size: 0.95rem;"><i class="fa fa-quote-left text-primary opacity-50 me-2"></i>Stay calm. Think deeply. Act profoundly.</p>
-              
-              <p class="mb-4 fs-6 text-dark" style="line-height: 1.8;">Sahaj focuses predominantly on promoting lifelong inner peace, intense mental well-being, and serene maturity alongside outward community service. Senior final-year volunteers boldly engage in holistic mindfulness practices, beautifully serving as totally balanced models of emotional strength and pure harmony.</p>
-              
-              <h5 class="text-uppercase fw-bold text-dark mb-3 mt-2" style="font-size: 1.15rem; letter-spacing: 1px;"><i class="fa fa-user-tie me-2 text-primary"></i>Program Officer</h5>
-              <div class="row g-4 mb-4 justify-content-center">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-light p-3 rounded-4 shadow-sm border border-primary unit-head-card">
-                    <img src="img/home/suresh.jpeg" class="rounded-circle shadow-sm border border-primary border-3 me-3" style="width:70px; height:70px; object-fit: cover;" alt="Dr. S. Suresh" onerror="this.src='img/NSS_Logo.png'">
-                    <div>
-                      <h5 class="mb-1 fw-bold text-dark" style="font-size: 1.05rem;">Dr. S. Suresh</h5>
-                      <p class="mb-0 text-primary fw-bold small" style="font-size: 0.85rem;">Program Officer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <h5 class="text-uppercase fw-bold text-dark mb-4 mt-2" style="font-size: 1.1rem; letter-spacing: 1px;"><i class="fa fa-users me-2 text-primary"></i>Unit Heads</h5>
-              <div class="row g-3 justify-content-center">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/krishna.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">KRISHNA</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
-                    </div>
-                  </div>
-                </div>
-                
+                  <!-- CTA Button -->
+                  <a href="contact.html#contact" class="btn-cta-modern">
+                    <i class="fas fa-arrow-right"></i> Join Unit
+                  </a>
                 </div>
               </div>
             </div>
@@ -409,56 +621,124 @@
         </div>
       </section>
 
-      <!-- Unit 5: SEWA -->
-      <section class="unit-section units-py-6 pb-2 border-bottom border-light">
-        <div class="container scroll-anim fade-in-up">
-          <div class="row g-0 align-items-stretch bg-white rounded-4 shadow-sm overflow-hidden unit-card border border-light">
+      <!-- Unit 2: PRAYAS - Modern Redesign -->
+      <section class="unit-section units-py-6 pb-4">
+        <div class="container">
+          <div class="row g-4 scroll-anim fade-in-up align-items-stretch">
             <!-- Image Column -->
-            <div class="col-lg-5 position-relative overflow-hidden">
-              <img src="img/units/sewaunit.png" class="img-fluid w-100 h-100 unit-banner-img" style="object-fit: cover; min-height: 400px; transition: transform 0.5s ease;" alt="Unit Sewa" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='img/NSS_Logo.png'">
+            <div class="col-lg-5 order-lg-2">
+              <div class="unit-image-container">
+                <img src="img/units/prayas.png" alt="Unit Prayas - Take initiative and lead"
+                  onerror="this.src='img/NSS_Logo.png'">
+              </div>
             </div>
-            <!-- Content Column -->
-            <div class="col-lg-7 p-4 p-lg-5 d-flex flex-column justify-content-center glass-panel">
-              <div class="d-flex justify-content-between align-items-center mb-1">
-                <h2 class="display-6 fw-bold text-dark mb-0">SEWA</h2>
-                <span class="badge bg-light text-secondary rounded-pill py-2 px-3 fw-bold fst-italic shadow-sm fs-6 border border-secondary" style="color: #6c757d !important;">4th Year</span>
-              </div>
-              <p class="fw-bold text-primary mb-4" style="font-size: 0.95rem;"><i class="fa fa-quote-left text-primary opacity-50 me-2"></i>Give freely. Love endlessly. Uplift everyone.</p>
-              
-              <p class="mb-4 fs-6 text-dark" style="line-height: 1.8;">Sewa is passionately focused absolutely strictly around pure, active volunteering and immensely practical hands-on service. Our heavily experienced final-year volunteers dedicate themselves deeply to consistently teaching massive underprivileged sectors and successfully managing nationwide blood donation campaigns.</p>
-              
-              <h5 class="text-uppercase fw-bold text-dark mb-3 mt-2" style="font-size: 1.15rem; letter-spacing: 1px;"><i class="fa fa-user-tie me-2 text-primary"></i>Program Officer</h5>
-              <div class="row g-4 mb-4 justify-content-center">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-light p-3 rounded-4 shadow-sm border border-primary unit-head-card">
-                    <img src="img/home/than.jpeg" class="rounded-circle shadow-sm border border-primary border-3 me-3" style="width:70px; height:70px; object-fit: cover;" alt="Than Singh" onerror="this.src='img/NSS_Logo.png'">
-                    <div>
-                      <h5 class="mb-1 fw-bold text-dark" style="font-size: 1.05rem;">Than Singh</h5>
-                      <p class="mb-0 text-primary fw-bold small" style="font-size: 0.85rem;">Program Officer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <h5 class="text-uppercase fw-bold text-dark mb-4 mt-2" style="font-size: 1.1rem; letter-spacing: 1px;"><i class="fa fa-users me-2 text-primary"></i>Unit Heads</h5>
-              <div class="row g-3 justify-content-center">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/akansha.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;" alt="Unit Head">
+            <!-- Content Column -->
+            <div class="col-lg-7 order-lg-1">
+              <div class="unit-card-modern h-100">
+                <div class="unit-content-modern">
+                  <!-- Header with Title and Badge -->
+                  <div class="d-flex justify-content-between align-items-start mb-4">
                     <div>
-                      <h6 class="mb-0 fw-bold text-dark">AKANSHA</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
+                      <h2 class="unit-title-modern mb-2">Prayas</h2>
+                      <div class="unit-tagline">
+                        <i class="fas fa-rocket"></i>
+                        Take Initiative & Lead
+                      </div>
+                    </div>
+                    <div class="unit-header-badge" style="background: linear-gradient(135deg, #ff9800, #ff7043);">2nd
+                      Year</div>
+                  </div>
+
+                  <!-- Description -->
+                  <p class="unit-description">
+                    Prayas engages second-year students in robust community action through direct interaction and
+                    comprehensive awareness campaigns. Shift focus to tangible, impactful efforts. Execute small
+                    initiatives that create lasting positive change in local communities.
+                  </p>
+
+                  <!-- Program Officers Section -->
+                  <div class="mb-5">
+                    <div class="section-title-modern">
+                      <i class="fas fa-user-tie"></i>Program Officers
+                    </div>
+                    <div class="row g-3">
+                      <div class="col-md-6 col-12">
+                        <div class="officer-card-modern">
+                          <img src="img/home/dheeraj.jpeg" alt="Dheeraj Kumar Sharma" class="officer-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="officer-info">
+                            <h5>Dheeraj Kumar Sharma</h5>
+                            <p>Program Officer</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="officer-card-modern">
+                          <img src="img/home/CHILUKAMARI.jpeg" alt="Chilukumari Rajesh" class="officer-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="officer-info">
+                            <h5>Chilukumari Rajesh</h5>
+                            <p>Program Officer</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/mahesh.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;" alt="Unit Head">
-                    <div>
-                      <h6 class="mb-0 fw-bold text-dark">MAHESH</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
+
+                  <!-- Unit Heads Section -->
+                  <div class="mb-4">
+                    <div class="section-title-modern">
+                      <i class="fas fa-users"></i>Unit Leaders
+                    </div>
+                    <div class="row g-2">
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/PRAGYAN.jpeg" alt="Pragyan" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Pragyan</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/POORNIMA.jpeg" alt="Poornima" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Poornima</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/RAJSHRI.jpeg" alt="Rajshri Joga" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Rajshri Joga</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/AMIT.jpeg" alt="Amit Kumar" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Amit Kumar</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <!-- CTA Button -->
+                  <a href="contact.html#contact" class="btn-cta-modern">
+                    <i class="fas fa-arrow-right"></i> Join Unit
+                  </a>
                 </div>
               </div>
             </div>
@@ -466,49 +746,360 @@
         </div>
       </section>
 
-      <!-- Unit 6: SANSKAR -->
-      <section class="unit-section units-py-6 mb-5 border-bottom border-light">
-        <div class="container scroll-anim fade-in-up">
-          <div class="row g-0 align-items-stretch bg-white rounded-4 shadow-sm overflow-hidden unit-card border border-light">
+      <!-- Unit 3: SAHYOG - Modern Redesign -->
+      <section class="unit-section units-py-6 pb-4">
+        <div class="container">
+          <div class="row g-4 scroll-anim fade-in-up align-items-stretch">
             <!-- Image Column -->
-            <div class="col-lg-5 order-lg-2 position-relative overflow-hidden">
-              <img src="img/units/sanskar.png" class="img-fluid w-100 h-100 unit-banner-img" style="object-fit: cover; min-height: 400px; transition: transform 0.5s ease;" alt="Unit Sanskar" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='img/NSS_Logo.png'">
+            <div class="col-lg-5 order-lg-1">
+              <div class="unit-image-container">
+                <img src="img/units/sahyog.png" alt="Unit Sahyog - Collaborate and grow together"
+                  onerror="this.src='img/NSS_Logo.png'">
+              </div>
             </div>
-            <!-- Content Column -->
-            <div class="col-lg-7 order-lg-1 p-4 p-lg-5 d-flex flex-column justify-content-center glass-panel">
-              <div class="d-flex justify-content-between align-items-center mb-1">
-                <h2 class="display-6 fw-bold text-dark mb-0">SANSKAR</h2>
-                <span class="badge bg-light text-secondary rounded-pill py-2 px-3 fw-bold fst-italic shadow-sm fs-6 border border-secondary" style="color: #6c757d !important;">4th Year</span>
-              </div>
-              <p class="fw-bold text-primary mb-4" style="font-size: 0.95rem;"><i class="fa fa-quote-left text-primary opacity-50 me-2"></i>Maintain integrity. Elevate humanity. Champion virtue.</p>
-              
-              <p class="mb-4 fs-6 text-dark" style="line-height: 1.8;">Sanskar serves prominently as our highest hallmark of installing critically unmatched moral values and elite ethical conduct among veteran graduating leaders. Through profound cultural activities and sophisticated awareness sessions, it permanently solidifies remarkable robust character and intense personal integrity.</p>
-              
-              <h5 class="text-uppercase fw-bold text-dark mb-3 mt-2" style="font-size: 1.15rem; letter-spacing: 1px;"><i class="fa fa-user-tie me-2 text-primary"></i>Program Officer</h5>
-              <div class="row g-4 mb-4 justify-content-center">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-light p-3 rounded-4 shadow-sm border border-primary unit-head-card">
-                    <img src="img/home/yogita.jpeg" class="rounded-circle shadow-sm border border-primary border-3 me-3" style="width:70px; height:70px; object-fit: cover;" alt="Yogita" onerror="this.src='img/NSS_Logo.png'">
-                    <div>
-                      <h5 class="mb-1 fw-bold text-dark" style="font-size: 1.05rem;">Yogita</h5>
-                      <p class="mb-0 text-primary fw-bold small" style="font-size: 0.85rem;">Program Officer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <h5 class="text-uppercase fw-bold text-dark mb-4 mt-2" style="font-size: 1.1rem; letter-spacing: 1px;"><i class="fa fa-users me-2 text-primary"></i>Unit Heads</h5>
-              <div class="row g-3 justify-content-center">
-                <div class="col-md-6 col-12">
-                  <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border border-light unit-head-card">
-                    <img src="img/units/akhil.jpeg" class="rounded-circle shadow-sm border border-white border-2 me-3" style="width:60px; height:60px; object-fit: cover;" alt="Unit Head">
+            <!-- Content Column -->
+            <div class="col-lg-7 order-lg-2">
+              <div class="unit-card-modern h-100">
+                <div class="unit-content-modern">
+                  <!-- Header with Title and Badge -->
+                  <div class="d-flex justify-content-between align-items-start mb-4">
                     <div>
-                      <h6 class="mb-0 fw-bold text-dark">AKHIL MEENA</h6>
-                      <p class="mb-0 text-muted small" style="font-size: 0.85rem;">Unit Head</p>
+                      <h2 class="unit-title-modern mb-2">Sahyog</h2>
+                      <div class="unit-tagline">
+                        <i class="fas fa-handshake"></i>
+                        Collaborate & Grow
+                      </div>
+                    </div>
+                    <div class="unit-header-badge" style="background: linear-gradient(135deg, #07c3f4, #039be5);">3rd
+                      Year</div>
+                  </div>
+
+                  <!-- Description -->
+                  <p class="unit-description">
+                    Sahyog emphasizes active collaboration and strategic planning among third-year leaders. Engage in
+                    organizing major community events, conduct comprehensive surveys, and execute far-reaching awareness
+                    campaigns. Lead with vision and coordination.
+                  </p>
+
+                  <!-- Program Officers Section -->
+                  <div class="mb-5">
+                    <div class="section-title-modern">
+                      <i class="fas fa-user-tie"></i>Program Officers
+                    </div>
+                    <div class="row g-3">
+                      <div class="col-md-6 col-12">
+                        <div class="officer-card-modern">
+                          <img src="img/home/sidharth.jpeg" alt="Sidhartha Harichandan" class="officer-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="officer-info">
+                            <h5>Sidhartha Harichandan</h5>
+                            <p>Program Officer</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="officer-card-modern">
+                          <img src="img/home/AMANDEEP.jpeg" alt="Amandeep Kaur" class="officer-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="officer-info">
+                            <h5>Amandeep Kaur</h5>
+                            <p>Program Officer</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <!-- Unit Heads Section -->
+                  <div class="mb-4">
+                    <div class="section-title-modern">
+                      <i class="fas fa-users"></i>Unit Leaders
+                    </div>
+                    <div class="row g-2">
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/KARTARKULSHRESTH.jpeg" alt="Kartar Kulshresth" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Kartar Kulshresth</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/RAJMEENA.jpeg" alt="Raj Kumar Meena" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Raj Kumar Meena</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+      </section>
+
+      <!-- Unit 4: SEHAJ - Modern Redesign -->
+      <section class="unit-section units-py-6 pb-4">
+        <div class="container">
+          <div class="row g-4 scroll-anim fade-in-up align-items-stretch">
+            <!-- Image Column -->
+            <div class="col-lg-5 order-lg-2">
+              <div class="unit-image-container">
+                <img src="img/units/sehaj.png" alt="Unit Sehaj - Inner peace and balance"
+                  onerror="this.src='img/NSS_Logo.png'">
+              </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="col-lg-7 order-lg-1">
+              <div class="unit-card-modern h-100">
+                <div class="unit-content-modern">
+                  <!-- Header with Title and Badge -->
+                  <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div>
+                      <h2 class="unit-title-modern mb-2">Sehaj</h2>
+                      <div class="unit-tagline">
+                        <i class="fas fa-om"></i>
+                        Inner Peace & Balance
+                      </div>
+                    </div>
+                    <div class="unit-header-badge" style="background: linear-gradient(135deg, #9c27b0, #673ab7);">4th
+                      Year</div>
+                  </div>
+
+                  <!-- Description -->
+                  <p class="unit-description">
+                    Sehaj promotes lifelong inner peace and mental well-being. Senior final-year volunteers engage in
+                    holistic mindfulness practices, serving as balanced models of emotional strength. Create harmony
+                    within yourself and spread it throughout the community.
+                  </p>
+
+                  <!-- Program Officers Section -->
+                  <div class="mb-5">
+                    <div class="section-title-modern">
+                      <i class="fas fa-user-tie"></i>Program Officer
+                    </div>
+                    <div class="row g-3">
+                      <div class="col-md-6 col-12">
+                        <div class="officer-card-modern">
+                          <img src="img/home/suresh.jpeg" alt="Dr. S. Suresh" class="officer-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="officer-info">
+                            <h5>Dr. S. Suresh</h5>
+                            <p>Program Officer</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Unit Heads Section -->
+                  <div class="mb-4">
+                    <div class="section-title-modern">
+                      <i class="fas fa-users"></i>Unit Leaders
+                    </div>
+                    <div class="row g-2">
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/krishna.jpeg" alt="Krishna" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Krishna</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CTA Button -->
+                  <a href="contact.html#contact" class="btn-cta-modern">
+                    <i class="fas fa-arrow-right"></i> Join Unit
+                  </a>
                 </div>
-                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Unit 5: SEWA - Modern Redesign -->
+      <section class="unit-section units-py-6 pb-4">
+        <div class="container">
+          <div class="row g-4 scroll-anim fade-in-up align-items-stretch">
+            <!-- Image Column -->
+            <div class="col-lg-5 order-lg-1">
+              <div class="unit-image-container">
+                <img src="img/units/sewaunit.png" alt="Unit Sewa - Hands-on service"
+                  onerror="this.src='img/NSS_Logo.png'">
+              </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="col-lg-7 order-lg-2">
+              <div class="unit-card-modern h-100">
+                <div class="unit-content-modern">
+                  <!-- Header with Title and Badge -->
+                  <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div>
+                      <h2 class="unit-title-modern mb-2">Sewa</h2>
+                      <div class="unit-tagline">
+                        <i class="fas fa-hands-helping"></i>
+                        Give Freely & Serve All
+                      </div>
+                    </div>
+                    <div class="unit-header-badge" style="background: linear-gradient(135deg, #e91e63, #c2185b);">4th
+                      Year</div>
+                  </div>
+
+                  <!-- Description -->
+                  <p class="unit-description">
+                    Sewa focuses on active volunteering and practical hands-on service. Experienced final-year
+                    volunteers dedicate themselves to providing education to underprivileged sections and managing
+                    impactful blood donation campaigns. Make tangible differences through direct action.
+                  </p>
+
+                  <!-- Program Officers Section -->
+                  <div class="mb-5">
+                    <div class="section-title-modern">
+                      <i class="fas fa-user-tie"></i>Program Officer
+                    </div>
+                    <div class="row g-3">
+                      <div class="col-md-6 col-12">
+                        <div class="officer-card-modern">
+                          <img src="img/home/than.jpeg" alt="Than Singh" class="officer-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="officer-info">
+                            <h5>Than Singh</h5>
+                            <p>Program Officer</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Unit Heads Section -->
+                  <div class="mb-4">
+                    <div class="section-title-modern">
+                      <i class="fas fa-users"></i>Unit Leaders
+                    </div>
+                    <div class="row g-2">
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/akansha.jpeg" alt="Akansha" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Akansha</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/mahesh.jpeg" alt="Mahesh" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Mahesh</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CTA Button -->
+                  <a href="contact.html#contact" class="btn-cta-modern">
+                    <i class="fas fa-arrow-right"></i> Join Unit
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Unit 6: SANSKAR - Modern Redesign -->
+      <section class="unit-section units-py-6 pb-4">
+        <div class="container">
+          <div class="row g-4 scroll-anim fade-in-up align-items-stretch">
+            <!-- Image Column -->
+            <div class="col-lg-5 order-lg-2">
+              <div class="unit-image-container">
+                <img src="img/units/sanskar.png" alt="Unit Sanskar - Values and ethics"
+                  onerror="this.src='img/NSS_Logo.png'">
+              </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="col-lg-7 order-lg-1">
+              <div class="unit-card-modern h-100">
+                <div class="unit-content-modern">
+                  <!-- Header with Title and Badge -->
+                  <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div>
+                      <h2 class="unit-title-modern mb-2">Sanskar</h2>
+                      <div class="unit-tagline">
+                        <i class="fas fa-star"></i>
+                        Values & Integrity
+                      </div>
+                    </div>
+                    <div class="unit-header-badge" style="background: linear-gradient(135deg, #00897b, #00695c);">4th
+                      Year</div>
+                  </div>
+
+                  <!-- Description -->
+                  <p class="unit-description">
+                    Sanskar instills unmatched moral values and ethical conduct among graduating leaders. Through
+                    cultural activities and awareness sessions, develop robust character and personal integrity.
+                    Champion virtue and create lasting positive impact on society.
+                  </p>
+
+                  <!-- Program Officers Section -->
+                  <div class="mb-5">
+                    <div class="section-title-modern">
+                      <i class="fas fa-user-tie"></i>Program Officer
+                    </div>
+                    <div class="row g-3">
+                      <div class="col-md-6 col-12">
+                        <div class="officer-card-modern">
+                          <img src="img/home/yogita.jpeg" alt="Yogita" class="officer-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="officer-info">
+                            <h5>Yogita</h5>
+                            <p>Program Officer</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Unit Heads Section -->
+                  <div class="mb-4">
+                    <div class="section-title-modern">
+                      <i class="fas fa-users"></i>Unit Leaders
+                    </div>
+                    <div class="row g-2">
+                      <div class="col-md-6 col-12">
+                        <div class="unit-head-card-modern">
+                          <img src="img/units/akhil.jpeg" alt="Akhil Meena" class="unit-head-image"
+                            onerror="this.src='img/NSS_Logo.png'">
+                          <div class="unit-head-info">
+                            <h6>Akhil Meena</h6>
+                            <p>Unit Head</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CTA Button -->
+                  <a href="contact.html#contact" class="btn-cta-modern">
+                    <i class="fas fa-arrow-right"></i> Join Unit
+                  </a>
                 </div>
               </div>
             </div>
@@ -524,7 +1115,7 @@
     <div class="row g-5 px-lg-5">
       <!-- Column 1: About -->
       <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-        <a href="Home.html" class="navbar-brand mb-4 d-flex align-items-center">
+        <a href="index.html" class="navbar-brand mb-4 d-flex align-items-center">
           <img src="img/home/Logo_WHite_1.png" alt="NSS NIT KKR Logo" width="60" height="60" class="me-3">
           <h2 class="m-0 text-white" style="font-size: 1.5rem;">NSS NIT KKR</h2>
         </a>
@@ -545,7 +1136,7 @@
           <a class="social-icon" href="https://www.facebook.com/nss.nitkkr"><i class="fab fa-facebook-f"></i></a>
           <a class="social-icon" href="https://www.linkedin.com/company/nss-nit-kurukshetra/"><i
               class="fab fa-linkedin-in"></i></a>
-          <a class="social-icon" href="https://instagram.com/nss_nitkkr"><i class="fab fa-instagram"></i></a>
+          <a class="social-icon" href="https://www.instagram.com/nss_nitkkr?igsh=MWFrNWYyMzh4ZGVhNA==" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
 
@@ -553,13 +1144,16 @@
       <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
         <h4 class="text-white text-uppercase">Quick Links</h4>
         <div class="d-flex flex-column justify-content-start mt-4 pt-2">
-          <a class="mb-3 text-white-50" href="Home.html"><i class="fa fa-angle-right text-primary me-2"></i>Home</a>
-          <a class="mb-3 text-white-50" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About Us</a>
+          <a class="mb-3 text-white-50" href="index.html"><i class="fa fa-angle-right text-primary me-2"></i>Home</a>
+          <a class="mb-3 text-white-50" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About
+            Us</a>
           <a class="mb-3 text-white-50" href="units.html"><i class="fa fa-angle-right text-primary me-2"></i>Units</a>
           <a class="mb-3 text-white-50" href="events.html"><i class="fa fa-angle-right text-primary me-2"></i>Events</a>
           <a class="mb-3 text-white-50" href="Team.html"><i class="fa fa-angle-right text-primary me-2"></i>Team</a>
-          <a class="mb-3 text-white-50" href="nss-camp.html"><i class="fa fa-angle-right text-primary me-2"></i>NSS Camp</a>
-          <a class="mb-3 text-white-50" href="projects.html"><i class="fa fa-angle-right text-primary me-2"></i>Projects</a>
+          <a class="mb-3 text-white-50" href="nss-camp.html"><i class="fa fa-angle-right text-primary me-2"></i>NSS
+            Camp</a>
+          <a class="mb-3 text-white-50" href="projects.html"><i
+              class="fa fa-angle-right text-primary me-2"></i>Projects</a>
           <a class="text-white-50" href="contact.html"><i class="fa fa-angle-right text-primary me-2"></i>Contact</a>
         </div>
       </div>
@@ -567,7 +1161,8 @@
       <!-- Column 3: Newsletter -->
       <div class="col-lg-4 col-md-12">
         <h4 class="text-white text-uppercase">Newsletter</h4>
-        <p class="mt-4 pt-2 mb-4 text-white-50">Subscribe to our newsletter to receive the latest updates and news about our camps and projects.</p>
+        <p class="mt-4 pt-2 mb-4 text-white-50">Subscribe to our newsletter to receive the latest updates and news about
+          our camps and projects.</p>
         <div class="w-100 mt-2">
           <div class="input-group">
             <input type="email" class="form-control newsletter-input" style="padding: 15px;"
@@ -591,7 +1186,8 @@
   <!-- Footer End -->
 
   <!-- Back to Top -->
-  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top modern-solid-btn"><i class="bi bi-arrow-up"></i></a>
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top modern-solid-btn"><i
+      class="bi bi-arrow-up"></i></a>
 
   <!-- JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
