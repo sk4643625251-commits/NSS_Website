@@ -3,252 +3,35 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Our Cells | NSS NIT KKR</title>
+  <title>Our Team | NSS NIT KKR</title>
+  <meta name="description" content="Meet the dedicated team behind NSS NIT Kurukshetra – Program Officers, Secretaries, and Team Heads driving change through community service.">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=Syncopate:wght@400;700&display=swap"
-    rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg-dark: #0a1628;
-      --glass-card: rgba(255, 255, 255, 0.06);
-      --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-      --border-glow: rgba(255, 255, 255, 0.12);
-      --text-glow: 0 0 15px rgba(168, 85, 247, 0.4);
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: #f8fafc;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      margin: 0;
-      overflow-x: hidden;
-    }
-
-    /* 1. Animated Ambient Background */
-    .ambient-glow {
-      position: fixed;
-      width: 80vw;
-      height: 80vh;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
-      top: -20%;
-      left: -10%;
-      z-index: -1;
-      filter: blur(80px);
-      animation: moveGlow 20s infinite alternate;
-    }
-
-    .ambient-glow-2 {
-      position: fixed;
-      width: 60vw;
-      height: 60vh;
-      background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
-      bottom: -10%;
-      right: -10%;
-      z-index: -1;
-      filter: blur(80px);
-      animation: moveGlow 25s infinite alternate-reverse;
-    }
-
-    @keyframes moveGlow {
-      from { transform: translate(0, 0); }
-      to   { transform: translate(20%, 20%); }
-    }
-
-    /* 2. Sleek Header */
-    .page-header {
-      padding: 100px 0 60px;
-      text-align: center;
-    }
-
-    .main-title {
-      font-family: 'Syncopate', sans-serif;
-      font-weight: 700;
-      font-size: 3rem;
-      letter-spacing: 10px;
-      text-transform: uppercase;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
-    }
-
-    /* 3. The "Pretty" Glass Cards */
-    .team-card {
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      border-radius: 30px;
-      padding: 30px;
-      height: 100%;
-      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Subtle gradient bottom accent */
-    .team-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--accent-gradient);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      border-radius: 0 0 30px 30px;
-    }
-
-    .team-card:hover::after {
-      opacity: 1;
-    }
-
-    .team-card:hover {
-      transform: translateY(-12px);
-      background: rgba(255, 255, 255, 0.11);
-      border-color: rgba(168, 85, 247, 0.4);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(99,102,241,0.15);
-    }
-
-    /* 4. Image Styling with Gradient Overlay */
-    .img-container {
-      width: 100%;
-      height: 250px;
-      border-radius: 25px;
-      overflow: hidden;
-      margin-bottom: 25px;
-      position: relative;
-    }
-
-    .img-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: 0.8s ease;
-    }
-
-    .team-card:hover img {
-      transform: scale(1.15);
-    }
-
-    /* Soft colorful gradient overlay on images */
-    .img-container::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, transparent 40%, rgba(2, 6, 23, 0.8));
-    }
-
-    /* 5. Typography & Badges */
-    .cell-badge {
-      display: inline-block;
-      padding: 5px 15px;
-      border-radius: 50px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      background: var(--accent-gradient);
-      margin-bottom: 15px;
-      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
-    }
-
-    .cell-name {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin-bottom: 15px;
-      color: #fff;
-    }
-
-    .cell-description {
-      font-size: 0.95rem;
-      color: #c0cfe4;
-      line-height: 1.7;
-      font-weight: 300;
-    }
-
-    /* 6. Spacing */
-    .container-main {
-      padding-bottom: 120px;
-    }
-
-    /* Footer */
-    .footer-modern {
-      background: #060e1c;
-      color: #94a3b8;
-      padding: 80px 0 30px;
-      border-top: 4px solid;
-      border-image: var(--accent-gradient) 1;
-    }
-
-    .footer-bottom {
-      background: #040a14;
-      padding: 20px 0;
-    }
-
-    .social-icon {
-      width: 42px;
-      height: 42px;
-      background: rgba(255, 255, 255, 0.07);
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 6px;
-      color: #fff;
-      transition: 0.35s ease;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .social-icon:hover {
-      background: linear-gradient(135deg, #6366f1, #a855f7);
-      transform: rotate(360deg);
-      color: white;
-      border-color: transparent;
-    }
-  </style>
   <link href="css/responsive.css" rel="stylesheet" />
+  <link href="css/team.css" rel="stylesheet" />
+
 </head>
 
 <body>
-  <div class="ambient-glow"></div>
-  <div class="ambient-glow-2"></div>
 
-  <style>
-    /* Cinematic Navbar Upgrade */
-    .navbar-glass {
-      background: rgba(2, 6, 23, 0.7) !important;
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      transition: all 0.4s ease;
-    }
-    .navbar-glass .nav-link { color: #ffffff !important; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; }
-    .navbar-glass .nav-link:hover, .navbar-glass .nav-link.active { color: #a855f7 !important; }
-    .navbar-glass .navbar-brand h2 { color: #ffffff !important; }
-    .navbar-glass .navbar-brand p { color: #94a3b8 !important; }
-    .navbar-glass .navbar-toggler-icon { filter: invert(1); }
-    .hero-link-hover { transition: all 0.3s ease; display: inline-block; }
-    .hero-link-hover:hover { color: #6366f1 !important; transform: translateX(8px); }
-  </style>
+  <!-- ── Ambient Background ── -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════ -->
   <nav class="navbar navbar-expand-lg navbar-glass shadow-sm sticky-top py-3 px-4 px-lg-5">
     <a href="index.html" class="navbar-brand d-flex align-items-center">
-      <img src="img/home/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2" onerror="this.src='img/Logo_White_1.png'" />
+      <img src="img/home/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2"
+           onerror="this.src='img/Logo_White_1.png'" />
       <div class="d-flex flex-column text-start justify-content-center">
-        <h2 class="m-0 text-white fs-5 fw-bold" style="font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.2;">National Service Scheme</h2>
-        <p class="m-0" style="font-size: 0.85rem; letter-spacing: 0.5px; line-height: 1; font-family: 'Plus Jakarta Sans', sans-serif; color: #94a3b8;">Kurukshetra</p>
+        <h2 class="m-0 text-white fs-5 fw-bold" style="font-family:'Plus Jakarta Sans',sans-serif;line-height:1.2;">National Service Scheme</h2>
+        <p class="m-0" style="font-size:0.82rem;letter-spacing:0.5px;font-family:'Plus Jakarta Sans',sans-serif;color:#94a3b8;">Kurukshetra</p>
       </div>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -256,111 +39,528 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0 fw-bold align-items-center">
-        <a href="index.html" class="nav-item nav-link">Home</a>
-        <a href="about.html" class="nav-item nav-link">About</a>
-        <a href="units.html" class="nav-item nav-link">Units</a>
-        <a href="events.html" class="nav-item nav-link">Events</a>
-        <a href="Team.html" class="nav-item nav-link active">Team</a>
+        <a href="index.html"    class="nav-item nav-link">Home</a>
+        <a href="about.html"   class="nav-item nav-link">About</a>
+        <a href="units.html"   class="nav-item nav-link">Units</a>
+        <a href="events.html"  class="nav-item nav-link">Events</a>
+        <a href="Team.html"    class="nav-item nav-link active">Team</a>
         <a href="nss-camp.html" class="nav-item nav-link">NSS Camp</a>
         <a href="projects.html" class="nav-item nav-link">Projects</a>
         <a href="newspaper.html" class="nav-item nav-link">Media</a>
       </div>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 ms-lg-3 d-none d-lg-block" style="background: linear-gradient(135deg, #6366f1, #a855f7); border: none; border-radius: 50px;">Contact</a>
-      <a href="contact.html#contact" class="btn btn-primary py-2 px-4 mt-2 mb-2 d-lg-none w-100" style="background: linear-gradient(135deg, #6366f1, #a855f7); border: none; border-radius: 50px;">Contact</a>
+      <a href="contact.html#contact" class="btn py-2 px-4 ms-lg-3 d-none d-lg-block"
+         style="background:linear-gradient(135deg,#6366f1,#a855f7);border:none;border-radius:50px;color:#fff;font-weight:600;">Contact</a>
+      <a href="contact.html#contact" class="btn py-2 px-4 mt-2 mb-2 d-lg-none w-100"
+         style="background:linear-gradient(135deg,#6366f1,#a855f7);border:none;border-radius:50px;color:#fff;font-weight:600;">Contact</a>
     </div>
   </nav>
 
+  <!-- ═══════════════════════════════════════════════
+       PAGE HEADER
+  ═══════════════════════════════════════════════ -->
   <header class="page-header">
     <div class="container">
-      <h1 class="main-title">Our Teams</h1>
-      <p style="color: #64748b; letter-spacing: 3px; font-weight: 300;">THE WINGS OF IMPACT</p>
+      <span class="eyebrow">NSS NIT Kurukshetra</span>
+      <h1 class="main-title">Our Team</h1>
+      <p class="subtitle">THE WINGS OF IMPACT</p>
     </div>
   </header>
 
+  <!-- ═══════════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════════ -->
   <main class="container container-main">
-    <div class="row g-5">
-      <div class="col-lg-4 col-md-6">
-        <div class="team-card">
-          <div class="img-container">
-            <img src="img/Teams/content.jpg" alt="Content">
-          </div>
-          <span class="cell-badge">Creative</span>
-          <h3 class="cell-name">Content Cell</h3>
-          <p class="cell-description">Drafting the voice of NSS. We specialize in storytelling, scripting, and
-            documenting the journey of change.</p>
+
+    <!-- ────────────────────────────────────────────
+         PROGRAM OFFICERS  (Faculty Leadership)
+    ──────────────────────────────────────────── -->
+    <section class="team-section" id="program-officers">
+      <div class="section-label">
+        <div class="label-inner">
+          <h2>Program Officers</h2>
+          <p class="officers-in-charge">Faculty Leadership &nbsp;|&nbsp; NSS NIT Kurukshetra</p>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6">
-        <div class="team-card">
-          <div class="img-container">
-            <img src="img/Teams/Edu.png" alt="Education">
+      <div class="row g-4 justify-content-center">
+
+        <!-- Dr. Yogita -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card po-card" id="card-dr-yogita">
+            <span class="role-badge badge-po">NSS PO</span>
+            <div class="avatar-wrap">
+              <img src="img/team/dr_yogita.jpg" alt="Dr. Yogita"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">YG</div>
+            </div>
+            <p class="profile-name">Dr. Yogita</p>
+            <p class="profile-role">NSS Program Officer</p>
+            <span class="po-allotment"><i class="fas fa-circle-dot"></i> Design Team</span>
           </div>
-          <span class="cell-badge">Empowerment</span>
-          <h3 class="cell-name">Education Cell</h3>
-          <p class="cell-description">Igniting minds in rural areas. Our mission is to bridge the educational gap
-            through consistent teaching drives.</p>
+        </div>
+
+        <!-- Dr. Than Singh -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card po-card" id="card-dr-than-singh">
+            <span class="role-badge badge-po">NSS PO</span>
+            <div class="avatar-wrap">
+              <img src="img/team/dr_than_singh.jpg" alt="Dr. Than Singh"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">TS</div>
+            </div>
+            <p class="profile-name">Dr. Than Singh</p>
+            <p class="profile-role">NSS Program Officer</p>
+            <span class="po-allotment"><i class="fas fa-circle-dot"></i> Content Team</span>
+          </div>
+        </div>
+
+        <!-- Dr. Sidhartha Harichandan -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card po-card" id="card-dr-sidhartha">
+            <span class="role-badge badge-po">NSS PO</span>
+            <div class="avatar-wrap">
+              <img src="img/team/dr_sidhartha.jpg" alt="Dr. Sidhartha Harichandan"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">SH</div>
+            </div>
+            <p class="profile-name">Dr. Sidhartha Harichandan</p>
+            <p class="profile-role">NSS Program Officer</p>
+            <span class="po-allotment"><i class="fas fa-circle-dot"></i> Content Team</span>
+          </div>
+        </div>
+
+        <!-- Dr. Vaibhav -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card po-card" id="card-dr-vaibhav">
+            <span class="role-badge badge-po">NSS PO</span>
+            <div class="avatar-wrap">
+              <img src="img/team/dr_vaibhav.jpg" alt="Dr. Vaibhav"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">VB</div>
+            </div>
+            <p class="profile-name">Dr. Vaibhav</p>
+            <p class="profile-role">NSS Program Officer</p>
+            <span class="po-allotment"><i class="fas fa-circle-dot"></i> Event Management</span>
+          </div>
+        </div>
+
+        <!-- Dr. Sweeti Sah -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card po-card" id="card-dr-sweeti">
+            <span class="role-badge badge-po">NSS PO</span>
+            <div class="avatar-wrap">
+              <img src="img/team/dr_sweeti_sah.jpg" alt="Dr. Sweeti Sah"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">SS</div>
+            </div>
+            <p class="profile-name">Dr. Sweeti Sah</p>
+            <p class="profile-role">NSS Program Officer</p>
+            <span class="po-allotment"><i class="fas fa-circle-dot"></i> Event Management</span>
+          </div>
+        </div>
+
+        <!-- Dr. S Suresh -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card po-card" id="card-dr-suresh">
+            <span class="role-badge badge-po">NSS PO</span>
+            <div class="avatar-wrap">
+              <img src="img/team/dr_s_suresh.jpg" alt="Dr. S Suresh"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">SR</div>
+            </div>
+            <p class="profile-name">Dr. S Suresh</p>
+            <p class="profile-role">NSS Program Officer</p>
+            <span class="po-allotment"><i class="fas fa-circle-dot"></i> Social Media Team</span>
+          </div>
+        </div>
+
+        <!-- Dr. Amandeep -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card po-card" id="card-dr-amandeep">
+            <span class="role-badge badge-po">NSS PO</span>
+            <div class="avatar-wrap">
+              <img src="img/team/dr_amandeep.jpg" alt="Dr. Amandeep"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">AD</div>
+            </div>
+            <p class="profile-name">Dr. Amandeep</p>
+            <p class="profile-role">NSS Program Officer</p>
+            <span class="po-allotment"><i class="fas fa-circle-dot"></i> Web Development</span>
+          </div>
+        </div>
+
+        <!-- Dr. Chilukamari Rajesh -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card po-card" id="card-dr-rajesh">
+            <span class="role-badge badge-po">NSS PO</span>
+            <div class="avatar-wrap">
+              <img src="img/team/dr_rajesh.jpg" alt="Dr. Chilukamari Rajesh"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">CR</div>
+            </div>
+            <p class="profile-name">Dr. Chilukamari Rajesh</p>
+            <p class="profile-role">NSS Program Officer</p>
+            <span class="po-allotment"><i class="fas fa-circle-dot"></i> Web Development</span>
+          </div>
+        </div>
+
+      </div><!-- /PO row -->
+    </section>
+
+    <div class="team-divider mt-5"></div>
+
+    <!-- ────────────────────────────────────────────
+         DESIGN TEAM
+    ──────────────────────────────────────────── -->
+    <section class="team-section" id="design-team">
+      <div class="section-label">
+        <div class="label-inner">
+          <h2>Design Team</h2>
+          <p class="officers-in-charge">Officer In-Charge: Dr. Yogita</p>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6">
-        <div class="team-card">
-          <div class="img-container">
-            <img src="img/Teams/Design.png" alt="Design">
+      <div class="row g-4 justify-content-center">
+
+        <!-- Dev Goel – Secretary -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card secretary-card" id="card-dev-goel">
+            <span class="role-badge badge-secretary">Secretary</span>
+            <div class="avatar-wrap">
+              <img src="img/team/dev_goel.jpg" alt="Dev Goel"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">DG</div>
+            </div>
+            <p class="profile-name">Dev Goel</p>
+            <p class="profile-role">Secretary</p>
           </div>
-          <span class="cell-badge">Visuals</span>
-          <h3 class="cell-name">Design Cell</h3>
-          <p class="cell-description">The artists behind the movement. We create the visual assets that communicate our
-            values to the world.</p>
+        </div>
+
+        <!-- Vaishnavi Lanjewar – Team Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-vaishnavi">
+            <span class="role-badge badge-head">Team Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/vaishnavi_lanjewar.jpg" alt="Vaishnavi Lanjewar"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">VL</div>
+            </div>
+            <p class="profile-name">Vaishnavi Lanjewar</p>
+            <p class="profile-role">Team Head</p>
+          </div>
+        </div>
+
+        <!-- Gagandeep – Team Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-gagandeep">
+            <span class="role-badge badge-head">Team Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/gagandeep.jpg" alt="Gagandeep"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">GD</div>
+            </div>
+            <p class="profile-name">Gagandeep</p>
+            <p class="profile-role">Team Head</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="team-divider mt-5"></div>
+
+    <!-- ────────────────────────────────────────────
+         CONTENT TEAM
+    ──────────────────────────────────────────── -->
+    <section class="team-section" id="content-team">
+      <div class="section-label">
+        <div class="label-inner">
+          <h2>Content Team</h2>
+          <p class="officers-in-charge">Officers In-Charge: Dr. Than Singh &amp; Dr. Sidhartha Harichandan</p>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6">
-        <div class="team-card">
-          <div class="img-container">
-            <img src="img/Teams/WebDesign.png" alt="Web">
+      <div class="row g-4 justify-content-center">
+
+        <!-- Santosh Kumar – Secretary -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card secretary-card" id="card-santosh">
+            <span class="role-badge badge-secretary">Secretary</span>
+            <div class="avatar-wrap">
+              <img src="img/team/santosh_kumar.jpg" alt="Santosh Kumar"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">SK</div>
+            </div>
+            <p class="profile-name">Santosh Kumar</p>
+            <p class="profile-role">Secretary</p>
           </div>
-          <span class="cell-badge">Technology</span>
-          <h3 class="cell-name">Web Cell</h3>
-          <p class="cell-description">Builders of the digital grid. We manage the online presence and technical
-            infrastructure of NSS NIT KKR.</p>
+        </div>
+
+        <!-- Harsh Pandey – Team Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-harsh">
+            <span class="role-badge badge-head">Team Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/harsh_pandey.jpg" alt="Harsh Pandey"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">HP</div>
+            </div>
+            <p class="profile-name">Harsh Pandey</p>
+            <p class="profile-role">Team Head</p>
+          </div>
+        </div>
+
+        <!-- Hutashah Sharma – Team Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-hutashah">
+            <span class="role-badge badge-head">Team Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/hutashah_sharma.jpg" alt="Hutashah Sharma"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">HS</div>
+            </div>
+            <p class="profile-name">Hutashah Sharma</p>
+            <p class="profile-role">Team Head</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="team-divider mt-5"></div>
+
+    <!-- ────────────────────────────────────────────
+         EVENT MANAGEMENT TEAM
+    ──────────────────────────────────────────── -->
+    <section class="team-section" id="event-team">
+      <div class="section-label">
+        <div class="label-inner">
+          <h2>Event Management Team</h2>
+          <p class="officers-in-charge">Officers In-Charge: Dr. Vaibhav &amp; Dr. Sweeti Sah</p>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6">
-        <div class="team-card">
-          <div class="img-container">
-            <img src="img/Teams/Env.png" alt="Environment">
+      <div class="row g-4 justify-content-center">
+
+        <!-- Adarsh Singh – Secretary -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card secretary-card" id="card-adarsh">
+            <span class="role-badge badge-secretary">Secretary</span>
+            <div class="avatar-wrap">
+              <img src="img/team/adarsh_singh.jpg" alt="Adarsh Singh"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">AS</div>
+            </div>
+            <p class="profile-name">Adarsh Singh</p>
+            <p class="profile-role">Secretary</p>
           </div>
-          <span class="cell-badge">Sustainable</span>
-          <h3 class="cell-name">Green Cell</h3>
-          <p class="cell-description">Advocating for Mother Earth. Our focus lies in plantation drives and spreading
-            ecological awareness.</p>
+        </div>
+
+        <!-- Sagar Panchal – Team Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-sagar">
+            <span class="role-badge badge-head">Team Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/sagar_panchal.jpg" alt="Sagar Panchal"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">SP</div>
+            </div>
+            <p class="profile-name">Sagar Panchal</p>
+            <p class="profile-role">Team Head</p>
+          </div>
+        </div>
+
+        <!-- Krishna – Team Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-krishna">
+            <span class="role-badge badge-head">Team Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/krishna.jpg" alt="Krishna"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">KR</div>
+            </div>
+            <p class="profile-name">Krishna</p>
+            <p class="profile-role">Team Head</p>
+          </div>
+        </div>
+
+        <!-- Rahul – Team Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-rahul">
+            <span class="role-badge badge-head">Team Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/rahul.jpg" alt="Rahul"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">RL</div>
+            </div>
+            <p class="profile-name">Rahul</p>
+            <p class="profile-role">Team Head</p>
+          </div>
+        </div>
+
+        <!-- Tanish – Team Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-tanish">
+            <span class="role-badge badge-head">Team Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/tanish.jpg" alt="Tanish"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">TN</div>
+            </div>
+            <p class="profile-name">Tanish</p>
+            <p class="profile-role">Team Head</p>
+          </div>
+        </div>
+
+        <!-- Kranti – Team Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-kranti">
+            <span class="role-badge badge-head">Team Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/kranti.jpg" alt="Kranti"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">KT</div>
+            </div>
+            <p class="profile-name">Kranti</p>
+            <p class="profile-role">Team Head</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="team-divider mt-5"></div>
+
+    <!-- ────────────────────────────────────────────
+         SOCIAL MEDIA TEAM
+    ──────────────────────────────────────────── -->
+    <section class="team-section" id="social-media-team">
+      <div class="section-label">
+        <div class="label-inner">
+          <h2>Social Media Team</h2>
+          <p class="officers-in-charge">Officer In-Charge: Dr. S Suresh</p>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6">
-        <div class="team-card">
-          <div class="img-container">
-            <img src="img/Teams/Sports.png" alt="Sports">
+      <div class="row g-4 justify-content-center">
+
+        <!-- Abhishek Sharma – Secretary -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card secretary-card" id="card-abhishek">
+            <span class="role-badge badge-secretary">Secretary</span>
+            <div class="avatar-wrap">
+              <img src="img/team/abhishek_sharma.jpg" alt="Abhishek Sharma"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">AB</div>
+            </div>
+            <p class="profile-name">Abhishek Sharma</p>
+            <p class="profile-role">Secretary</p>
           </div>
-          <span class="cell-badge">Kinetic</span>
-          <h3 class="cell-name">Sports Cell</h3>
-          <p class="cell-description">Fostering unity through fitness. We organize events that use the power of sport to
-            bring communities together.</p>
+        </div>
+
+        <!-- Chandana – Team Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-chandana">
+            <span class="role-badge badge-head">Team Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/chandana.jpg" alt="Chandana"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">CD</div>
+            </div>
+            <p class="profile-name">Chandana</p>
+            <p class="profile-role">Team Head</p>
+          </div>
+        </div>
+
+        <!-- Ronit – Team Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-ronit">
+            <span class="role-badge badge-head">Team Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/ronit.jpg" alt="Ronit"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">RN</div>
+            </div>
+            <p class="profile-name">Ronit</p>
+            <p class="profile-role">Team Head</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="team-divider mt-5"></div>
+
+    <!-- ────────────────────────────────────────────
+         WEB DEVELOPMENT TEAM
+    ──────────────────────────────────────────── -->
+    <section class="team-section" id="web-team">
+      <div class="section-label">
+        <div class="label-inner">
+          <h2>Web Development Team</h2>
+          <p class="officers-in-charge">Officers In-Charge: Dr. Amandeep &amp; Dr. Chilukamari Rajesh</p>
         </div>
       </div>
-    </div>
-  </main>
 
-  <!-- Footer Start -->
+      <div class="row g-4 justify-content-center">
+
+        <!-- Komal Yadav – Secretary -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card secretary-card" id="card-komal">
+            <span class="role-badge badge-secretary">Secretary</span>
+            <div class="avatar-wrap">
+              <img src="img/team/komal_yadav.jpg" alt="Komal Yadav"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">KY</div>
+            </div>
+            <p class="profile-name">Komal Yadav</p>
+            <p class="profile-role">Secretary</p>
+          </div>
+        </div>
+
+        <!-- Radhika Jindal – Unit Head -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-radhika">
+            <span class="role-badge badge-head">Unit Head</span>
+            <div class="avatar-wrap">
+              <img src="img/team/radhika_jindal.jpg" alt="Radhika Jindal"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">RJ</div>
+            </div>
+            <p class="profile-name">Radhika Jindal</p>
+            <p class="profile-role">Unit Head</p>
+          </div>
+        </div>
+
+        <!-- Subodh Kumar – Team Member -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div class="profile-card" id="card-subodh">
+            <span class="role-badge badge-member">Team Member</span>
+            <div class="avatar-wrap">
+              <img src="img/team/subodh_kumar.jpg" alt="Subodh Kumar"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="avatar-initials" style="display:none;">SK</div>
+            </div>
+            <p class="profile-name">Subodh Kumar</p>
+            <p class="profile-role">Team Member</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- /container-main -->
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
   <div class="container-fluid footer-modern py-5 mt-auto">
     <div class="row g-5 px-lg-5">
       <!-- Column 1: About -->
       <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
         <a href="index.html" class="navbar-brand mb-4 d-flex align-items-center">
           <img src="img/home/Logo_WHite_1.png" alt="NSS NIT KKR Logo" width="60" height="60" class="me-3">
-          <h2 class="m-0 text-white" style="font-size: 1.5rem;">NSS NIT KKR</h2>
+          <h2 class="m-0 text-white" style="font-size:1.5rem;">NSS NIT KKR</h2>
         </a>
         <p class="mb-4 text-white-50">
           Striving for the purpose of bringing peace and harmony by inculcating every individual with the spirit
@@ -377,8 +577,7 @@
         <div class="d-flex mt-4">
           <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
           <a class="social-icon" href="https://www.facebook.com/nss.nitkkr"><i class="fab fa-facebook-f"></i></a>
-          <a class="social-icon" href="https://www.linkedin.com/company/nss-nit-kurukshetra/"><i
-              class="fab fa-linkedin-in"></i></a>
+          <a class="social-icon" href="https://www.linkedin.com/company/nss-nit-kurukshetra/"><i class="fab fa-linkedin-in"></i></a>
           <a class="social-icon" href="https://www.instagram.com/nss_nitkkr?igsh=MWFrNWYyMzh4ZGVhNA==" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
@@ -388,15 +587,12 @@
         <h4 class="text-white text-uppercase">Quick Links</h4>
         <div class="d-flex flex-column justify-content-start mt-4 pt-2">
           <a class="mb-3 text-white-50" href="index.html"><i class="fa fa-angle-right text-primary me-2"></i>Home</a>
-          <a class="mb-3 text-white-50" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About
-            Us</a>
+          <a class="mb-3 text-white-50" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About Us</a>
           <a class="mb-3 text-white-50" href="units.html"><i class="fa fa-angle-right text-primary me-2"></i>Units</a>
           <a class="mb-3 text-white-50" href="events.html"><i class="fa fa-angle-right text-primary me-2"></i>Events</a>
           <a class="mb-3 text-white-50" href="Team.html"><i class="fa fa-angle-right text-primary me-2"></i>Team</a>
-          <a class="mb-3 text-white-50" href="nss-camp.html"><i class="fa fa-angle-right text-primary me-2"></i>NSS
-            Camp</a>
-          <a class="mb-3 text-white-50" href="projects.html"><i
-              class="fa fa-angle-right text-primary me-2"></i>Projects</a>
+          <a class="mb-3 text-white-50" href="nss-camp.html"><i class="fa fa-angle-right text-primary me-2"></i>NSS Camp</a>
+          <a class="mb-3 text-white-50" href="projects.html"><i class="fa fa-angle-right text-primary me-2"></i>Projects</a>
           <a class="text-white-50" href="contact.html"><i class="fa fa-angle-right text-primary me-2"></i>Contact</a>
         </div>
       </div>
@@ -404,13 +600,11 @@
       <!-- Column 3: Newsletter -->
       <div class="col-lg-4 col-md-12">
         <h4 class="text-white text-uppercase">Newsletter</h4>
-        <p class="mt-4 pt-2 mb-4 text-white-50">Subscribe to our newsletter to receive the latest updates and news about
-          our camps and projects.</p>
+        <p class="mt-4 pt-2 mb-4 text-white-50">Subscribe to receive the latest updates and news about our camps and projects.</p>
         <div class="w-100 mt-2">
           <div class="input-group">
-            <input type="email" class="form-control newsletter-input" style="padding: 15px;"
-              placeholder="Your Email Address">
-            <button class="btn btn-primary px-4 fw-bold modern-solid-btn">Sign Up</button>
+            <input type="email" class="form-control" style="padding:15px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#fff;" placeholder="Your Email Address">
+            <button class="btn px-4 fw-bold" style="background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;border:none;">Sign Up</button>
           </div>
         </div>
       </div>
@@ -418,16 +612,14 @@
   </div>
   <div class="container-fluid footer-bottom text-white-50">
     <div class="container text-center">
-      <p class="mb-0">
-        &copy; <a class="text-white fw-bold" href="#">NSS NIT Kurukshetra</a>. All Rights Reserved.
-      </p>
-      <p class="mb-0 mt-1" style="font-size: 13px;">
-        Designed by <a class="text-white opacity-75" href="#">Shivam & NSS Web Team</a>
-      </p>
+      <p class="mb-0">&copy; <a class="text-white fw-bold" href="#">NSS NIT Kurukshetra</a>. All Rights Reserved.</p>
+      <p class="mb-0 mt-1" style="font-size:13px;">Designed by <a class="text-white opacity-75" href="#">Shivam &amp; NSS Web Team</a></p>
     </div>
   </div>
   <!-- Footer End -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/team.js"></script>
 </body>
 
 </html>
