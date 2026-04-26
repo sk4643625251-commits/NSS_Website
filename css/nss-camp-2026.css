@@ -191,9 +191,12 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.4s ease;
   width: 100%;
-  position: sticky !important;
+  position: fixed !important;
   top: 0 !important;
   z-index: 1050 !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  min-height: 80px !important;
 }
 
 .navbar-glass .nav-link {
