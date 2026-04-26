@@ -427,3 +427,66 @@ body {
     font-size: 1.2rem;
     line-height: 1;
 }
+
+/* ===== PROJECT SHOWCASE ENHANCEMENTS ===== */
+
+/* Category Header Banner */
+.showcase-category-header {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px 32px;
+    backdrop-filter: blur(10px);
+    border-left: 4px solid rgba(46, 204, 113, 0.5);
+    margin-top: 3rem;
+}
+
+/* Category Icon Circle */
+.showcase-cat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Bullet Point Rows inside cards */
+.showcase-points {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.showcase-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+}
+
+.showcase-point i {
+    font-size: 0.9rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .showcase-category-header {
+        padding: 20px;
+    }
+    .showcase-cat-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+}
