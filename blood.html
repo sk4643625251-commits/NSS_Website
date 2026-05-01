@@ -42,9 +42,14 @@
     .navbar-glass .navbar-toggler-icon { filter: invert(1); }
   </style>
   <link href="css/responsive.css" rel="stylesheet" />
+  <!-- Go Back CSS -->
+  <link href="css/go-back.css" rel="stylesheet" />
 </head>
 
 <body>
+  <!-- Universal Go Back Button -->
+  <button onclick="goBack()" class="universal-go-back-btn"><i class="fa fa-arrow-left"></i> Go back</button>
+
 
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar navbar-expand-lg navbar-glass shadow-sm sticky-top py-3 px-4 px-lg-5">
@@ -539,5 +544,7 @@
     if (statsEl) observer.observe(statsEl);
   </script>
 
+  <!-- Go Back JS -->
+  <script src="js/go-back.js"></script>
 </body>
 </html>

@@ -209,9 +209,14 @@
   </style>
 
   <link href="css/responsive.css" rel="stylesheet" />
+  <!-- Go Back CSS -->
+  <link href="css/go-back.css" rel="stylesheet" />
 </head>
 
 <body>
+  <!-- Universal Go Back Button -->
+  <button onclick="goBack()" class="universal-go-back-btn"><i class="fa fa-arrow-left"></i> Go back</button>
+
   <div class="bg-glow glow-1"></div>
   <div class="bg-glow glow-2"></div>
 
@@ -391,6 +396,8 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+  <!-- Go Back JS -->
+  <script src="js/go-back.js"></script>
 </body>
 
 </html>
