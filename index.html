@@ -41,11 +41,15 @@
   <!-- Contributors Stylesheet -->
   <link href="css/contributors.css" rel="stylesheet" />
   <link href="css/leaders-contributors.css" rel="stylesheet" />
+  <!-- Go Back CSS -->
+  <link href="css/go-back.css" rel="stylesheet" />
 
 </head>
 
 <body class="d-flex flex-column min-vh-100">
 
+  <!-- Universal Go Back Button -->
+  <button onclick="goBack()" class="universal-go-back-btn"><i class="fa fa-arrow-left"></i> Go back</button>
 
   <script>
     function darkMode() {
@@ -632,95 +636,268 @@
   </script>
   <!-- ============================================ -->
 
+
   <!-- ============================================
-     BLOOD DONATION CTA SECTION
-     ============================================ -->
+       VOLUNTEER CTA SECTION — Redesigned
+       ============================================ -->
   <style>
-    .blood-cta-section {
-      background: linear-gradient(135deg, #f0f7ff 0%, #d9edff 100%);
+    /* ---- Volunteer Hero Section ---- */
+    .volunteer-cta-section {
+      position: relative;
+      background: linear-gradient(rgba(4, 10, 35, 0.88), rgba(4, 10, 35, 0.92)),
+                  url('img/home/donor.jpeg') center center / cover no-repeat fixed;
+      padding: 110px 0 90px;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Glow orbs */
+    .volunteer-cta-section::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(220,53,69,0.12) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
+    }
+    .volunteer-cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .volunteer-cta-inner { position: relative; z-index: 1; }
+
+    /* Badge pill */
+    .vol-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(220, 53, 69, 0.15);
+      border: 1px solid rgba(220, 53, 69, 0.35);
+      color: #ff6b7a;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 7px 20px;
+      border-radius: 50px;
+      margin-bottom: 22px;
+    }
+    .vol-badge-dot {
+      width: 7px; height: 7px;
+      background: #ff6b7a;
+      border-radius: 50%;
+      animation: pulse-dot 1.6s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.4); }
+    }
+
+    /* Heading */
+    .vol-heading {
       font-family: 'Poppins', sans-serif;
-    }
-
-    .blood-cta-heading {
-      color: #003366;
       font-weight: 800;
-      letter-spacing: -1px;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    .vol-heading span { color: #ff6b7a; }
+
+    .vol-sub {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    .btn-blood-primary {
-      background: #dc3545;
+    /* Stat badges row */
+    .vol-stats { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 36px 0; }
+    .vol-stat-pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 14px 26px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      min-width: 130px;
+      transition: transform 0.3s ease;
+    }
+    .vol-stat-pill:hover { transform: translateY(-5px); border-color: rgba(220,53,69,0.35); }
+    .vol-stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #ffffff;
+      display: block;
+    }
+    .vol-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; }
+
+    /* Service cards */
+    .vol-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin: 48px 0; }
+    .vol-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      transition: all 0.35s ease;
+      cursor: default;
+    }
+    .vol-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(220,53,69,0.35);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(220,53,69,0.1);
+    }
+    .vol-card-icon {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 18px;
+    }
+    .vol-card-icon.red   { background: rgba(220,53,69,0.15);  color: #ff6b7a; }
+    .vol-card-icon.blue  { background: rgba(99,102,241,0.15); color: #a78bfa; }
+    .vol-card-icon.green { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+    .vol-card h5 { color: #fff; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+    .vol-card p  { color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.6; margin: 0; }
+
+    /* CTA buttons */
+    .btn-vol-primary {
+      background: linear-gradient(135deg, #dc3545, #b91c1c);
       border: none;
       color: #fff;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
       transition: all 0.3s ease;
+      box-shadow: 0 6px 25px rgba(220,53,69,0.35);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
-
-    .btn-blood-primary:hover {
-      background: #bb2d3b;
+    .btn-vol-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(220,53,69,0.5);
       color: #fff;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(220, 53, 69, 0.3) !important;
     }
-
-    .btn-blood-secondary {
-      border: 2px solid #5a7184;
-      color: #5a7184;
+    .btn-vol-secondary {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 15px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
       transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      backdrop-filter: blur(8px);
     }
-
-    .btn-blood-secondary:hover {
-      background: #5a7184;
+    .btn-vol-secondary:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.4);
+      transform: translateY(-4px);
       color: #fff;
-      transform: translateY(-2px);
     }
 
-    .blood-cta-img {
-      max-width: 100%;
-      height: auto;
-      max-height: 380px;
-      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.08));
-      transition: transform 0.5s ease;
-    }
-
-    .blood-cta-img:hover {
-      transform: scale(1.02);
+    /* Divider line */
+    .vol-divider {
+      width: 60px; height: 4px;
+      background: linear-gradient(90deg, #dc3545, #a855f7);
+      border-radius: 4px;
+      margin: 20px auto;
     }
   </style>
 
-  <div class="container-fluid py-6 blood-cta-section">
-    <div class="container text-center py-4">
+  <div class="container-fluid volunteer-cta-section">
+    <div class="container volunteer-cta-inner text-center">
+
+      <!-- Badge -->
+      <div>
+        <span class="vol-badge">
+          <span class="vol-badge-dot"></span>
+          Community Service
+        </span>
+      </div>
 
       <!-- Heading -->
-      <h2 class="display-4 mb-3 blood-cta-heading text-uppercase">Let Our Volunteers Lend a Helping Hand</h2>
-
-      <p class="fs-5 text-muted mb-5 mx-auto" style="max-width: 700px;">
-        In times of medical emergencies or physical needs, our dedicated NSS community is here to support you. We
-        connect you with verified donors and helpers seamlessly.
+      <h2 class="vol-heading mb-3">
+        Let Our Volunteers<br>
+        <span>Lend a Helping Hand</span>
+      </h2>
+      <div class="vol-divider"></div>
+      <p class="vol-sub mt-3">
+        In times of medical emergencies or physical needs, our dedicated NSS community is here to support you.
+        We connect you with verified donors and helpers — seamlessly and swiftly.
       </p>
 
-      <!-- Primary Action Button -->
-      <div class="mb-4">
-        <a href="blood.html" class="btn btn-blood-primary btn-lg rounded-pill px-5 py-3 shadow">
-          <i class="fa-solid fa-droplet me-2"></i> Get a Blood Donor
+      <!-- Stats -->
+      <div class="vol-stats">
+        <div class="vol-stat-pill">
+          <span class="vol-stat-num">500+</span>
+          <span class="vol-stat-label">Volunteers</span>
+        </div>
+        <div class="vol-stat-pill">
+          <span class="vol-stat-num">200+</span>
+          <span class="vol-stat-label">Blood Donors</span>
+        </div>
+        <div class="vol-stat-pill">
+          <span class="vol-stat-num">50+</span>
+          <span class="vol-stat-label">Scribes</span>
+        </div>
+        <div class="vol-stat-pill">
+          <span class="vol-stat-num">24/7</span>
+          <span class="vol-stat-label">Available</span>
+        </div>
+      </div>
+
+      <!-- Service Cards -->
+      <div class="vol-cards mx-auto" style="max-width: 860px;">
+        <div class="vol-card">
+          <div class="vol-card-icon red"><i class="fa-solid fa-droplet"></i></div>
+          <h5>Blood Donation</h5>
+          <p>Connect with verified blood donors in your time of need — fast, reliable, and life-saving.</p>
+        </div>
+        <div class="vol-card">
+          <div class="vol-card-icon blue"><i class="fa-solid fa-pen-nib"></i></div>
+          <h5>Scribe Service</h5>
+          <p>Our trained volunteers assist students with disabilities during exams as professional scribes.</p>
+        </div>
+        <div class="vol-card">
+          <div class="vol-card-icon green"><i class="fa-solid fa-hand-holding-heart"></i></div>
+          <h5>Community Help</h5>
+          <p>From cleanliness drives to awareness campaigns, we're always there to serve the community.</p>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="d-flex gap-3 justify-content-center flex-wrap mt-2">
+        <a href="blood.html" class="btn-vol-primary">
+          <i class="fa-solid fa-droplet"></i> Get a Blood Donor
         </a>
-      </div>
-
-      <!-- Illustration -->
-      <div class="mb-5">
-        <!-- Replace with your actual illustration/image path. Fallback included. -->
-        <img src="img/home/donor.jpeg" alt="Volunteers Teamwork" class="img-fluid rounded-4 blood-cta-img"
-          style="object-fit: cover;">
-      </div>
-
-      <!-- Secondary Action Button -->
-      <div>
-        <a href="contact.html" class="btn btn-blood-secondary rounded-pill px-4 py-2">
-          <i class="fa-solid fa-pen-nib me-2"></i> Get a Scribe
+        <a href="contact.html" class="btn-vol-secondary">
+          <i class="fa-solid fa-pen-nib"></i> Get a Scribe
         </a>
       </div>
 
     </div>
   </div>
   <!-- ============================================ -->
+
 
   <style>
     /* Cinematic Sections Global */
@@ -1397,6 +1574,9 @@
 
   <!-- Contributors Javascript -->
   <script src="js/contributors.js"></script>
+
+  <!-- Go Back JS -->
+  <script src="js/go-back.js"></script>
 
   <!-- Leaders & Contributors Javascript -->
   <script src="js/leaders-contributors.js"></script>
