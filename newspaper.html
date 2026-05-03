@@ -16,319 +16,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg-dark: #020617;
-      --primary-dark: #f8fafc;
-      --accent-blue: #6366f1;
-      --soft-bg: #020617;
-      --card-glass: rgba(255, 255, 255, 0.03);
-      --border-glow: rgba(255, 255, 255, 0.1);
-      --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-      --transition-smooth: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    body {
-      font-family: 'Outfit', sans-serif;
-      background-color: var(--soft-bg);
-      color: #94a3b8;
-      overflow-x: hidden;
-    }
-
-    /* Ambient Glow Background */
-    .ambient-glow {
-      position: fixed;
-      width: 80vw;
-      height: 80vh;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
-      top: -20%;
-      left: -10%;
-      z-index: -1;
-      filter: blur(100px);
-      animation: moveGlow 20s infinite alternate;
-    }
-
-    @keyframes moveGlow {
-      from {
-        transform: translate(0, 0);
-      }
-
-      to {
-        transform: translate(20%, 20%);
-      }
-    }
-
-    /* Navbar Styling */
-    .navbar {
-      backdrop-filter: blur(15px);
-      background: rgba(255, 255, 255, 0.8) !important;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    /* Modern Hero Header */
-    .hero-section {
-      padding: 120px 0 80px;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      border-radius: 0 0 50px 50px;
-      margin-bottom: -40px;
-      color: white;
-      text-align: center;
-    }
-
-    .text-gradient {
-      background: linear-gradient(to right, #60a5fa, #a855f7);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Newspaper Card - Cinematic Dark Style (Team Theme) */
-    .news-card {
-      background: var(--card-glass);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: 30px;
-      border: 1px solid var(--border-glow);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-      transition: var(--transition-smooth);
-      height: 100%;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .news-card:hover {
-      transform: translateY(-15px);
-      background: rgba(255, 255, 255, 0.07);
-      box-shadow: 0 40px 60px -15px rgba(0, 0, 0, 0.4);
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .img-zoom-wrapper {
-      position: relative;
-      height: 260px;
-      overflow: hidden;
-    }
-
-    .img-zoom-wrapper::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, transparent 40%, rgba(2, 6, 23, 0.8));
-      pointer-events: none;
-    }
-
-    .img-zoom-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background-color: #ffffff;
-      padding: 5px;
-      transition: transform 1s ease;
-    }
-
-    .news-card:hover .img-zoom-wrapper img {
-      transform: scale(1.15);
-    }
-
-    .date-float {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(8px);
-      color: white;
-      padding: 8px 18px;
-      border-radius: 12px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .news-content {
-      padding: 30px;
-      flex-grow: 1;
-    }
-
-    .news-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      background: var(--accent-gradient);
-      color: white;
-      font-weight: 800;
-      margin-bottom: 15px;
-      display: inline-block;
-      padding: 5px 15px;
-      border-radius: 50px;
-      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
-    }
-
-    .news-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 15px;
-      line-height: 1.4;
-    }
-
-    /* Cinematic Impact Section - Blood Donation */
-    .impact-container {
-      background: linear-gradient(135deg, #040F28 0%, #1e090b 100%);
-      border-radius: 40px;
-      padding: 70px 60px;
-      margin-top: 100px;
-      position: relative;
-      overflow: hidden;
-      color: white;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(220, 53, 69, 0.2);
-    }
-
-    .impact-bg-glow {
-      position: absolute;
-      top: 50%;
-      right: -10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(220, 53, 69, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-      transform: translateY(-50%);
-      border-radius: 50%;
-      z-index: 0;
-    }
-
-    .impact-content-wrapper {
-      position: relative;
-      z-index: 1;
-    }
-
-    .impact-btn {
-      background: linear-gradient(135deg, #dc3545, #9b1c28);
-      color: white;
-      padding: 14px 40px;
-      border-radius: 50px;
-      font-weight: 700;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: none;
-      box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
-      letter-spacing: 1px;
-    }
-
-    .impact-btn:hover {
-      background: linear-gradient(135deg, #e44d5d, #b52534);
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 12px 25px rgba(220, 53, 69, 0.6);
-      color: white;
-    }
-
-    .impact-btn-outline {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 14px 40px;
-      border-radius: 50px;
-      font-weight: 700;
-      transition: all 0.4s ease;
-      letter-spacing: 1px;
-    }
-
-    .impact-btn-outline:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      color: white;
-      transform: translateY(-4px);
-    }
-
-    .heartbeat-icon {
-      animation: heartbeat 1.5s infinite;
-      filter: drop-shadow(0 0 15px rgba(220, 53, 69, 0.6));
-    }
-
-    @keyframes heartbeat {
-      0% {
-        transform: scale(1);
-      }
-
-      15% {
-        transform: scale(1.15);
-      }
-
-      30% {
-        transform: scale(1);
-      }
-
-      45% {
-        transform: scale(1.15);
-      }
-
-      60% {
-        transform: scale(1);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    .hero-link-hover {
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .hero-link-hover:hover {
-      color: #3b82f6 !important;
-      transform: translateX(8px);
-    }
-
-    /* Animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease-out;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-
-  <!-- Global Cinematic Variables -->
-  <style>
-    .cinematic-section {
-      background-color: #040F28;
-      /* Deep Navy */
-      color: #ffffff;
-    }
-
-    .cinematic-heading {
-      font-family: 'Poppins', sans-serif;
-      color: #ffffff;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .glass-card {
-      background: rgba(255, 255, 255, 0.05) !important;
-      backdrop-filter: blur(10px) !important;
-      -webkit-backdrop-filter: blur(10px) !important;
-      border: 1px solid rgba(255, 255, 255, 0.15) !important;
-      border-radius: 20px !important;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-      color: #fff !important;
-    }
-
-    .glass-card:hover {
-      transform: translateY(-8px) scale(1.02) !important;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(13, 71, 161, 0.4) !important;
-      background: rgba(255, 255, 255, 0.08) !important;
-      border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    }
-  </style>
-
+  <!-- Newspaper Page CSS -->
+  <link href="css/newspaper.css" rel="stylesheet" />
+  <link href="css/footer.css" rel="stylesheet" />
   <link href="css/responsive.css" rel="stylesheet" />
   <!-- Go Back CSS -->
   <link href="css/go-back.css" rel="stylesheet" />
@@ -341,39 +31,6 @@
   <div class="ambient-glow"></div>
 
 
-  <style>
-    /* Cinematic Navbar Upgrade */
-    .navbar-glass {
-      background: rgba(4, 15, 40, 0.7) !important;
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.4s ease;
-    }
-
-    .navbar-glass .nav-link {
-      color: #ffffff !important;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-    }
-
-    .navbar-glass .nav-link:hover,
-    .navbar-glass .nav-link.active {
-      color: #a855f7 !important;
-    }
-
-    .navbar-glass .navbar-brand h2 {
-      color: #ffffff !important;
-    }
-
-    .navbar-glass .navbar-brand p {
-      color: #bbbbbb !important;
-    }
-
-    .navbar-glass .navbar-toggler-icon {
-      filter: invert(1);
-    }
-  </style>
   <nav class="navbar navbar-expand-lg navbar-glass shadow-sm sticky-top py-3 px-4 px-lg-5">
     <a href="index.html" class="navbar-brand d-flex align-items-center">
       <img src="img/home/NSS_Logo.png" alt="NSS Logo" width="45" height="45" class="me-2"
@@ -550,7 +207,8 @@
           <div class="news-content">
             <span class="news-tag">Women Empowerment</span>
             <h4 class="news-title">Sanitary Pad Distribution</h4>
-            <p class="small mb-0" style="color: #ffffff;">Spreading awareness and distributing sanitary pads to promote menstrual hygiene and empower women in rural communities.</p>
+            <p class="small mb-0" style="color: #ffffff;">Spreading awareness and distributing sanitary pads to promote
+              menstrual hygiene and empower women in rural communities.</p>
           </div>
         </div>
       </div>
@@ -563,7 +221,8 @@
           <div class="news-content">
             <span class="news-tag">Health Initiative</span>
             <h4 class="news-title">Mega Blood Donation Camp</h4>
-            <p class="small mb-0" style="color: #ffffff;">Successfully organized a blood donation camp witnessing active participation from about 100 people, saving numerous lives.</p>
+            <p class="small mb-0" style="color: #ffffff;">Successfully organized a blood donation camp witnessing active
+              participation from about 100 people, saving numerous lives.</p>
           </div>
         </div>
       </div>
@@ -576,7 +235,8 @@
           <div class="news-content">
             <span class="news-tag">Fitness & Unity</span>
             <h4 class="news-title">Run for Unity Marathon</h4>
-            <p class="small mb-0" style="color: #ffffff;">Fostering unity and physical fitness through a mass marathon event, bringing together students and volunteers.</p>
+            <p class="small mb-0" style="color: #ffffff;">Fostering unity and physical fitness through a mass marathon
+              event, bringing together students and volunteers.</p>
           </div>
         </div>
       </div>
@@ -589,7 +249,98 @@
           <div class="news-content">
             <span class="news-tag">Clean India</span>
             <h4 class="news-title">Safai Abhiyan</h4>
-            <p class="small mb-0" style="color: #ffffff;">Dedicated volunteers conducted a large-scale cleanliness drive, echoing the principles of Swachh Bharat Abhiyan.</p>
+            <p class="small mb-0" style="color: #ffffff;">Dedicated volunteers conducted a large-scale cleanliness
+              drive, echoing the principles of Swachh Bharat Abhiyan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================
+         NSS MAGAZINE PDF SECTION
+         ==================================== -->
+    <div class="magazine-section mb-5">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5 text-center">
+            <div class="magazine-cover-wrap">
+              <img src="img/home/magazine-cover.jpg" alt="NSS Magazine Cover"
+                onerror="this.src='img/NSS_Logo.png'" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <span class="magazine-badge"><i class="fa fa-book-open"></i> NSS Publication</span>
+            <h2 class="cinematic-heading mb-3" style="font-size:clamp(1.8rem,4vw,2.8rem);">
+              NSS <span style="color:#a78bfa;">Magazine</span><br>
+              <span style="font-size:0.55em;color:rgba(255,255,255,0.5);font-weight:400;letter-spacing:1px;">NIT Kurukshetra Edition</span>
+            </h2>
+            <p style="color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.8;margin-bottom:28px;">
+              A curated collection of NSS stories, achievements, events, and volunteer experiences.
+              Flip through our journey of service, impact and community outreach.
+            </p>
+            <div class="mb-4">
+              <div class="mag-feature">
+                <div class="mag-feature-icon"><i class="fa fa-images"></i></div>
+                <div><h6>Photo Stories</h6><p>Event galleries, camp highlights and volunteer moments.</p></div>
+              </div>
+              <div class="mag-feature">
+                <div class="mag-feature-icon"><i class="fa fa-pen-fancy"></i></div>
+                <div><h6>Articles &amp; Reflections</h6><p>Essays, poems and personal accounts from NSS volunteers.</p></div>
+              </div>
+              <div class="mag-feature">
+                <div class="mag-feature-icon"><i class="fa fa-chart-bar"></i></div>
+                <div><h6>Annual Highlights</h6><p>Key stats, milestones and achievements of the NSS unit.</p></div>
+              </div>
+            </div>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="pdf/nss-magazine.pdf" target="_blank" class="btn-mag-primary"><i class="fa fa-eye"></i> Read Online</a>
+              <a href="pdf/nss-magazine.pdf" download class="btn-mag-secondary"><i class="fa fa-download"></i> Download PDF</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================
+         DESIGN TEAM SECTION
+         ==================================== -->
+    <div class="design-team-section mb-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="design-team-badge"><span class="design-team-badge-dot"></span> Website &amp; Magazine</span>
+          <h2 class="cinematic-heading display-5 text-uppercase">The <span style="color:#82b1ff;">Design Team</span></h2>
+          <p style="color:rgba(255,255,255,0.6);">The creative minds behind NSS NIT Kurukshetra's digital presence and publications.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <!-- Lead -->
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="design-card lead-card">
+              <span class="lead-badge">LEAD</span>
+              <img src="img/Teams/gagandeep.jpg" alt="Gagandeep" onerror="this.src='img/NSS_Logo.png'">
+              <h5>Gagandeep</h5>
+              <p>Design Team Lead</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="design-card">
+              <img src="img/Teams/designer2.jpg" alt="Team Member" onerror="this.src='img/NSS_Logo.png'">
+              <h5>Team Member</h5>
+              <p>UI Designer</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="design-card">
+              <img src="img/Teams/designer3.jpg" alt="Team Member" onerror="this.src='img/NSS_Logo.png'">
+              <h5>Team Member</h5>
+              <p>Content Writer</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="design-card">
+              <img src="img/Teams/designer4.jpg" alt="Team Member" onerror="this.src='img/NSS_Logo.png'">
+              <h5>Team Member</h5>
+              <p>Developer</p>
+            </div>
           </div>
         </div>
       </div>
@@ -647,7 +398,8 @@
           <a class="social-icon" href="https://www.facebook.com/nss.nitkkr"><i class="fab fa-facebook-f"></i></a>
           <a class="social-icon" href="https://www.linkedin.com/company/nss-nit-kurukshetra/"><i
               class="fab fa-linkedin-in"></i></a>
-          <a class="social-icon" href="https://www.instagram.com/nss_nitkkr?igsh=MWFrNWYyMzh4ZGVhNA==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a class="social-icon" href="https://www.instagram.com/nss_nitkkr?igsh=MWFrNWYyMzh4ZGVhNA=="
+            target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
 
@@ -695,17 +447,12 @@
     </div>
   </div>
   <!-- Footer End -->
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Go Back JS -->
   <script src="js/go-back.js"></script>
+  <!-- Newspaper JS -->
+  <script src="js/newspaper.js"></script>
 </body>
 
 </html>
