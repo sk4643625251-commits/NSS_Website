@@ -26,21 +26,7 @@
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/blood.css" rel="stylesheet" />
 
-  <style>
-    /* Navbar overrides */
-    .navbar-glass {
-      background: rgba(4, 15, 40, 0.75) !important;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .navbar-glass .nav-link { color: #ffffff !important; font-family: 'Inter', sans-serif; font-weight: 500; }
-    .navbar-glass .nav-link:hover,
-    .navbar-glass .nav-link.active { color: #f87171 !important; }
-    .navbar-glass .navbar-brand h2 { color: #ffffff !important; }
-    .navbar-glass .navbar-brand p  { color: #aaaaaa !important; }
-    .navbar-glass .navbar-toggler-icon { filter: invert(1); }
-  </style>
+  <!-- Navbar overrides now live in css/blood.css -->
   <link href="css/responsive.css" rel="stylesheet" />
   <!-- Go Back CSS -->
   <link href="css/go-back.css" rel="stylesheet" />
@@ -49,6 +35,68 @@
 <body>
   <!-- Universal Go Back Button -->
   <button onclick="goBack()" class="universal-go-back-btn"><i class="fa fa-arrow-left"></i> Go back</button>
+
+  <!-- ===== FLOATING "NEED BLOOD?" BUTTON ===== -->
+  <button id="bloodFloatBtn" class="blood-float-btn" aria-label="Need Blood?">
+    <span class="blood-float-pulse"></span>
+    <i class="fa-solid fa-droplet"></i> Need Blood?
+  </button>
+
+  <!-- ===== REQUEST BLOOD MODAL ===== -->
+  <div class="modal fade blood-modal" id="bloodRequestModal" tabindex="-1"
+       aria-labelledby="bloodRequestModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bloodRequestModalLabel">
+            <i class="fa-solid fa-droplet"></i> Request Blood
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p style="color:rgba(255,255,255,0.55);font-size:0.875rem;margin-bottom:20px;">
+            Fill in the details below. On submit, a pre-filled WhatsApp message will open for you to send to our NSS coordinator.
+          </p>
+          <form id="bloodRequestForm">
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="blood-label" for="reqName">Patient's Name <span style="color:#f87171">*</span></label>
+                <input id="reqName" type="text" class="form-control blood-form-control w-100" placeholder="E.g., Rahul Sharma" required>
+              </div>
+              <div class="col-sm-6">
+                <label class="blood-label" for="reqBlood">Blood Group Required <span style="color:#f87171">*</span></label>
+                <select id="reqBlood" class="form-select blood-form-select w-100" required>
+                  <option selected disabled value="Select Group">Select Group</option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A−</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B−</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB−</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O−</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label class="blood-label" for="reqContact">Contact Number <span style="color:#f87171">*</span></label>
+                <input id="reqContact" type="tel" class="form-control blood-form-control w-100" placeholder="+91 XXXXX XXXXX" required>
+              </div>
+              <div class="col-12">
+                <label class="blood-label" for="reqLocation">Hospital / Location <span style="color:#f87171">*</span></label>
+                <input id="reqLocation" type="text" class="form-control blood-form-control w-100" placeholder="E.g., Civil Hospital, Kurukshetra" required>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer d-flex justify-content-between align-items-center">
+          <button type="button" class="btn" style="color:rgba(255,255,255,0.5);font-size:0.875rem;" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" form="bloodRequestForm" class="btn btn-blood-submit" style="width:auto;padding:12px 28px;">
+            <span><i class="fab fa-whatsapp me-2"></i>Send via WhatsApp</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <!-- ===== NAVBAR ===== -->
@@ -91,7 +139,7 @@
   <main>
 
     <!-- ===== HERO SECTION ===== -->
-    <section class="blood-hero">
+    <section class="blood-hero" id="donate">
       <!-- Floating particles -->
       <div class="hero-bg-particles" aria-hidden="true">
         <div class="particle"></div>
@@ -167,7 +215,7 @@
         <div class="row g-5 justify-content-center">
 
           <!-- DONATE FORM CARD -->
-          <div class="col-lg-6 col-md-10">
+          <div class="col-lg-6 col-md-10 bd-reveal">
             <div class="blood-glass-card h-100 d-flex flex-column">
               <div class="form-accent-line"></div>
               <div class="blood-form-container text-center flex-grow-1">
@@ -177,20 +225,20 @@
                 <h2 class="form-heading">Donate <span>Blood</span></h2>
                 <p class="form-subheading">Register as a voluntary blood donor today.</p>
 
-                <form class="text-start">
+                <form class="text-start" id="bloodDonateForm">
                   <div class="row g-3">
                     <div class="col-12">
-                      <label class="blood-label">Full Name</label>
-                      <input type="text" class="form-control blood-form-control" placeholder="E.g., John Doe" required>
+                      <label class="blood-label" for="donName">Full Name</label>
+                      <input id="donName" type="text" class="form-control blood-form-control" placeholder="E.g., John Doe" required>
                     </div>
                     <div class="col-sm-6">
-                      <label class="blood-label">Phone Number</label>
-                      <input type="tel" class="form-control blood-form-control" placeholder="+91 XXXXX XXXXX" required>
+                      <label class="blood-label" for="donPhone">Phone Number</label>
+                      <input id="donPhone" type="tel" class="form-control blood-form-control" placeholder="+91 XXXXX XXXXX" required>
                     </div>
                     <div class="col-sm-6">
-                      <label class="blood-label">Blood Group</label>
-                      <select class="form-select blood-form-select" required>
-                        <option selected disabled>Select Group</option>
+                      <label class="blood-label" for="donBlood">Blood Group</label>
+                      <select id="donBlood" class="form-select blood-form-select" required>
+                        <option selected disabled value="Select Group">Select Group</option>
                         <option value="A+">A+</option>
                         <option value="A-">A−</option>
                         <option value="B+">B+</option>
@@ -202,8 +250,8 @@
                       </select>
                     </div>
                     <div class="col-12">
-                      <label class="blood-label">Location / Address</label>
-                      <input type="text" class="form-control blood-form-control" placeholder="E.g., Kurukshetra, Haryana" required>
+                      <label class="blood-label" for="donLocation">Location / Address</label>
+                      <input id="donLocation" type="text" class="form-control blood-form-control" placeholder="E.g., Kurukshetra, Haryana" required>
                     </div>
                     <div class="col-12">
                       <label class="blood-label">Last Donation Date <span style="color:rgba(255,255,255,0.35)">(optional)</span></label>
@@ -211,7 +259,7 @@
                     </div>
                     <div class="col-12 mt-3">
                       <button type="submit" class="btn btn-blood-submit">
-                        <span><i class="fa-solid fa-heart me-2"></i>Register as Donor</span>
+                        <span><i class="fab fa-whatsapp me-2"></i>Register via WhatsApp</span>
                       </button>
                     </div>
                   </div>
@@ -221,57 +269,44 @@
             </div>
           </div>
 
-          <!-- REQUEST FORM CARD -->
-          <div class="col-lg-6 col-md-10">
+          <!-- REQUEST FORM CARD (opens modal) -->
+          <div class="col-lg-6 col-md-10 bd-reveal bd-reveal-delay-1">
             <div class="blood-glass-card req-card h-100 d-flex flex-column">
               <div class="form-accent-line req-gradient"></div>
-              <div class="blood-form-container text-center flex-grow-1">
+              <div class="blood-form-container text-center flex-grow-1 d-flex flex-column align-items-center justify-content-center">
                 <div class="form-icon-circle req-icon-bg">
                   <i class="fa-solid fa-briefcase-medical"></i>
                 </div>
                 <h2 class="form-heading" style="color:#fff;">Request <span style="background:linear-gradient(135deg,#ea580c,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Blood</span></h2>
-                <p class="form-subheading">We are here to help you in your medical emergency.</p>
+                <p class="form-subheading">In an emergency? We're here to help immediately.</p>
 
-                <form class="text-start">
-                  <div class="row g-3">
+                <div class="mt-4 w-100">
+                  <div class="row g-3 mb-4">
                     <div class="col-12">
-                      <label class="blood-label">Patient's Name</label>
-                      <input type="text" class="form-control blood-form-control" placeholder="E.g., Jane Smith" required>
-                    </div>
-                    <div class="col-sm-6">
-                      <label class="blood-label">Contact Number</label>
-                      <input type="tel" class="form-control blood-form-control" placeholder="+91 XXXXX XXXXX" required>
-                    </div>
-                    <div class="col-sm-6">
-                      <label class="blood-label">Required Blood Group</label>
-                      <select class="form-select blood-form-select" required>
-                        <option selected disabled>Select Group</option>
-                        <option value="A+">A+</option>
-                        <option value="A-">A−</option>
-                        <option value="B+">B+</option>
-                        <option value="B-">B−</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB-">AB−</option>
-                        <option value="O+">O+</option>
-                        <option value="O-">O−</option>
-                      </select>
-                    </div>
-                    <div class="col-12">
-                      <label class="blood-label">Hospital Name &amp; Location</label>
-                      <input type="text" class="form-control blood-form-control" placeholder="E.g., Civil Hospital, Kurukshetra" required>
-                    </div>
-                    <div class="col-12">
-                      <label class="blood-label">Units Required <span style="color:rgba(255,255,255,0.35)">(optional)</span></label>
-                      <input type="number" min="1" max="20" class="form-control blood-form-control" placeholder="E.g., 2">
-                    </div>
-                    <div class="col-12 mt-3">
-                      <button type="submit" class="btn btn-blood-submit req-gradient req-shadow">
-                        <span><i class="fa-solid fa-paper-plane me-2"></i>Submit Request</span>
-                      </button>
+                      <div class="p-3" style="background:rgba(234,88,12,0.07);border:1px solid rgba(234,88,12,0.2);border-radius:16px;">
+                        <p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.875rem;line-height:1.6;">
+                          <i class="fa-solid fa-circle-info me-2" style="color:#fb923c;"></i>
+                          Click below to quickly send an urgent blood request via WhatsApp to our NSS coordinator.
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </form>
 
+                  <button type="button" class="btn btn-blood-submit req-gradient req-shadow w-100"
+                    data-bs-toggle="modal" data-bs-target="#bloodRequestModal">
+                    <span><i class="fab fa-whatsapp me-2"></i>Request Blood via WhatsApp</span>
+                  </button>
+
+                  <div class="mt-3">
+                    <a id="whatsappGroupJoinBtn"
+                      href="https://chat.whatsapp.com/CQ4IyMHJ9uQ4o0rILwczbK"
+                      data-wa-group
+                      target="_blank" rel="noopener noreferrer"
+                      class="btn-whatsapp-outline w-100 justify-content-center">
+                      <i class="fab fa-whatsapp"></i> Join NSS Blood Donor Group
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -280,8 +315,36 @@
       </div>
     </section>
 
+    <!-- ===== BECOME A DONOR CTA CARD ===== -->
+    <section class="py-5">
+      <div class="container">
+        <div class="donor-cta-card bd-reveal">
+          <span class="section-title-badge mb-3 d-inline-block">
+            <i class="fab fa-whatsapp me-1"></i> Stay Connected
+          </span>
+          <h2>Become a Blood Donor ❤️</h2>
+          <p>
+            Join our growing community of NSS blood donors. Every registered donor is a beacon of hope.
+            Connect instantly, be notified of urgent needs, and save lives from your community.
+          </p>
+          <div class="donor-cta-actions">
+            <a href="https://chat.whatsapp.com/CQ4IyMHJ9uQ4o0rILwczbK"
+               target="_blank" rel="noopener noreferrer"
+               data-wa-group
+               class="btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+            </a>
+            <button type="button" class="btn-whatsapp-outline"
+              data-bs-toggle="modal" data-bs-target="#bloodRequestModal">
+              <i class="fa-solid fa-droplet"></i> Request Blood
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== WHY DONATE SECTION ===== -->
-    <section class="why-donate-section">
+    <section class="why-donate-section bd-reveal">
       <div class="container">
         <div class="text-center mb-5">
           <span class="section-title-badge">Why It Matters</span>
@@ -323,7 +386,7 @@
     </section>
 
     <!-- ===== ELIGIBILITY + BLOOD GROUPS SECTION ===== -->
-    <section class="eligibility-section">
+    <section class="eligibility-section bd-reveal">
       <div class="container">
         <div class="row g-5 align-items-start">
 
@@ -509,7 +572,7 @@
   <div class="container-fluid footer-bottom text-white-50">
     <div class="container text-center">
       <p class="mb-0">&copy; <a class="text-white fw-bold" href="#">NSS NIT Kurukshetra</a>. All Rights Reserved.</p>
-      <p class="mb-0 mt-1" style="font-size:13px;">Designed by <a class="text-white opacity-75" href="#">Shivam &amp; NSS Web Team</a></p>
+      <p class="mb-0 mt-1" style="font-size:13px;">Designed by <a class="text-white opacity-75" href="#">Subodh Kumar &amp; NSS Web Team</a></p>
     </div>
   </div>
   <!-- Footer End -->
@@ -517,34 +580,9 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    // Counter animation for stats
-    function animateCounter(el, target, suffix) {
-      let count = 0;
-      const step = Math.ceil(target / 60);
-      const timer = setInterval(() => {
-        count = Math.min(count + step, target);
-        el.textContent = count + suffix;
-        if (count >= target) clearInterval(timer);
-      }, 25);
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounter(document.querySelectorAll('.stat-value')[0], 500, '+');
-          animateCounter(document.querySelectorAll('.stat-value')[1],   8,  '');
-          animateCounter(document.querySelectorAll('.stat-value')[2], 1500, '+');
-          observer.disconnect();
-        }
-      });
-    }, { threshold: 0.5 });
-
-    const statsEl = document.querySelector('.stats-glass-row');
-    if (statsEl) observer.observe(statsEl);
-  </script>
-
   <!-- Go Back JS -->
   <script src="js/go-back.js"></script>
+  <!-- Blood Page JS (counters, smooth-scroll, WhatsApp, floating btn) -->
+  <script src="js/blood.js"></script>
 </body>
 </html>

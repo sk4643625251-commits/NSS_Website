@@ -1,4 +1,4 @@
-﻿/********** Template CSS **********/
+/********** Template CSS **********/
 :root {
     /* --primary: #FD5D14; */
     --primary: #3AB0FF;
@@ -121,10 +121,9 @@ html, body {
 .back-to-top {
     position: fixed;
     display: none;
-    left: 50%;
-    bottom: 0;
-    margin-left: -22px;
-    border-radius: 0;
+    right: 30px;
+    bottom: 30px;
+    border-radius: 8px;
     z-index: 99;
 }
 
